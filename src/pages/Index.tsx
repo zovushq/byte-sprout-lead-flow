@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import Solution from "@/components/Solution";
+import SampleReels from "@/components/SampleReels";
 import Process from "@/components/Process";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Pricing from "@/components/Pricing";
@@ -17,6 +18,7 @@ const Index = () => {
       <Hero />
       <Problem />
       <Solution />
+      <SampleReels />
       <Process />
       <WhyChooseUs />
       <Pricing />

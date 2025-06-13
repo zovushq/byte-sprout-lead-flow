@@ -2,6 +2,11 @@
 import React from "react";
 
 const Footer = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-background border-t border-border py-12">
       <div className="container mx-auto px-4">
@@ -26,11 +31,46 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold text-navy mb-4">Navigation</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li>Problem</li>
-                <li>Solution</li>
-                <li>Why Us</li>
-                <li>Pricing</li>
-                <li>FAQ</li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('problem')}
+                    className="hover:text-navy transition-colors text-left"
+                  >
+                    Problem
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('solution')}
+                    className="hover:text-navy transition-colors text-left"
+                  >
+                    Solution
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('why-choose-us')}
+                    className="hover:text-navy transition-colors text-left"
+                  >
+                    Why Us
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('pricing')}
+                    className="hover:text-navy transition-colors text-left"
+                  >
+                    Pricing
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('faq')}
+                    className="hover:text-navy transition-colors text-left"
+                  >
+                    FAQ
+                  </button>
+                </li>
               </ul>
             </div>
 

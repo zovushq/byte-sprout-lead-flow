@@ -5,9 +5,9 @@ const SampleReels = () => {
   const sampleReels = [
     {
       id: 1,
-      title: "Personal Injury Law Basics",
-      description: "What to do after a car accident - your rights explained",
-      thumbnail: "/api/placeholder/300/400",
+      title: "Pulled Over? One Sentence Could Save You.",
+      description: "Criminal defense attorney Willie Baker breaks down what to say (and not say) if you're questioned by police. Know your rights — your future could depend on it.",
+      videoUrl: "https://youtube.com/shorts/PeEdeRZ7z10?feature=share",
       duration: "0:45"
     },
     {
@@ -26,8 +26,14 @@ const SampleReels = () => {
     }
   ];
 
+  const handleVideoClick = (videoUrl?: string) => {
+    if (videoUrl) {
+      window.open(videoUrl, '_blank');
+    }
+  };
+
   return (
-    <section className="py-20 bg-muted">
+    <section id="sample-reels" className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
@@ -44,8 +50,9 @@ const SampleReels = () => {
             {sampleReels.map((reel, index) => (
               <div 
                 key={reel.id}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-scale-in group"
+                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-scale-in group cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => handleVideoClick(reel.videoUrl)}
               >
                 <div className="relative">
                   <div className="aspect-[9/16] bg-gradient-to-br from-navy/20 to-lime/20 flex items-center justify-center">

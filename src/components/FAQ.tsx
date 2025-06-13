@@ -41,6 +41,11 @@ const faqData = [
 ];
 
 const FAQ = () => {
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="faq" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -79,6 +84,7 @@ const FAQ = () => {
             </p>
             <Button 
               size="lg"
+              onClick={scrollToContact}
               className="bg-lime text-navy hover:bg-lime/90 font-semibold"
             >
               <Calendar className="mr-2 h-5 w-5" />

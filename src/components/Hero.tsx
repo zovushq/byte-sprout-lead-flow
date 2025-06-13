@@ -1,20 +1,19 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-
 const Hero = () => {
   const scrollToContact = () => {
     const element = document.getElementById('contact');
-    element?.scrollIntoView({ behavior: 'smooth' });
+    element?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
   const scrollToSampleReels = () => {
     const element = document.getElementById('sample-reels');
-    element?.scrollIntoView({ behavior: 'smooth' });
+    element?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <section className="pt-32 pb-24 bg-gradient-to-br from-navy via-primary to-navy text-white">
+  return <section className="pt-32 pb-24 bg-gradient-to-br from-navy via-primary to-navy text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
@@ -27,19 +26,11 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button 
-                size="lg" 
-                onClick={scrollToContact}
-                className="bg-lime text-navy hover:bg-lime/90 font-semibold px-8 py-4 text-lg transition-all duration-300 hover:scale-105"
-              >
+              <Button size="lg" onClick={scrollToContact} className="bg-lime text-navy hover:bg-lime/90 font-semibold py-4 transition-all duration-300 hover:scale-105 px-[7px] text-base">
                 Get 4 Qualified Leads This Month
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button 
-                size="lg"
-                onClick={scrollToSampleReels}
-                className="bg-white text-navy border border-black hover:bg-transparent hover:text-white hover:border-white px-8 py-4 text-lg transition-all duration-300"
-              >
+              <Button size="lg" onClick={scrollToSampleReels} className="bg-white text-navy border border-black hover:bg-transparent hover:text-white hover:border-white px-8 py-4 text-lg transition-all duration-300">
                 <Play className="mr-2 h-5 w-5" />
                 Watch Demo
               </Button>
@@ -65,8 +56,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;

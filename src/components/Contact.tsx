@@ -1,14 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Calendar } from "lucide-react";
-
 const Contact = () => {
   const openCalendly = () => {
     window.open('https://cal.com/zovus/bytesprout', '_blank');
   };
-
-  return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-navy via-primary to-navy text-white">
+  return <section id="contact" className="bg-gradient-to-br from-navy via-primary to-navy text-white py-[60px]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
@@ -55,11 +51,7 @@ const Contact = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Button 
-                size="lg"
-                onClick={openCalendly}
-                className="bg-lime text-navy hover:bg-lime/90 font-semibold px-8 py-4 text-lg transition-all duration-300 hover:scale-105"
-              >
+              <Button size="lg" onClick={openCalendly} className="bg-lime text-navy hover:bg-lime/90 font-semibold px-8 py-4 text-lg transition-all duration-300 hover:scale-105">
                 <Calendar className="mr-2 h-5 w-5" />
                 Book Your Discovery Call
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -95,8 +87,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;

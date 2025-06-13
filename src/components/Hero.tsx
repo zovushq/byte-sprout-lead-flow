@@ -25,7 +25,7 @@ const Hero = () => {
               We create engaging short-form content using your AI avatar and automate lead qualification—no camera time, no content creation, just qualified prospects in your calendar.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
               <Button size="lg" onClick={scrollToContact} className="bg-lime text-navy hover:bg-lime/90 font-semibold py-4 transition-all duration-300 hover:scale-105 text-base px-[20px]">
                 Get 4 Qualified Leads This Month
                 <ArrowRight className="ml-2 h-5 w-5" />

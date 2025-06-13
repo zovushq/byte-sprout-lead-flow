@@ -62,28 +62,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                <div className="text-3xl font-bold text-lime mb-2">Done-for-You</div>
-                <div className="text-white/80 font-medium mb-2 text-lime">Setup</div>
-                <div className="text-white/60 text-sm">We handle avatar, scripts, content, and automation.</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                <div className="text-3xl font-bold text-lime mb-2">Zero</div>
-                <div className="text-white/80 font-medium mb-2 text-lime">Learning Curve</div>
-                <div className="text-white/60 text-sm">You don't need to lift a finger — we build and manage everything.</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                <div className="text-3xl font-bold text-lime mb-2">14</div>
-                <div className="text-white/80 font-medium mb-2 text-lime">Clients Within Days</div>
-                <div className="text-white/60 text-sm">Most firms start seeing qualified leads within 1–2 weeks.</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                <div className="text-3xl font-bold text-lime mb-2">✓</div>
-                <div className="text-white/80 font-medium mb-2 text-lime">Fits Any Practice Area</div>
-                <div className="text-white/60 text-sm">Custom workflows for immigration, PI, criminal defense, and more.</div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>

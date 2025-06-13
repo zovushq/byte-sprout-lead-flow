@@ -8,6 +8,11 @@ const Hero = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToSampleReels = () => {
+    const element = document.getElementById('sample-reels');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="pt-32 pb-24 bg-gradient-to-br from-navy via-primary to-navy text-white">
       <div className="container mx-auto px-4">
@@ -32,6 +37,7 @@ const Hero = () => {
               </Button>
               <Button 
                 size="lg"
+                onClick={scrollToSampleReels}
                 className="bg-white text-navy border border-black hover:bg-transparent hover:text-white hover:border-white px-8 py-4 text-lg transition-all duration-300"
               >
                 <Play className="mr-2 h-5 w-5" />

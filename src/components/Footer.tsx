@@ -22,34 +22,32 @@ const Footer = () => {
               </p>
             </div>
 
-            {/* Services */}
+            {/* Navigation */}
             <div>
-              <h4 className="font-semibold text-navy mb-4">Services</h4>
+              <h4 className="font-semibold text-navy mb-4">Navigation</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li>AI Avatar Creation</li>
-                <li>Content Production</li>
-                <li>Lead Qualification</li>
-                <li>DM Automation</li>
-                <li>Appointment Booking</li>
+                <li>Problem</li>
+                <li>Solution</li>
+                <li>Why Us</li>
+                <li>Pricing</li>
+                <li>FAQ</li>
               </ul>
             </div>
 
-            {/* Legal */}
+            {/* Trust & Compliance */}
             <div>
-              <h4 className="font-semibold text-navy mb-4">Legal</h4>
+              <h4 className="font-semibold text-navy mb-4">Trust & Compliance</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li>Privacy Policy</li>
-                <li>Terms of Service</li>
-                <li>Bar Compliance</li>
-                <li>Data Security</li>
-                <li>Client Agreement</li>
+                <li>– Bar Compliance Ready</li>
+                <li>– Data Secure</li>
+                <li>– Cancel Anytime</li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="text-muted-foreground">
-              © 2024 ByteSprout. All rights reserved.
+              © 2025 ByteSprout (A <a href="https://www.zovus.tech" className="underline">ZOVUS</a> Company). All rights reserved.
             </div>
             <div className="text-muted-foreground mt-4 md:mt-0">
               Built for law firms who want to grow smarter, not harder.

@@ -4,7 +4,7 @@ import { Check, ArrowRight } from "lucide-react";
 
 const Pricing = () => {
   const features = [
-    "AI Avatar Creation & Setup",
+    "AI Avatar Creation & Setup (2 Custom Avatars Included)",
     "16 Professional Reels per Month (4/week)",
     "Content Strategy & Scriptwriting", 
     "Multi-Platform Publishing (TikTok, IG, YouTube, FB)",
@@ -16,6 +16,11 @@ const Pricing = () => {
     "Client Approval Workflow",
     "Bar Compliance Monitoring",
     "Monthly Performance Reports"
+  ];
+
+  const addOns = [
+    "Extra Reels: $150 per reel (additional to 16 included)",
+    "Extra Avatars: $50/month per avatar (2 included in plan)"
   ];
 
   const scrollToContact = () => {
@@ -40,17 +45,20 @@ const Pricing = () => {
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border-2 border-lime/20 animate-scale-in">
             <div className="text-center mb-8">
               <div className="bg-lime/10 text-navy px-4 py-2 rounded-full inline-block mb-4">
-                <span className="font-semibold">Complete System</span>
+                <span className="font-semibold">🔥 Founding Member Special - Next 3 Clients Only</span>
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-                $2,500<span className="text-lg font-normal text-muted-foreground">/month</span>
+              <h3 className="text-3xl md:text-4xl font-bold text-navy mb-2">
+                <span className="line-through text-muted-foreground text-2xl">$5,000</span>
+                <span className="ml-2">$2,500</span>
+                <span className="text-lg font-normal text-muted-foreground">/month</span>
               </h3>
+              <p className="text-lime font-semibold text-lg mb-2">50% OFF - Limited Time</p>
               <p className="text-muted-foreground text-lg">
                 Everything you need to turn your expertise into a lead generation machine
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center space-x-3">
                   <div className="bg-lime/20 rounded-full p-1">
@@ -61,16 +69,30 @@ const Pricing = () => {
               ))}
             </div>
 
+            <div className="border-t border-border pt-6 mb-6">
+              <h4 className="text-lg font-semibold text-navy mb-3">Add-Ons Available</h4>
+              <div className="space-y-2">
+                {addOns.map((addOn, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <div className="bg-muted rounded-full p-1">
+                      <Check className="h-4 w-4 text-muted-foreground" />
+                    </div>
+                    <span className="text-muted-foreground">{addOn}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             <div className="border-t border-border pt-8 mb-8">
               <h4 className="text-xl font-semibold text-navy mb-4">ROI Breakdown</h4>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                 <div>
-                  <div className="text-2xl font-bold text-navy">4</div>
-                  <div className="text-muted-foreground">Qualified Leads/Month</div>
+                  <div className="text-2xl font-bold text-navy">Compounding</div>
+                  <div className="text-muted-foreground">Returns Over Time</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-navy">$625</div>
-                  <div className="text-muted-foreground">Cost Per Lead</div>
+                  <div className="text-2xl font-bold text-navy">$0</div>
+                  <div className="text-muted-foreground">Wasted Ad Spend</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-lime">$25K+</div>
@@ -89,7 +111,7 @@ const Pricing = () => {
             </Button>
 
             <p className="text-center text-muted-foreground mt-4">
-              30-day money-back guarantee • No setup fees • Cancel anytime
+              No setup fees • Cancel anytime
             </p>
           </div>
 

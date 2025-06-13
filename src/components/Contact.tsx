@@ -51,7 +51,7 @@ const Contact = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Button size="lg" onClick={openCalendly} className="bg-lime text-navy hover:bg-lime/90 font-semibold px-8 py-4 text-lg transition-all duration-300 hover:scale-105">
+              <Button size="lg" onClick={openCalendly} className="bg-lime text-navy hover:bg-lime/90 font-semibold py-4 transition-all duration-300 hover:scale-105 text-base px-[20px]">
                 <Calendar className="mr-2 h-5 w-5" />
                 Book Your Discovery Call
                 <ArrowRight className="ml-2 h-5 w-5" />

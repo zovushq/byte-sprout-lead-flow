@@ -1,35 +1,15 @@
-
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
-
 const Pricing = () => {
-  const features = [
-    "AI Avatar Creation & Setup (2 Custom Avatars Included)",
-    "16 Professional Reels per Month (4/week)",
-    "Content Strategy & Scriptwriting", 
-    "Multi-Platform Publishing (TikTok, IG, YouTube, FB)",
-    "AI-Powered DM Automation",
-    "Lead Qualification & Scoring",
-    "Automated Appointment Booking",
-    "Real-Time Lead Dashboard",
-    "SMS & Email Notifications",
-    "Client Approval Workflow",
-    "Bar Compliance Monitoring",
-    "Monthly Performance Reports"
-  ];
-
-  const addOns = [
-    "Extra Reels: $150 per reel (additional to 16 included)",
-    "Extra Avatars: $50/month per avatar (2 included in plan)"
-  ];
-
+  const features = ["AI Avatar Creation & Setup (2 Custom Avatars Included)", "16 Professional Reels per Month (4/week)", "Content Strategy & Scriptwriting", "Multi-Platform Publishing (TikTok, IG, YouTube, FB)", "AI-Powered DM Automation", "Lead Qualification & Scoring", "Automated Appointment Booking", "Real-Time Lead Dashboard", "SMS & Email Notifications", "Client Approval Workflow", "Bar Compliance Monitoring", "Monthly Performance Reports"];
+  const addOns = ["Extra Reels: $150 per reel (additional to 16 included)", "Extra Avatars: $50/month per avatar (2 included in plan)"];
   const scrollToContact = () => {
     const element = document.getElementById('contact');
-    element?.scrollIntoView({ behavior: 'smooth' });
+    element?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <section id="pricing" className="py-20 bg-muted">
+  return <section id="pricing" className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
@@ -59,27 +39,23 @@ const Pricing = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-center space-x-3">
+              {features.map((feature, index) => <div key={index} className="flex items-center space-x-3">
                   <div className="bg-lime/20 rounded-full p-1">
                     <Check className="h-4 w-4 text-navy" />
                   </div>
                   <span className="text-foreground">{feature}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             <div className="border-t border-border pt-6 mb-6">
               <h4 className="text-lg font-semibold text-navy mb-3">Add-Ons Available</h4>
               <div className="space-y-2">
-                {addOns.map((addOn, index) => (
-                  <div key={index} className="flex items-center space-x-3">
+                {addOns.map((addOn, index) => <div key={index} className="flex items-center space-x-3">
                     <div className="bg-muted rounded-full p-1">
                       <Check className="h-4 w-4 text-muted-foreground" />
                     </div>
                     <span className="text-muted-foreground">{addOn}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
 
@@ -101,11 +77,7 @@ const Pricing = () => {
               </div>
             </div>
 
-            <Button 
-              size="lg" 
-              onClick={scrollToContact}
-              className="w-full bg-navy hover:bg-navy/90 text-white font-semibold py-4 text-lg"
-            >
+            <Button size="lg" onClick={scrollToContact} className="w-full bg-navy hover:bg-navy/90 text-white font-semibold py-4 text-sm px-0">
               Start Growing Your Practice Today
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -139,8 +111,6 @@ const Pricing = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Pricing;

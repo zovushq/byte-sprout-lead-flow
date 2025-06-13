@@ -9,7 +9,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="pt-24 pb-16 bg-gradient-to-br from-navy via-primary to-navy text-white">
+    <section className="pt-32 pb-24 bg-gradient-to-br from-navy via-primary to-navy text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
@@ -31,9 +31,8 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button 
-                variant="outline" 
                 size="lg"
-                className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg transition-all duration-300"
+                className="bg-white text-navy border border-white hover:bg-transparent hover:text-white hover:border-white px-8 py-4 text-lg transition-all duration-300"
               >
                 <Play className="mr-2 h-5 w-5" />
                 Watch Demo
@@ -43,15 +42,18 @@ const Hero = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                 <div className="text-3xl font-bold text-lime mb-2">16</div>
-                <div className="text-white/80">Reels Per Month</div>
+                <div className="text-white/80 font-medium mb-2">AI-Avatar Reels Monthly</div>
+                <div className="text-white/60 text-sm">Stay top of mind on every platform</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                 <div className="text-3xl font-bold text-lime mb-2">100%</div>
-                <div className="text-white/80">Automated Follow-up</div>
+                <div className="text-white/80 font-medium mb-2">Automated Lead Qualification & Follow-up</div>
+                <div className="text-white/60 text-sm">We handle the chasing, you close</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                 <div className="text-3xl font-bold text-lime mb-2">$0</div>
-                <div className="text-white/80">Setup Fees</div>
+                <div className="text-white/80 font-medium mb-2">Setup Fees</div>
+                <div className="text-white/60 text-sm">Simple retainer, no hidden costs</div>
               </div>
             </div>
           </div>

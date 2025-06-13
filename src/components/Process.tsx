@@ -6,7 +6,7 @@ const Process = () => {
     {
       number: "01",
       title: "AI Avatar Creation",
-      description: "We create your digital twin in one session. You provide voice samples and photos—we handle the tech magic."
+      description: "We create your digital twin in one session. You provide voice sample and a video for training your custom avatar—we handle the tech magic."
     },
     {
       number: "02", 

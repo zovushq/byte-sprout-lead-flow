@@ -32,7 +32,7 @@ const Hero = () => {
               </Button>
               <Button 
                 size="lg"
-                className="bg-white text-navy border border-white hover:bg-transparent hover:text-white hover:border-white px-8 py-4 text-lg transition-all duration-300"
+                className="bg-white text-navy border border-black hover:bg-transparent hover:text-white hover:border-white px-8 py-4 text-lg transition-all duration-300"
               >
                 <Play className="mr-2 h-5 w-5" />
                 Watch Demo
@@ -47,7 +47,7 @@ const Hero = () => {
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                 <div className="text-3xl font-bold text-lime mb-2">100%</div>
-                <div className="text-white/80 font-medium mb-2">Automated Lead Qualification & Follow-up</div>
+                <div className="text-white/80 font-medium mb-2">Automated Lead Qualification</div>
                 <div className="text-white/60 text-sm">We handle the chasing, you close</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">

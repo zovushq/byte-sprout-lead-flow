@@ -46,9 +46,9 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/3763e8a1-e2e2-4430-bc5b-64aa5ad709c4.png" 
+              src="/lovable-uploads/9618184f-6be5-4203-aa1e-d59883f4397e.png" 
               alt="ByteSprout Logo – AI-Powered Content Creation for Law Firms"
-              className="h-8 w-auto"
+              className="h-10 w-auto"
             />
           </div>
 

@@ -2,7 +2,23 @@ import { Button } from "@/components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 const Pricing = () => {
-  const features = ["AI Avatar Creation & Setup (2 Custom Avatars Included)", "16 Professional Reels per Month (4/week)", "Content Strategy & Scriptwriting", "Multi-Platform Publishing (TikTok, IG, YouTube, FB)", "AI-Powered DM Automation", "Lead Qualification & Scoring", "Automated Appointment Booking", "Real-Time Lead Dashboard", "SMS & Email Notifications", "Client Approval Workflow", "Bar Compliance Monitoring", "Monthly Performance Reports"];
+  const features = [
+    "AI Avatar Creation & Setup (2 Custom Avatars Included)",
+    "16 Professionally Edited Reels Monthly (4/week)",
+    "Multi-Platform Publishing (TikTok, IG, YouTube, FB, Google My Business)",
+    "Content Strategy, Ideation & Scriptwriting Service",
+    "A dedicated Slack channel for instant feedback and easy approvals",
+    "Bi-weekly performance reports and strategy sessions so you’re never left in the dark",
+    "Dedicated social media manager and client relationship specialist for your firm",
+    "AI-Powered DM Automation",
+    "Lead Qualification & Scoring",
+    "Automated Appointment Booking",
+    "Real-Time Lead Dashboard",
+    "SMS & Email Notifications",
+    "Client Approval Workflow",
+    "Bar Compliance Monitoring",
+    "Monthly Performance Reports"
+  ];
   const addOns = ["Extra Reels: $150 per reel (additional to 16 included)", "Extra Avatars: $50/month per avatar (2 included in plan)"];
   const scrollToContact = () => {
     const element = document.getElementById('contact');

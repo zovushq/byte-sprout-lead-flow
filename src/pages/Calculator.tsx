@@ -73,7 +73,7 @@ const CalculatorPage = () => {
                   +
                 </Button>
                 <span className="ml-2 text-sm text-muted-foreground">
-                  (min {BASE_REELS})
+                  min. 15
                 </span>
               </div>
             </div>

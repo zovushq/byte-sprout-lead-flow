@@ -26,6 +26,7 @@ const PLAN_DESC = [
   "2 custom AI avatars included",
   "AI-Powered DM Automation (if selected)",
   "Lead qualification & booking (if selected)",
+  "Founding Member Special — only 3 slots left!",
 ];
 
 const CalculatorPage = () => {
@@ -196,7 +197,7 @@ const CalculatorPage = () => {
               ))}
             </ul>
             <div className="mt-2 text-xs text-muted-foreground">
-              * Founding Member Special available for first 3 clients only.<br/>
+              * Founding Member Special — only 3 slots left!<br/>
               Extra avatars charged at $50/month per additional avatar (first 2 included).
             </div>
           </div>

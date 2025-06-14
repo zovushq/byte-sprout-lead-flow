@@ -11,7 +11,7 @@ const faqData = [
   {
     question: "What’s included in the Founding Member Offer?",
     answer:
-      "The Founding Member Offer is our introductory pricing available to just the first 3 clients. It offers a significant discount on reels and automation, locking in lower rates for early adopters. Once these slots are filled, the pricing will revert to standard rates as displayed in the calculator when the offer toggle is off.",
+      "The Founding Member Offer is our introductory pricing available while slots last—only 3 slots left! It offers a significant discount on reels and automation, locking in lower rates for early adopters. Once these slots are filled, the pricing will revert to standard rates as displayed in the calculator when the offer toggle is off.",
   },
   {
     question: "Can I create a plan with more than 15 reels per month?",

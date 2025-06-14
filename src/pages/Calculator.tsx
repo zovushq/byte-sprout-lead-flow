@@ -72,9 +72,7 @@ const CalculatorPage = () => {
                 <Button type="button" onClick={() => setNumReels(v => v + 1)} size="icon" variant="secondary" aria-label="increase">
                   +
                 </Button>
-                <span className="ml-2 text-sm text-muted-foreground">
-                  min. 15
-                </span>
+                <span className="ml-2 text-sm text-muted-foreground">(min. 15)</span>
               </div>
             </div>
 

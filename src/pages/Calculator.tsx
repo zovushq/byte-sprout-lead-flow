@@ -26,7 +26,7 @@ const PLAN_DESC = [
   "2 custom AI avatars included",
   "AI-Powered DM Automation (if selected)",
   "Lead qualification & booking (if selected)",
-  "Founding Member Special — only 3 slots left!",
+  "Founding Member Special (only 3 slots left)",
 ];
 
 const CalculatorPage = () => {
@@ -44,8 +44,8 @@ const CalculatorPage = () => {
   const total = reelsSubtotal + avatarSubtotal;
 
   const offerText = withOffer
-    ? "Founding Member Special (first 3 clients only)"
-    : "Normal Pricing (after 3 founding slots are filled)";
+    ? "Founding Member Special (only 3 slots left)"
+    : "Normal Pricing (after all offer slots filled)";
 
   return (
     <>
@@ -197,7 +197,7 @@ const CalculatorPage = () => {
               ))}
             </ul>
             <div className="mt-2 text-xs text-muted-foreground">
-              * Founding Member Special — only 3 slots left!<br/>
+              * Founding Member Special (only 3 slots left)<br/>
               Extra avatars charged at $50/month per additional avatar (first 2 included).
             </div>
           </div>

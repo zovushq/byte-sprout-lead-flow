@@ -61,7 +61,9 @@ const CalculatorPage = () => {
             <Switch checked={withOffer} onCheckedChange={setWithOffer} aria-label="Toggle Founding Member Special" />
           </div>
           <div className={`font-semibold rounded-full py-1 px-4 mx-auto text-center mb-6 w-fit transition-colors duration-200 ${withOffer ? "bg-lime/10 text-lime" : "bg-muted/80 text-navy border border-muted"}`}>
-            Founding Member Special Offer (only 3 slots left)
+            {withOffer
+              ? "Founding Member Special Offer (only 3 slots left)"
+              : "Normal Pricing (after all offer slots filled)"}
           </div>
 
           <div className="space-y-5 mb-6">

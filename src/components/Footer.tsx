@@ -118,6 +118,14 @@ const Footer = () => {
                     FAQ
                   </button>
                 </li>
+                <li>
+                  <a 
+                    href="/calculator"
+                    className="hover:text-navy transition-colors text-left block"
+                  >
+                    Calculator
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -156,4 +164,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

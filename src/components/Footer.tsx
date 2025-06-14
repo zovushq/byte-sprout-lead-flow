@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Instagram, Facebook, Linkedin, X as XIcon } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -37,23 +38,64 @@ const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const scrollToSection = (sectionId: string) => {
-    // Wait in case of route change (see below)
+  // Helper for smooth scroll to element by id
+  const smoothScrollTo = (id: string) => {
     setTimeout(() => {
-      const element = document.getElementById(sectionId);
+      const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
-    }, 100);
+    }, 100); // Allow DOM time to render if navigating
   };
 
-  // Unified handler for all navigation menu links
+  // For calculator page navigation footer
+  const handleCalcNav = (target: "home" | "calculator" | "faq") => {
+    if (target === "home") {
+      if (location.pathname === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        navigate("/");
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 100);
+      }
+    }
+    if (target === "calculator") {
+      if (location.pathname === "/calculator") {
+        smoothScrollTo("custom-calculator");
+      } else {
+        navigate("/calculator");
+        smoothScrollTo("custom-calculator");
+      }
+    }
+    if (target === "faq") {
+      if (location.pathname === "/calculator") {
+        smoothScrollTo("calculator-faq");
+      } else {
+        navigate("/calculator");
+        smoothScrollTo("calculator-faq");
+      }
+    }
+  };
+
+  // Unified handler for all navigation menu links (retains for home page)
   const handleNavMenuClick = (sectionId: string) => {
     if (location.pathname === "/") {
-      scrollToSection(sectionId);
+      // home page scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
     } else {
       navigate("/");
-      scrollToSection(sectionId); // Scroll after a brief timeout to give DOM a chance to mount
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
     }
   };
 
@@ -111,55 +153,90 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold text-navy mb-4">Navigation</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li>
-                  <button 
-                    onClick={() => handleNavMenuClick('problem')}
-                    className="hover:text-navy transition-colors text-left"
-                  >
-                    Problem
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => handleNavMenuClick('solution')}
-                    className="hover:text-navy transition-colors text-left"
-                  >
-                    Solution
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => handleNavMenuClick('why-choose-us')}
-                    className="hover:text-navy transition-colors text-left"
-                  >
-                    Why Us
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => handleNavMenuClick('pricing')}
-                    className="hover:text-navy transition-colors text-left"
-                  >
-                    Pricing
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => handleNavMenuClick('faq')}
-                    className="hover:text-navy transition-colors text-left"
-                  >
-                    FAQ
-                  </button>
-                </li>
-                <li>
-                  {/* Calculator remains a Link */}
-                  <Link 
-                    to="/calculator"
-                    className="hover:text-navy transition-colors text-left block"
-                  >
-                    Calculator
-                  </Link>
-                </li>
+                {location.pathname === "/calculator" ? (
+                  <>
+                    {/* HOME */}
+                    <li>
+                      <button
+                        onClick={() => handleCalcNav("home")}
+                        className="hover:text-navy transition-colors text-left"
+                      >
+                        Home
+                      </button>
+                    </li>
+                    {/* CALCULATOR SECTION SCROLL */}
+                    <li>
+                      <button
+                        onClick={() => handleCalcNav("calculator")}
+                        className="hover:text-navy transition-colors text-left"
+                      >
+                        Calculator
+                      </button>
+                    </li>
+                    {/* FAQ SECTION SCROLL */}
+                    <li>
+                      <button
+                        onClick={() => handleCalcNav("faq")}
+                        className="hover:text-navy transition-colors text-left"
+                      >
+                        FAQs
+                      </button>
+                    </li>
+                  </>
+                ) : (
+                  // Default for all other pages (preserving old logic)
+                  <>
+                    <li>
+                      <button 
+                        onClick={() => handleNavMenuClick('problem')}
+                        className="hover:text-navy transition-colors text-left"
+                      >
+                        Problem
+                      </button>
+                    </li>
+                    <li>
+                      <button 
+                        onClick={() => handleNavMenuClick('solution')}
+                        className="hover:text-navy transition-colors text-left"
+                      >
+                        Solution
+                      </button>
+                    </li>
+                    <li>
+                      <button 
+                        onClick={() => handleNavMenuClick('why-choose-us')}
+                        className="hover:text-navy transition-colors text-left"
+                      >
+                        Why Us
+                      </button>
+                    </li>
+                    <li>
+                      <button 
+                        onClick={() => handleNavMenuClick('pricing')}
+                        className="hover:text-navy transition-colors text-left"
+                      >
+                        Pricing
+                      </button>
+                    </li>
+                    <li>
+                      <button 
+                        onClick={() => handleNavMenuClick('faq')}
+                        className="hover:text-navy transition-colors text-left"
+                      >
+                        FAQ
+                      </button>
+                    </li>
+                    <li>
+                      {/* Calculator remains a Link */}
+                      <Link 
+                        to="/calculator"
+                        className="hover:text-navy transition-colors text-left block"
+                      >
+                        Calculator
+                      </Link>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
 

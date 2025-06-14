@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -9,7 +10,7 @@ const Pricing = () => {
     "Content Strategy, Ideation & Scriptwriting Service",
     "A dedicated Slack channel for instant feedback and easy approvals",
     "Bi-weekly performance reports and strategy sessions so you’re never left in the dark",
-    "Dedicated social media manager and client relationship specialist for your firm",
+    "Dedicated social media manager and client relationship manager",
     "AI-Powered DM Automation",
     "Lead Qualification & Scoring",
     "Automated Appointment Booking",
@@ -137,3 +138,4 @@ const Pricing = () => {
     </section>;
 };
 export default Pricing;
+

@@ -33,11 +33,6 @@ const faqData = [
     answer:
       "Most firms start seeing their first qualified lead within 1-2 weeks of launching their ByteSprout campaign. Our AI-powered content machine works 24/7 to generate leads, allowing you to quickly grow your practice without increasing your workload.",
   },
-  {
-    question: "What if I'm not satisfied with the results?",
-    answer:
-      "We're confident that you'll be thrilled with the results you achieve with ByteSprout. However, if for any reason you're not completely satisfied, we offer a full money-back guarantee. We want you to feel confident in your investment and see the value in our system.",
-  },
 ];
 
 const FAQ = () => {

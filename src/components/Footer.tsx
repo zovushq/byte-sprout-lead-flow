@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
+import { Instagram, Facebook, Linkedin, X as XIcon } from "lucide-react";
 
 const SOCIALS = [
   {
@@ -27,7 +27,7 @@ const SOCIALS = [
   {
     name: "X",
     href: "https://x.com/bytesprouthq",
-    Icon: Twitter,
+    Icon: XIcon,
     hover: "hover:text-[#1DA1F2] hover:drop-shadow-[0_0_8px_#1da1f2aa]",
     label: "X (Twitter)",
   }

@@ -26,7 +26,7 @@ const Pricing = () => {
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border-2 border-lime/20 animate-scale-in">
             <div className="text-center mb-8">
               <div className="bg-lime/10 text-navy px-4 py-2 rounded-full inline-block mb-4">
-                <span className="font-semibold">🔥 Founding Member Special - only 3 slots left</span>
+                <span className="font-semibold">🔥 Founding Member Special Offer - only 3 slots left</span>
               </div>
               <h3 className="text-3xl md:text-4xl font-bold text-navy mb-2">
                 <span className="line-through text-muted-foreground text-2xl">$5,000</span>

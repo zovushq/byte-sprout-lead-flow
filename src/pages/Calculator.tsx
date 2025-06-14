@@ -41,7 +41,7 @@ const CalculatorPage = () => {
       <CalculatorHero />
       <CalculatorSteps />
       {/* Calculator Section */}
-      <section id="custom-calculator" className="min-h-screen bg-muted flex items-center justify-center py-[65px]">
+      <section id="custom-calculator" className="min-h-screen bg-muted flex items-center justify-center py-[65px] px-[10px]">
         <div className="bg-white shadow-xl rounded-2xl max-w-xl w-full p-8 relative border border-lime/30">
           <h2 className="text-2xl md:text-4xl font-extrabold text-navy mb-3 text-center">
             Custom Plan Calculator

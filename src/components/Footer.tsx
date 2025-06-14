@@ -1,5 +1,37 @@
 
 import React from "react";
+import { Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
+
+const SOCIALS = [
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/bytesprouthq/",
+    Icon: Instagram,
+    hover: "hover:text-[#E4405F] hover:drop-shadow-[0_0_8px_#e4405faa]",
+    label: "Instagram",
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/bytesprouthq",
+    Icon: Facebook,
+    hover: "hover:text-[#1877F3] hover:drop-shadow-[0_0_8px_#1877f3aa]",
+    label: "Facebook",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/bytesprouthq",
+    Icon: Linkedin,
+    hover: "hover:text-[#0A66C2] hover:drop-shadow-[0_0_8px_#0a66c2aa]",
+    label: "LinkedIn",
+  },
+  {
+    name: "X",
+    href: "https://x.com/bytesprouthq",
+    Icon: Twitter,
+    hover: "hover:text-[#1DA1F2] hover:drop-shadow-[0_0_8px_#1da1f2aa]",
+    label: "X (Twitter)",
+  }
+];
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -25,6 +57,21 @@ const Footer = () => {
                 The AI-powered content and lead generation system built specifically for law firms. 
                 Turn your expertise into qualified leads on autopilot.
               </p>
+              {/* Social Icons */}
+              <div className="mt-6 flex items-center space-x-5">
+                {SOCIALS.map(({ name, href, Icon, hover, label }) => (
+                  <a
+                    key={name}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className={`transition-colors text-black ${hover}`}
+                  >
+                    <Icon size={28} strokeWidth={2} />
+                  </a>
+                ))}
+              </div>
             </div>
 
             {/* Navigation */}

@@ -202,7 +202,16 @@ const CalculatorPage = () => {
             </div>
           </div>
           <div className="mt-2 text-center">
-            <Button size="lg" className="w-full bg-navy hover:bg-navy/90 text-white font-semibold py-3 text-base">Start with this plan</Button>
+            <a
+              href="https://cal.com/zovus/bytesprout"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <Button size="lg" className="w-full bg-navy hover:bg-navy/90 text-white font-semibold py-3 text-base">
+                Start with this plan
+              </Button>
+            </a>
           </div>
         </div>
       </section>

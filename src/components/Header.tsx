@@ -2,20 +2,21 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const controlNavbar = () => {
       if (typeof window !== 'undefined') {
         if (window.scrollY > lastScrollY && window.scrollY > 100) {
-          // Scrolling down
           setIsVisible(false);
         } else {
-          // Scrolling up
           setIsVisible(true);
         }
         setLastScrollY(window.scrollY);
@@ -30,9 +31,36 @@ const Header = () => {
     }
   }, [lastScrollY]);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
+  // Link to section in current page, or if on another page, navigate home then scroll
+  const handleLinkClick = (sectionId: string) => {
+    if (location.pathname === "/") {
+      // On home, just scroll to section
+      const element = document.getElementById(sectionId);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Navigate home, then scroll
+      navigate("/", { replace: false });
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); // delay to allow route change
+    }
+    setIsMenuOpen(false);
+  };
+
+  // Logo click: always go home/top
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    }
     setIsMenuOpen(false);
   };
 
@@ -45,47 +73,49 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <img 
-              src="/lovable-uploads/9618184f-6be5-4203-aa1e-d59883f4397e.png" 
-              alt="ByteSprout Logo – AI-Powered Content Creation for Law Firms"
-              className="h-10 w-auto"
-            />
+            <Link to="/" onClick={handleLogoClick}>
+              <img 
+                src="/lovable-uploads/9618184f-6be5-4203-aa1e-d59883f4397e.png" 
+                alt="ByteSprout Logo – AI-Powered Content Creation for Law Firms"
+                className="h-10 w-auto cursor-pointer"
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <button 
-              onClick={() => scrollToSection('problem')}
+              onClick={() => handleLinkClick('problem')}
               className="text-foreground hover:text-navy transition-colors"
             >
               Problem
             </button>
             <button 
-              onClick={() => scrollToSection('solution')}
+              onClick={() => handleLinkClick('solution')}
               className="text-foreground hover:text-navy transition-colors"
             >
               Solution
             </button>
             <button 
-              onClick={() => scrollToSection('why-choose-us')}
+              onClick={() => handleLinkClick('why-choose-us')}
               className="text-foreground hover:text-navy transition-colors"
             >
               Why Us
             </button>
             <button 
-              onClick={() => scrollToSection('pricing')}
+              onClick={() => handleLinkClick('pricing')}
               className="text-foreground hover:text-navy transition-colors"
             >
               Pricing
             </button>
             <button 
-              onClick={() => scrollToSection('faq')}
+              onClick={() => handleLinkClick('faq')}
               className="text-foreground hover:text-navy transition-colors"
             >
               FAQ
             </button>
             <Button 
-              onClick={() => scrollToSection('contact')}
+              onClick={() => handleLinkClick('contact')}
               className="bg-navy hover:bg-navy/90 text-white"
             >
               Get Started
@@ -106,37 +136,37 @@ const Header = () => {
           <nav className="md:hidden mt-4 pt-4 border-t border-border/20">
             <div className="flex flex-col space-y-4">
               <button 
-                onClick={() => scrollToSection('problem')}
+                onClick={() => handleLinkClick('problem')}
                 className="text-left text-foreground hover:text-navy transition-colors"
               >
                 Problem
               </button>
               <button 
-                onClick={() => scrollToSection('solution')}
+                onClick={() => handleLinkClick('solution')}
                 className="text-left text-foreground hover:text-navy transition-colors"
               >
                 Solution
               </button>
               <button 
-                onClick={() => scrollToSection('why-choose-us')}
+                onClick={() => handleLinkClick('why-choose-us')}
                 className="text-left text-foreground hover:text-navy transition-colors"
               >
                 Why Us
               </button>
               <button 
-                onClick={() => scrollToSection('pricing')}
+                onClick={() => handleLinkClick('pricing')}
                 className="text-left text-foreground hover:text-navy transition-colors"
               >
                 Pricing
               </button>
               <button 
-                onClick={() => scrollToSection('faq')}
+                onClick={() => handleLinkClick('faq')}
                 className="text-left text-foreground hover:text-navy transition-colors"
               >
                 FAQ
               </button>
               <Button 
-                onClick={() => scrollToSection('contact')}
+                onClick={() => handleLinkClick('contact')}
                 className="bg-navy hover:bg-navy/90 text-white w-full"
               >
                 Get Started

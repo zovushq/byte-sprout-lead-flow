@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Instagram, Facebook, Linkedin, X as XIcon } from "lucide-react";
-import { Link } from "react-router-dom"; // Import Link
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const SOCIALS = [
   {
@@ -35,9 +35,25 @@ const SOCIALS = [
 ];
 
 const Footer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // Logo click: always go home/top
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    }
   };
 
   return (
@@ -48,11 +64,13 @@ const Footer = () => {
             {/* Brand */}
             <div className="md:col-span-2">
               <div className="flex items-center space-x-3 mb-4">
-                <img 
-                  src="/lovable-uploads/9618184f-6be5-4203-aa1e-d59883f4397e.png" 
-                  alt="ByteSprout Logo – AI-Powered Content Creation for Law Firms"
-                  className="h-10 w-auto"
-                />
+                <Link to="/" onClick={handleLogoClick}>
+                  <img 
+                    src="/lovable-uploads/9618184f-6be5-4203-aa1e-d59883f4397e.png" 
+                    alt="ByteSprout Logo – AI-Powered Content Creation for Law Firms"
+                    className="h-10 w-auto cursor-pointer"
+                  />
+                </Link>
               </div>
               <p className="text-muted-foreground leading-relaxed max-w-md">
                 The AI-powered content and lead generation system built specifically for law firms. 

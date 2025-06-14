@@ -1,9 +1,15 @@
+
 import React, { useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import CalculatorHero from "@/components/CalculatorHero";
+import CalculatorSteps from "@/components/CalculatorSteps";
+import CalculatorFAQ from "@/components/CalculatorFAQ";
 import { Button } from "@/components/ui/button";
 import ScrollToTop from "@/components/ScrollToTop";
 
 // Constants for pricing
-const SPECIAL_OFFER = true; // Founding Member Special Offer toggle (could be improved later)
+const SPECIAL_OFFER = true;
 const BASE_REELS = 15;
 const INCLUDED_AVATARS = 2;
 
@@ -23,7 +29,7 @@ const PLAN_DESC = [
   "Lead qualification & booking (if selected)",
 ];
 
-const Calculator = () => {
+const CalculatorPage = () => {
   const [numReels, setNumReels] = useState(BASE_REELS);
   const [withAutomation, setWithAutomation] = useState(true);
   const [extraAvatars, setExtraAvatars] = useState(0);
@@ -32,26 +38,26 @@ const Calculator = () => {
   const reelUnitPrice = getReelPrice(withAutomation, SPECIAL_OFFER);
   const avatarsCharged = extraAvatars > 0 ? extraAvatars : 0;
   const reelsCharged = numReels >= BASE_REELS ? numReels : BASE_REELS;
-  const baseAvatarsDesc = `2 included${extraAvatars > 0 ? ` + ${extraAvatars}` : ""}`;
-
   const reelsSubtotal = reelsCharged * reelUnitPrice;
   const avatarSubtotal = avatarsCharged * AVATAR_PRICE;
-
   const total = reelsSubtotal + avatarSubtotal;
 
-  // Offer display notices
   const offerText = SPECIAL_OFFER
     ? "Founding Member Special (first 3 clients only)"
     : "";
 
   return (
     <>
+      <Header />
       <ScrollToTop />
-      <div className="min-h-screen bg-muted flex items-center justify-center">
+      <CalculatorHero />
+      <CalculatorSteps />
+      {/* Calculator Section */}
+      <section className="min-h-screen bg-muted flex items-center justify-center py-10" id="custom-calculator">
         <div className="bg-white shadow-xl rounded-2xl max-w-xl w-full p-8 relative border border-lime/30">
-          <h1 className="text-2xl md:text-4xl font-extrabold text-navy mb-3 text-center">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-navy mb-3 text-center">
             Custom Plan Calculator
-          </h1>
+          </h2>
           <p className="text-muted-foreground text-center mb-1">
             Instantly estimate your monthly cost. All prices are monthly. Minimum 15 reels/month.
           </p>
@@ -191,9 +197,12 @@ const Calculator = () => {
             <Button size="lg" className="w-full bg-navy hover:bg-navy/90 text-white font-semibold py-3 text-base">Start with this plan</Button>
           </div>
         </div>
-      </div>
+      </section>
+      {/* FAQ Section */}
+      <CalculatorFAQ />
+      <Footer />
     </>
   );
 };
 
-export default Calculator;
+export default CalculatorPage;

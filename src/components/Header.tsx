@@ -31,7 +31,31 @@ const Header = () => {
     }
   }, [lastScrollY]);
 
-  // Link to section in current page, or if on another page, navigate home then scroll
+  // Universal: Logo click
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    }
+    setIsMenuOpen(false);
+  };
+
+  // Scroll to a section by id (on current page)
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // ========== NAVIGATION LOGIC ==========
+
+  // For main site navigation sections (home page)
   const handleLinkClick = (sectionId: string) => {
     if (location.pathname === "/") {
       // On home, just scroll to section
@@ -50,19 +74,188 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
-  // Logo click: always go home/top
-  const handleLogoClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (location.pathname === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      navigate("/");
-      setTimeout(() => {
+  // For calculator page navigation
+  const handleCalculatorNav = (target: "home" | "calculator" | "faq") => {
+    if (target === "home") {
+      if (location.pathname === "/") {
         window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 100);
+      } else {
+        navigate("/");
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 100);
+      }
+      setIsMenuOpen(false);
     }
-    setIsMenuOpen(false);
+    if (target === "calculator") {
+      if (location.pathname === "/calculator") {
+        scrollToSection("custom-calculator");
+      } else {
+        navigate("/calculator");
+        setTimeout(() => {
+          scrollToSection("custom-calculator");
+        }, 100);
+      }
+      setIsMenuOpen(false);
+    }
+    if (target === "faq") {
+      if (location.pathname === "/calculator") {
+        scrollToSection("calculator-faq");
+      } else {
+        navigate("/calculator");
+        setTimeout(() => {
+          scrollToSection("calculator-faq");
+        }, 100);
+      }
+      setIsMenuOpen(false);
+    }
   };
+
+  // ========== END NAVIGATION LOGIC ==========
+
+  // Renders main navigation (home page)
+  const renderDefaultNav = () => (
+    <>
+      <button 
+        onClick={() => handleLinkClick('problem')}
+        className="text-foreground hover:text-navy transition-colors"
+      >
+        Problem
+      </button>
+      <button 
+        onClick={() => handleLinkClick('solution')}
+        className="text-foreground hover:text-navy transition-colors"
+      >
+        Solution
+      </button>
+      <button 
+        onClick={() => handleLinkClick('why-choose-us')}
+        className="text-foreground hover:text-navy transition-colors"
+      >
+        Why Us
+      </button>
+      <button 
+        onClick={() => handleLinkClick('pricing')}
+        className="text-foreground hover:text-navy transition-colors"
+      >
+        Pricing
+      </button>
+      <button 
+        onClick={() => handleLinkClick('faq')}
+        className="text-foreground hover:text-navy transition-colors"
+      >
+        FAQ
+      </button>
+      <Button 
+        onClick={() => handleLinkClick('contact')}
+        className="bg-navy hover:bg-navy/90 text-white"
+      >
+        Get Started
+      </Button>
+    </>
+  );
+
+  // Renders calculator page navigation
+  const renderCalculatorNav = () => (
+    <>
+      <button
+        onClick={() => handleCalculatorNav("home")}
+        className="text-foreground hover:text-navy transition-colors"
+      >
+        Home
+      </button>
+      <button
+        onClick={() => handleCalculatorNav("calculator")}
+        className="text-foreground hover:text-navy transition-colors"
+      >
+        Calculator
+      </button>
+      <button
+        onClick={() => handleCalculatorNav("faq")}
+        className="text-foreground hover:text-navy transition-colors"
+      >
+        FAQs
+      </button>
+      <Button
+        onClick={() => handleCalculatorNav("calculator")}
+        className="bg-navy hover:bg-navy/90 text-white"
+      >
+        Get a Quote
+      </Button>
+    </>
+  );
+
+  // Renders mobile menu for main/home page
+  const renderDefaultMobileNav = () => (
+    <div className="flex flex-col space-y-4">
+      <button 
+        onClick={() => handleLinkClick('problem')}
+        className="text-left text-foreground hover:text-navy transition-colors"
+      >
+        Problem
+      </button>
+      <button 
+        onClick={() => handleLinkClick('solution')}
+        className="text-left text-foreground hover:text-navy transition-colors"
+      >
+        Solution
+      </button>
+      <button 
+        onClick={() => handleLinkClick('why-choose-us')}
+        className="text-left text-foreground hover:text-navy transition-colors"
+      >
+        Why Us
+      </button>
+      <button 
+        onClick={() => handleLinkClick('pricing')}
+        className="text-left text-foreground hover:text-navy transition-colors"
+      >
+        Pricing
+      </button>
+      <button 
+        onClick={() => handleLinkClick('faq')}
+        className="text-left text-foreground hover:text-navy transition-colors"
+      >
+        FAQ
+      </button>
+      <Button 
+        onClick={() => handleLinkClick('contact')}
+        className="bg-navy hover:bg-navy/90 text-white w-full"
+      >
+        Get Started
+      </Button>
+    </div>
+  );
+
+  // Renders mobile menu for calculator page
+  const renderCalculatorMobileNav = () => (
+    <div className="flex flex-col space-y-4">
+      <button
+        onClick={() => handleCalculatorNav("home")}
+        className="text-left text-foreground hover:text-navy transition-colors"
+      >
+        Home
+      </button>
+      <button
+        onClick={() => handleCalculatorNav("calculator")}
+        className="text-left text-foreground hover:text-navy transition-colors"
+      >
+        Calculator
+      </button>
+      <button
+        onClick={() => handleCalculatorNav("faq")}
+        className="text-left text-foreground hover:text-navy transition-colors"
+      >
+        FAQs
+      </button>
+      <Button
+        onClick={() => handleCalculatorNav("calculator")}
+        className="bg-navy hover:bg-navy/90 text-white w-full"
+      >
+        Get a Quote
+      </Button>
+    </div>
+  );
 
   return (
     <header 
@@ -84,42 +277,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => handleLinkClick('problem')}
-              className="text-foreground hover:text-navy transition-colors"
-            >
-              Problem
-            </button>
-            <button 
-              onClick={() => handleLinkClick('solution')}
-              className="text-foreground hover:text-navy transition-colors"
-            >
-              Solution
-            </button>
-            <button 
-              onClick={() => handleLinkClick('why-choose-us')}
-              className="text-foreground hover:text-navy transition-colors"
-            >
-              Why Us
-            </button>
-            <button 
-              onClick={() => handleLinkClick('pricing')}
-              className="text-foreground hover:text-navy transition-colors"
-            >
-              Pricing
-            </button>
-            <button 
-              onClick={() => handleLinkClick('faq')}
-              className="text-foreground hover:text-navy transition-colors"
-            >
-              FAQ
-            </button>
-            <Button 
-              onClick={() => handleLinkClick('contact')}
-              className="bg-navy hover:bg-navy/90 text-white"
-            >
-              Get Started
-            </Button>
+            {location.pathname === "/calculator" ? renderCalculatorNav() : renderDefaultNav()}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -134,44 +292,9 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pt-4 border-t border-border/20">
-            <div className="flex flex-col space-y-4">
-              <button 
-                onClick={() => handleLinkClick('problem')}
-                className="text-left text-foreground hover:text-navy transition-colors"
-              >
-                Problem
-              </button>
-              <button 
-                onClick={() => handleLinkClick('solution')}
-                className="text-left text-foreground hover:text-navy transition-colors"
-              >
-                Solution
-              </button>
-              <button 
-                onClick={() => handleLinkClick('why-choose-us')}
-                className="text-left text-foreground hover:text-navy transition-colors"
-              >
-                Why Us
-              </button>
-              <button 
-                onClick={() => handleLinkClick('pricing')}
-                className="text-left text-foreground hover:text-navy transition-colors"
-              >
-                Pricing
-              </button>
-              <button 
-                onClick={() => handleLinkClick('faq')}
-                className="text-left text-foreground hover:text-navy transition-colors"
-              >
-                FAQ
-              </button>
-              <Button 
-                onClick={() => handleLinkClick('contact')}
-                className="bg-navy hover:bg-navy/90 text-white w-full"
-              >
-                Get Started
-              </Button>
-            </div>
+            {location.pathname === "/calculator" 
+              ? renderCalculatorMobileNav() 
+              : renderDefaultMobileNav()}
           </nav>
         )}
       </div>

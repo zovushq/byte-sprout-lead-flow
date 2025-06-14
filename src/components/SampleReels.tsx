@@ -14,38 +14,38 @@ const getMaxResYouTubeThumbnail = (url: string) => {
   return { maxRes: undefined, fallback: undefined };
 };
 
+const YOUTUBE_SHORT = "https://youtube.com/shorts/PeEdeRZ7z10?feature=share";
+
+const sampleReels = [
+  {
+    id: 1,
+    title: "Pulled Over? One Sentence Could Save You.",
+    description: "Criminal defense attorney Willie Baker breaks down what to say (and not say) if you're questioned by police. Know your rights — your future could depend on it.",
+    videoUrl: YOUTUBE_SHORT,
+    duration: "0:45",
+  },
+  {
+    id: 2,
+    title: "Estate Planning Essentials",
+    description: "Why every family needs a will - common misconceptions",
+    videoUrl: YOUTUBE_SHORT,
+    duration: "0:52",
+  },
+  {
+    id: 3,
+    title: "Criminal Defense Rights",
+    description: "Understanding your Miranda rights during police stops",
+    videoUrl: YOUTUBE_SHORT,
+    duration: "0:38",
+  },
+];
+
 const SampleReels = () => {
   const [playingReelId, setPlayingReelId] = useState<number | null>(null);
   const [thumbnailError, setThumbnailError] = useState<{ [id: number]: boolean }>({});
 
-  const sampleReels = [
-    {
-      id: 1,
-      title: "Pulled Over? One Sentence Could Save You.",
-      description: "Criminal defense attorney Willie Baker breaks down what to say (and not say) if you're questioned by police. Know your rights — your future could depend on it.",
-      videoUrl: "https://youtube.com/shorts/PeEdeRZ7z10?feature=share",
-      duration: "0:45"
-    },
-    {
-      id: 2,
-      title: "Estate Planning Essentials",
-      description: "Why every family needs a will - common misconceptions",
-      thumbnail: "/api/placeholder/300/400",
-      duration: "0:52"
-    },
-    {
-      id: 3,
-      title: "Criminal Defense Rights",
-      description: "Understanding your Miranda rights during police stops",
-      thumbnail: "/api/placeholder/300/400",
-      duration: "0:38"
-    }
-  ];
-
   // Function to convert YouTube Shorts URL to embeddable URL
   const getEmbedUrl = (url: string) => {
-    // For https://youtube.com/shorts/PeEdeRZ7z10?feature=share
-    // Outputs: https://www.youtube.com/embed/PeEdeRZ7z10?autoplay=1
     const match = url.match(/shorts\/([a-zA-Z0-9_-]+)/);
     if (match && match[1]) {
       return `https://www.youtube.com/embed/${match[1]}?autoplay=1&modestbranding=1&rel=0&playsinline=1`;
@@ -69,18 +69,18 @@ const SampleReels = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {sampleReels.map((reel, index) => (
-              <div 
+              <div
                 key={reel.id}
                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-scale-in group cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => {
-                  if (reel.videoUrl) setPlayingReelId(reel.id);
+                  setPlayingReelId(reel.id);
                 }}
               >
                 <div className="relative">
                   <div className="aspect-[9/16] flex items-center justify-center bg-black">
-                    {/* First reel: preview with YouTube Shorts thumbnail */}
-                    {reel.id === 1 && playingReelId !== reel.id && (() => {
+                    {/* Show the thumbnail unless that reel is playing, then show the embedded video */}
+                    {playingReelId !== reel.id && (() => {
                       const { maxRes, fallback } = getMaxResYouTubeThumbnail(reel.videoUrl!);
                       return (
                         <div className="relative w-full h-full">
@@ -109,8 +109,7 @@ const SampleReels = () => {
                         </div>
                       );
                     })()}
-                    {/* First reel: active (playing state) */}
-                    {reel.id === 1 && playingReelId === reel.id && (
+                    {playingReelId === reel.id && (
                       <iframe
                         className="w-full h-full rounded"
                         src={getEmbedUrl(reel.videoUrl!)}
@@ -126,23 +125,12 @@ const SampleReels = () => {
                         }}
                       />
                     )}
-
-                    {/* Other reels: keep old appearance */}
-                    {reel.id !== 1 && (
-                      <div className="text-center pointer-events-none w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-navy/20 to-lime/20 aspect-[9/16]">
-                        <div className="w-16 h-16 bg-lime rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300 pointer-events-auto">
-                          <Play className="h-8 w-8 text-navy ml-1" />
-                        </div>
-                        <div className="text-navy font-semibold">Sample AI Avatar</div>
-                        <div className="text-muted-foreground text-sm">Click to Preview</div>
-                      </div>
-                    )}
                   </div>
                   <div className="absolute top-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm z-10">
                     {reel.duration}
                   </div>
                 </div>
-                
+
                 <div className="p-6">
                   <h3 className="font-bold text-lg text-navy mb-2">{reel.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -179,3 +167,4 @@ const SampleReels = () => {
 };
 
 export default SampleReels;
+

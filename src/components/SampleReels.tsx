@@ -1,8 +1,22 @@
+
 import { useState } from "react";
 import { Play } from "lucide-react";
 
+// Helper: Gets the max resolution YouTube thumbnail by video ID
+const getMaxResYouTubeThumbnail = (url: string) => {
+  const match = url.match(/shorts\/([a-zA-Z0-9_-]+)/);
+  if (match && match[1]) {
+    return {
+      maxRes: `https://img.youtube.com/vi/${match[1]}/maxresdefault.jpg`,
+      fallback: `https://img.youtube.com/vi/${match[1]}/hqdefault.jpg`,
+    };
+  }
+  return { maxRes: undefined, fallback: undefined };
+};
+
 const SampleReels = () => {
   const [playingReelId, setPlayingReelId] = useState<number | null>(null);
+  const [thumbnailError, setThumbnailError] = useState<{ [id: number]: boolean }>({});
 
   const sampleReels = [
     {
@@ -39,16 +53,6 @@ const SampleReels = () => {
     return url;
   };
 
-  // Function to get YouTube shorts thumbnail from URL
-  const getYouTubeThumbnail = (url: string) => {
-    const match = url.match(/shorts\/([a-zA-Z0-9_-]+)/);
-    if (match && match[1]) {
-      // Default to highest res, fallback later if not available
-      return `https://img.youtube.com/vi/${match[1]}/hqdefault.jpg`;
-    }
-    return undefined;
-  };
-
   return (
     <section id="sample-reels" className="py-20 bg-muted">
       <div className="container mx-auto px-4">
@@ -76,26 +80,35 @@ const SampleReels = () => {
                 <div className="relative">
                   <div className="aspect-[9/16] flex items-center justify-center bg-black">
                     {/* First reel: preview with YouTube Shorts thumbnail */}
-                    {reel.id === 1 && playingReelId !== reel.id && (
-                      <div className="relative w-full h-full">
-                        <img
-                          src={getYouTubeThumbnail(reel.videoUrl!)}
-                          alt={reel.title + " thumbnail"}
-                          className="w-full h-full object-cover"
-                          style={{ aspectRatio: "9/16" }}
-                          draggable={false}
-                        />
-                        {/* Overlay */}
-                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40">
-                          <div className="w-16 h-16 bg-lime rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 pointer-events-auto">
-                            <Play className="h-8 w-8 text-navy ml-1" />
-                          </div>
-                          <div className="text-white font-semibold text-base drop-shadow">
-                            Click to Preview
+                    {reel.id === 1 && playingReelId !== reel.id && (() => {
+                      const { maxRes, fallback } = getMaxResYouTubeThumbnail(reel.videoUrl!);
+                      return (
+                        <div className="relative w-full h-full">
+                          <img
+                            src={!thumbnailError[reel.id] ? maxRes : fallback}
+                            alt={reel.title + " thumbnail"}
+                            className="w-full h-full object-cover"
+                            style={{ aspectRatio: "9/16" }}
+                            draggable={false}
+                            onError={() =>
+                              setThumbnailError((prev) => ({
+                                ...prev,
+                                [reel.id]: true,
+                              }))
+                            }
+                          />
+                          {/* Overlay */}
+                          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40">
+                            <div className="w-16 h-16 bg-lime rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 pointer-events-auto">
+                              <Play className="h-8 w-8 text-navy ml-1" />
+                            </div>
+                            <div className="text-white font-semibold text-base drop-shadow">
+                              Click to Preview
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    )}
+                      );
+                    })()}
                     {/* First reel: active (playing state) */}
                     {reel.id === 1 && playingReelId === reel.id && (
                       <iframe

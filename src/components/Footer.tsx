@@ -28,7 +28,7 @@ const SOCIALS = [
     name: "X",
     href: "https://x.com/bytesprouthq",
     Icon: XIcon,
-    hover: "hover:text-[#1DA1F2] hover:drop-shadow-[0_0_8px_#1da1f2aa]",
+    hover: "hover:text-[#111] hover:drop-shadow-[0_0_8px_#1118]",
     label: "X (Twitter)",
   }
 ];

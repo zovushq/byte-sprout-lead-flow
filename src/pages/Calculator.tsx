@@ -20,7 +20,13 @@ const getReelPrice = (automation: boolean, special: boolean) => {
   return automation ? 300 : 210;
 };
 const AVATAR_PRICE = 50; // Per extra avatar (always the same)
-const PLAN_DESC = ["Minimum 15 reels/month", "2 custom AI avatars included", "AI-Powered DM Automation (if selected)", "Lead qualification & booking (if selected)", "Founding Member Special (only 3 slots left)"];
+// Removed the "Lead qualification & booking (if selected)" point from PLAN_DESC.
+const PLAN_DESC = [
+  "Minimum 15 reels/month",
+  "2 custom AI avatars included",
+  "AI-Powered DM Automation (if selected)",
+  "Founding Member Special (only 3 slots left)"
+];
 const CalculatorPage = () => {
   const [numReels, setNumReels] = useState(BASE_REELS);
   const [withAutomation, setWithAutomation] = useState(true);

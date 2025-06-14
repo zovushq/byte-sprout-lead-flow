@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -27,7 +26,7 @@ const Pricing = () => {
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border-2 border-lime/20 animate-scale-in">
             <div className="text-center mb-8">
               <div className="bg-lime/10 text-navy px-4 py-2 rounded-full inline-block mb-4">
-                <span className="font-semibold">🔥 Founding Member Special - Next 3 Clients Only</span>
+                <span className="font-semibold">🔥 Founding Member Special - only 3 slots left</span>
               </div>
               <h3 className="text-3xl md:text-4xl font-bold text-navy mb-2">
                 <span className="line-through text-muted-foreground text-2xl">$5,000</span>
@@ -86,12 +85,7 @@ const Pricing = () => {
 
             {/* New secondary button for users with custom requirements */}
             <Link to="/calculator" className="block mt-4">
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full font-semibold py-4 text-sm px-0 border-navy text-navy hover:bg-navy/10 transition-colors"
-                aria-label="Go to Custom Plan Calculator"
-              >
+              <Button variant="outline" size="lg" className="w-full font-semibold py-4 text-sm px-0 border-navy text-navy hover:bg-navy/10 transition-colors" aria-label="Go to Custom Plan Calculator">
                 Custom Plan Calculator
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

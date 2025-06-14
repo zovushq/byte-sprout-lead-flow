@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Calculator from "./pages/Calculator";
+import PageTransition from "@/components/PageTransition";
 
 const queryClient = new QueryClient();
 
@@ -17,10 +17,31 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/calculator" element={<Calculator />} />
+          <Route
+            path="/"
+            element={
+              <PageTransition>
+                <Index />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/calculator"
+            element={
+              <PageTransition>
+                <Calculator />
+              </PageTransition>
+            }
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          <Route
+            path="*"
+            element={
+              <PageTransition>
+                <NotFound />
+              </PageTransition>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
@@ -28,4 +49,3 @@ const App = () => (
 );
 
 export default App;
-

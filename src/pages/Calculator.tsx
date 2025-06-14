@@ -19,16 +19,8 @@ const getReelPrice = (automation: boolean, special: boolean) => {
   }
   return automation ? 300 : 210;
 };
-
 const AVATAR_PRICE = 50; // Per extra avatar (always the same)
-const PLAN_DESC = [
-  "Minimum 15 reels/month",
-  "2 custom AI avatars included",
-  "AI-Powered DM Automation (if selected)",
-  "Lead qualification & booking (if selected)",
-  "Founding Member Special (only 3 slots left)",
-];
-
+const PLAN_DESC = ["Minimum 15 reels/month", "2 custom AI avatars included", "AI-Powered DM Automation (if selected)", "Lead qualification & booking (if selected)", "Founding Member Special (only 3 slots left)"];
 const CalculatorPage = () => {
   const [numReels, setNumReels] = useState(BASE_REELS);
   const [withAutomation, setWithAutomation] = useState(true);
@@ -42,19 +34,14 @@ const CalculatorPage = () => {
   const reelsSubtotal = reelsCharged * reelUnitPrice;
   const avatarSubtotal = avatarsCharged * AVATAR_PRICE;
   const total = reelsSubtotal + avatarSubtotal;
-
-  const offerText = withOffer
-    ? "Founding Member Special (only 3 slots left)"
-    : "Normal Pricing (after all offer slots filled)";
-
-  return (
-    <>
+  const offerText = withOffer ? "Founding Member Special (only 3 slots left)" : "Normal Pricing (after all offer slots filled)";
+  return <>
       <Header />
       <ScrollToTop />
       <CalculatorHero />
       <CalculatorSteps />
       {/* Calculator Section */}
-      <section className="min-h-screen bg-muted flex items-center justify-center py-10" id="custom-calculator">
+      <section id="custom-calculator" className="min-h-screen bg-muted flex items-center justify-center py-[65px]">
         <div className="bg-white shadow-xl rounded-2xl max-w-xl w-full p-8 relative border border-lime/30">
           <h2 className="text-2xl md:text-4xl font-extrabold text-navy mb-3 text-center">
             Custom Plan Calculator
@@ -65,11 +52,7 @@ const CalculatorPage = () => {
           {/* Offer Toggle */}
           <div className="flex items-center justify-center gap-3 my-8">
             <span className="text-sm md:text-base font-medium text-navy">Show Founding Member Offer</span>
-            <Switch
-              checked={withOffer}
-              onCheckedChange={setWithOffer}
-              aria-label="Toggle Founding Member Special"
-            />
+            <Switch checked={withOffer} onCheckedChange={setWithOffer} aria-label="Toggle Founding Member Special" />
           </div>
           <div className={`font-semibold rounded-full py-1 px-4 mx-auto text-center mb-6 w-fit transition-colors duration-200 ${withOffer ? "bg-lime/10 text-lime" : "bg-muted/80 text-navy border border-muted"}`}>
             {offerText}
@@ -82,23 +65,11 @@ const CalculatorPage = () => {
                 How many reels per month?
               </label>
               <div className="flex items-center gap-4">
-                <Button
-                  type="button"
-                  onClick={() => setNumReels((v) => Math.max(BASE_REELS, v - 1))}
-                  size="icon"
-                  variant="secondary"
-                  aria-label="decrease"
-                >
+                <Button type="button" onClick={() => setNumReels(v => Math.max(BASE_REELS, v - 1))} size="icon" variant="secondary" aria-label="decrease">
                   −
                 </Button>
                 <span className="text-2xl font-bold">{numReels}</span>
-                <Button
-                  type="button"
-                  onClick={() => setNumReels((v) => v + 1)}
-                  size="icon"
-                  variant="secondary"
-                  aria-label="increase"
-                >
+                <Button type="button" onClick={() => setNumReels(v => v + 1)} size="icon" variant="secondary" aria-label="increase">
                   +
                 </Button>
                 <span className="ml-2 text-sm text-muted-foreground">
@@ -110,12 +81,7 @@ const CalculatorPage = () => {
             {/* Automation Toggle */}
             <div>
               <label className="flex items-center gap-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={withAutomation}
-                  onChange={() => setWithAutomation((val) => !val)}
-                  className="h-5 w-5 accent-lime"
-                />
+                <input type="checkbox" checked={withAutomation} onChange={() => setWithAutomation(val => !val)} className="h-5 w-5 accent-lime" />
                 <span className="font-medium text-navy text-base">
                   Add AI-Powered DM Automation
                 </span>
@@ -131,25 +97,11 @@ const CalculatorPage = () => {
                 Extra AI Avatars Needed?
               </label>
               <div className="flex items-center gap-4">
-                <Button
-                  type="button"
-                  onClick={() =>
-                    setExtraAvatars((v) => Math.max(0, v - 1))
-                  }
-                  size="icon"
-                  variant="secondary"
-                  aria-label="decrease"
-                >
+                <Button type="button" onClick={() => setExtraAvatars(v => Math.max(0, v - 1))} size="icon" variant="secondary" aria-label="decrease">
                   −
                 </Button>
                 <span className="text-2xl font-bold">{extraAvatars}</span>
-                <Button
-                  type="button"
-                  onClick={() => setExtraAvatars((v) => v + 1)}
-                  size="icon"
-                  variant="secondary"
-                  aria-label="increase"
-                >
+                <Button type="button" onClick={() => setExtraAvatars(v => v + 1)} size="icon" variant="secondary" aria-label="increase">
                   +
                 </Button>
                 <span className="ml-2 text-sm text-muted-foreground">
@@ -192,22 +144,15 @@ const CalculatorPage = () => {
           <div className="text-muted-foreground text-sm pt-1 pb-2">
             <div className="font-semibold text-navy mb-1">What's Included:</div>
             <ul className="pl-5 list-disc space-y-1">
-              {PLAN_DESC.map((desc) => (
-                <li key={desc}>{desc}</li>
-              ))}
+              {PLAN_DESC.map(desc => <li key={desc}>{desc}</li>)}
             </ul>
             <div className="mt-2 text-xs text-muted-foreground">
-              * Founding Member Special (only 3 slots left)<br/>
+              * Founding Member Special (only 3 slots left)<br />
               Extra avatars charged at $50/month per additional avatar (first 2 included).
             </div>
           </div>
           <div className="mt-2 text-center">
-            <a
-              href="https://cal.com/zovus/bytesprout"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
+            <a href="https://cal.com/zovus/bytesprout" target="_blank" rel="noopener noreferrer" className="block">
               <Button size="lg" className="w-full bg-navy hover:bg-navy/90 text-white font-semibold py-3 text-base">
                 Start with this plan
               </Button>
@@ -218,8 +163,6 @@ const CalculatorPage = () => {
       {/* FAQ Section */}
       <CalculatorFAQ />
       <Footer />
-    </>
-  );
+    </>;
 };
-
 export default CalculatorPage;

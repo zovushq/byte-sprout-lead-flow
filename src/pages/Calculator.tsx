@@ -23,7 +23,12 @@ const getReelPrice = (automation: boolean, special: boolean) => {
 const AVATAR_PRICE = 50; // Per extra avatar (always the same)
 // Removed the "Lead qualification & booking (if selected)" point from PLAN_DESC.
 const PLAN_DESC = [
-  "Minimum 15 reels/month",
+  "All videos are professionally edited for maximum scroll-stopping power.",
+  "Custom cover design for every single video.",
+  "Content ideation, AI video production, and publishing on ALL platforms: Instagram, TikTok, Facebook, YouTube, Google My Business.",
+  "A dedicated Slack channel for easy approvals, fast feedback, and direct communication with our team.",
+  "Dedicated social media manager and relationship manager for your firm.",
+  "Bi-weekly performance analysis and strategy reviews, so you’re never left in the dark.",
   "2 custom AI avatars included",
   "AI-Powered DM Automation (if selected)",
   "Founding Member Special (only 3 slots left)"

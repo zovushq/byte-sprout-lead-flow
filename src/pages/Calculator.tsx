@@ -169,7 +169,6 @@ const CalculatorPage = () => {
               )}
             </ul>
             <div className="mt-2 text-xs text-muted-foreground">
-              * Founding Member Special (only 3 slots left)<br />
               Extra avatars charged at $50/month per additional avatar (first 2 included).
             </div>
           </div>

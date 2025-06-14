@@ -22,16 +22,7 @@ const getReelPrice = (automation: boolean, special: boolean) => {
 };
 const AVATAR_PRICE = 50; // Per extra avatar (always the same)
 // Removed the "Lead qualification & booking (if selected)" point from PLAN_DESC.
-const PLAN_DESC = [
-  "All videos are professionally edited for maximum scroll-stopping power.",
-  "Custom cover design for every single video.",
-  "Content ideation, AI video production, and publishing on ALL platforms: Instagram, TikTok, Facebook, YouTube, Google My Business.",
-  "A dedicated Slack channel for easy approvals, fast feedback, and direct communication with our team.",
-  "Dedicated social media manager and relationship manager for your firm.",
-  "Bi-weekly performance analysis and strategy reviews, so you’re never left in the dark.",
-  "2 custom AI avatars included",
-  "AI-Powered DM Automation (if selected)"
-];
+const PLAN_DESC = ["All videos are professionally edited for maximum scroll-stopping power.", "Custom cover design for every single video.", "Content ideation, AI video production, and publishing on ALL platforms: Instagram, TikTok, Facebook, YouTube, Google My Business.", "A dedicated Slack channel for easy approvals, fast feedback, and direct communication with our team.", "Dedicated social media manager and relationship manager for your firm.", "Bi-weekly performance analysis and strategy reviews, so you’re never left in the dark.", "2 custom AI avatars included", "AI-Powered DM Automation (if selected)"];
 const CalculatorPage = () => {
   const [numReels, setNumReels] = useState(BASE_REELS);
   const [withAutomation, setWithAutomation] = useState(true);
@@ -46,14 +37,10 @@ const CalculatorPage = () => {
   const avatarSubtotal = avatarsCharged * AVATAR_PRICE;
   const total = reelsSubtotal + avatarSubtotal;
   const offerText = withOffer ? "Founding Member Special (only 3 slots left)" : "Normal Pricing (after all offer slots filled)";
-  return (
-    <>
+  return <>
       <Helmet>
         <title>ByteSprout | AI Video & Automation Cost Calculator</title>
-        <meta
-          name="description"
-          content="Get a custom quote for AI avatar video production, content automation, and multi-platform publishing. Instantly estimate pricing based on your business needs."
-        />
+        <meta name="description" content="Get a custom quote for AI avatar video production, content automation, and multi-platform publishing. Instantly estimate pricing based on your business needs." />
       </Helmet>
       <Header />
       <ScrollToTop />
@@ -162,15 +149,11 @@ const CalculatorPage = () => {
             <div className="font-semibold text-navy mb-1">What's Included:</div>
             <ul className="pl-5 list-disc space-y-1">
               {PLAN_DESC.map(desc => <li key={desc}>{desc}</li>)}
-              {withOffer && (
-                <li className="font-semibold text-lime">
+              {withOffer && <li className="font-semibold text-lime">
                   Founding Member Special Discount (only 3 slots left)
-                </li>
-              )}
+                </li>}
             </ul>
-            <div className="mt-2 text-xs text-muted-foreground">
-              Extra avatars charged at $50/month per additional avatar (first 2 included).
-            </div>
+            
           </div>
           <div className="mt-2 text-center">
             <a href="https://cal.com/zovus/bytesprout" target="_blank" rel="noopener noreferrer" className="block">
@@ -184,7 +167,6 @@ const CalculatorPage = () => {
       {/* FAQ Section */}
       <CalculatorFAQ />
       <Footer />
-    </>
-  );
+    </>;
 };
 export default CalculatorPage;

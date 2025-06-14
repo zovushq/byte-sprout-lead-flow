@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Instagram, Facebook, Linkedin, X as XIcon } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -39,8 +38,23 @@ const Footer = () => {
   const navigate = useNavigate();
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    // Wait in case of route change (see below)
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+
+  // Unified handler for all navigation menu links
+  const handleNavMenuClick = (sectionId: string) => {
+    if (location.pathname === "/") {
+      scrollToSection(sectionId);
+    } else {
+      navigate("/");
+      scrollToSection(sectionId); // Scroll after a brief timeout to give DOM a chance to mount
+    }
   };
 
   // Logo click: always go home/top
@@ -99,7 +113,7 @@ const Footer = () => {
               <ul className="space-y-2 text-muted-foreground">
                 <li>
                   <button 
-                    onClick={() => scrollToSection('problem')}
+                    onClick={() => handleNavMenuClick('problem')}
                     className="hover:text-navy transition-colors text-left"
                   >
                     Problem
@@ -107,7 +121,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <button 
-                    onClick={() => scrollToSection('solution')}
+                    onClick={() => handleNavMenuClick('solution')}
                     className="hover:text-navy transition-colors text-left"
                   >
                     Solution
@@ -115,7 +129,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <button 
-                    onClick={() => scrollToSection('why-choose-us')}
+                    onClick={() => handleNavMenuClick('why-choose-us')}
                     className="hover:text-navy transition-colors text-left"
                   >
                     Why Us
@@ -123,7 +137,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <button 
-                    onClick={() => scrollToSection('pricing')}
+                    onClick={() => handleNavMenuClick('pricing')}
                     className="hover:text-navy transition-colors text-left"
                   >
                     Pricing
@@ -131,14 +145,14 @@ const Footer = () => {
                 </li>
                 <li>
                   <button 
-                    onClick={() => scrollToSection('faq')}
+                    onClick={() => handleNavMenuClick('faq')}
                     className="hover:text-navy transition-colors text-left"
                   >
                     FAQ
                   </button>
                 </li>
                 <li>
-                  {/* Use Link for SPA navigation */}
+                  {/* Calculator remains a Link */}
                   <Link 
                     to="/calculator"
                     className="hover:text-navy transition-colors text-left block"

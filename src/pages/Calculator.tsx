@@ -6,10 +6,10 @@ import CalculatorHero from "@/components/CalculatorHero";
 import CalculatorSteps from "@/components/CalculatorSteps";
 import CalculatorFAQ from "@/components/CalculatorFAQ";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 import ScrollToTop from "@/components/ScrollToTop";
 
 // Constants for pricing
-const SPECIAL_OFFER = true;
 const BASE_REELS = 15;
 const INCLUDED_AVATARS = 2;
 
@@ -33,18 +33,19 @@ const CalculatorPage = () => {
   const [numReels, setNumReels] = useState(BASE_REELS);
   const [withAutomation, setWithAutomation] = useState(true);
   const [extraAvatars, setExtraAvatars] = useState(0);
+  const [withOffer, setWithOffer] = useState(true);
 
   // Pricing logic
-  const reelUnitPrice = getReelPrice(withAutomation, SPECIAL_OFFER);
+  const reelUnitPrice = getReelPrice(withAutomation, withOffer);
   const avatarsCharged = extraAvatars > 0 ? extraAvatars : 0;
   const reelsCharged = numReels >= BASE_REELS ? numReels : BASE_REELS;
   const reelsSubtotal = reelsCharged * reelUnitPrice;
   const avatarSubtotal = avatarsCharged * AVATAR_PRICE;
   const total = reelsSubtotal + avatarSubtotal;
 
-  const offerText = SPECIAL_OFFER
+  const offerText = withOffer
     ? "Founding Member Special (first 3 clients only)"
-    : "";
+    : "Normal Pricing (after 3 founding slots are filled)";
 
   return (
     <>
@@ -61,11 +62,18 @@ const CalculatorPage = () => {
           <p className="text-muted-foreground text-center mb-1">
             Instantly estimate your monthly cost. All prices are monthly. Minimum 15 reels/month.
           </p>
-          {SPECIAL_OFFER && (
-            <div className="bg-lime/10 text-lime font-semibold rounded-full py-1 px-4 mx-auto text-center mb-6 w-fit">
-              {offerText}
-            </div>
-          )}
+          {/* Offer Toggle */}
+          <div className="flex items-center justify-center gap-3 my-8">
+            <span className="text-sm md:text-base font-medium text-navy">Show Founding Member Offer</span>
+            <Switch
+              checked={withOffer}
+              onCheckedChange={setWithOffer}
+              aria-label="Toggle Founding Member Special"
+            />
+          </div>
+          <div className={`font-semibold rounded-full py-1 px-4 mx-auto text-center mb-6 w-fit transition-colors duration-200 ${withOffer ? "bg-lime/10 text-lime" : "bg-muted/80 text-navy border border-muted"}`}>
+            {offerText}
+          </div>
 
           <div className="space-y-6 mb-6">
             {/* Reels Stepper */}
@@ -206,3 +214,4 @@ const CalculatorPage = () => {
 };
 
 export default CalculatorPage;
+

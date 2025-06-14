@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CalculatorHero from "@/components/CalculatorHero";
@@ -41,7 +42,15 @@ const CalculatorPage = () => {
   const avatarSubtotal = avatarsCharged * AVATAR_PRICE;
   const total = reelsSubtotal + avatarSubtotal;
   const offerText = withOffer ? "Founding Member Special (only 3 slots left)" : "Normal Pricing (after all offer slots filled)";
-  return <>
+  return (
+    <>
+      <Helmet>
+        <title>ByteSprout | AI Video & Automation Cost Calculator</title>
+        <meta
+          name="description"
+          content="Get a custom quote for AI avatar video production, content automation, and multi-platform publishing. Instantly estimate pricing based on your business needs."
+        />
+      </Helmet>
       <Header />
       <ScrollToTop />
       <CalculatorHero />
@@ -167,6 +176,7 @@ const CalculatorPage = () => {
       {/* FAQ Section */}
       <CalculatorFAQ />
       <Footer />
-    </>;
+    </>
+  );
 };
 export default CalculatorPage;

@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -18,7 +17,7 @@ const getReelPrice = (automation: boolean, special: boolean) => {
   if (special) {
     return automation ? 155 : 115;
   }
-  return automation ? 275 : 200;
+  return automation ? 300 : 210;
 };
 
 const AVATAR_PRICE = 50; // Per extra avatar (always the same)
@@ -214,4 +213,3 @@ const CalculatorPage = () => {
 };
 
 export default CalculatorPage;
-

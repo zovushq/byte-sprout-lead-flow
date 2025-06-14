@@ -1,9 +1,6 @@
-
 import React from "react";
 import { Calculator } from "lucide-react";
-
-const CalculatorHero = () => (
-  <section className="py-16 bg-gradient-to-br from-navy via-primary to-navy text-white text-center">
+const CalculatorHero = () => <section className="bg-gradient-to-br from-navy via-primary to-navy text-white text-center py-[95px]">
     <div className="container mx-auto px-4">
       <div className="max-w-2xl mx-auto animate-fade-in">
         <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full text-lime font-semibold mb-4">
@@ -21,7 +18,5 @@ const CalculatorHero = () => (
         </p>
       </div>
     </div>
-  </section>
-);
-
+  </section>;
 export default CalculatorHero;

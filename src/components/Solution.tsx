@@ -1,4 +1,3 @@
-
 import { Bot, Video, Users, MessageSquare, Calendar, Shield } from "lucide-react";
 
 const Solution = () => {
@@ -77,7 +76,7 @@ const Solution = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
-                <div className="text-3xl font-bold text-lime mb-2">100%</div>
+                <div className="text-3xl font-bold text-lime mb-2">Done-For-You</div>
                 <div className="text-white/80">Client Approval Required</div>
               </div>
               <div>

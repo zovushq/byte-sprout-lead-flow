@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Instagram, Facebook, Linkedin, X as XIcon } from "lucide-react";
+import { Link } from "react-router-dom"; // Import Link
 
 const SOCIALS = [
   {
@@ -119,12 +120,13 @@ const Footer = () => {
                   </button>
                 </li>
                 <li>
-                  <a 
-                    href="/calculator"
+                  {/* Use Link for SPA navigation */}
+                  <Link 
+                    to="/calculator"
                     className="hover:text-navy transition-colors text-left block"
                   >
                     Calculator
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

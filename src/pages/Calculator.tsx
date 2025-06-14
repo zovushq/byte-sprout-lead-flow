@@ -42,7 +42,7 @@ const CalculatorPage = () => {
       <CalculatorSteps />
       {/* Calculator Section */}
       <section id="custom-calculator" className="min-h-screen bg-muted flex items-center justify-center py-[65px] px-[10px]">
-        <div className="bg-white shadow-xl rounded-2xl max-w-xl w-full p-8 relative border border-lime/30">
+        <div className="bg-white shadow-xl rounded-2xl max-w-xl w-full p-8 relative border border-lime/30 flex flex-col gap-y-4 sm:gap-y-0">
           <h2 className="text-2xl md:text-4xl font-extrabold text-navy mb-3 text-center">
             Custom Plan Calculator
           </h2>
@@ -58,7 +58,7 @@ const CalculatorPage = () => {
             {offerText}
           </div>
 
-          <div className="space-y-6 mb-6">
+          <div className="space-y-4 sm:space-y-6 mb-6">
             {/* Reels Stepper */}
             <div>
               <label className="block mb-1 font-medium text-navy">

@@ -59,10 +59,10 @@ const Contact = () => {
               <div className="flex items-center space-x-2 text-white/80">
                 <Mail className="h-5 w-5" />
                 <a
-                  href="mailto:bytesprout.inc@gmail.com"
+                  href="mailto:zovus.inc@gmail.com"
                   className="underline hover:text-lime transition-colors"
                 >
-                  bytesprout.inc@gmail.com
+                  zovus.inc@gmail.com
                 </a>
               </div>
             </div>

@@ -91,9 +91,7 @@ const Pricing = () => {
               </Button>
             </Link>
 
-            <p className="text-center text-muted-foreground mt-4">
-              No setup fees • Cancel anytime
-            </p>
+            <p className="text-center text-muted-foreground mt-4">No setup fees • Simple retainer, no hidden costs • Cancel anytime</p>
           </div>
 
           <div className="mt-12 text-center animate-fade-in">

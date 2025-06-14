@@ -1,7 +1,10 @@
 
+import { useState } from "react";
 import { Play } from "lucide-react";
 
 const SampleReels = () => {
+  const [playingReelId, setPlayingReelId] = useState<number | null>(null);
+
   const sampleReels = [
     {
       id: 1,
@@ -26,10 +29,15 @@ const SampleReels = () => {
     }
   ];
 
-  const handleVideoClick = (videoUrl?: string) => {
-    if (videoUrl) {
-      window.open(videoUrl, '_blank');
+  // Function to convert YouTube Shorts URL to embeddable URL
+  const getEmbedUrl = (url: string) => {
+    // For https://youtube.com/shorts/PeEdeRZ7z10?feature=share
+    // Outputs: https://www.youtube.com/embed/PeEdeRZ7z10?autoplay=1
+    const match = url.match(/shorts\/([a-zA-Z0-9_-]+)/);
+    if (match && match[1]) {
+      return `https://www.youtube.com/embed/${match[1]}?autoplay=1&modestbranding=1&rel=0&playsinline=1`;
     }
+    return url;
   };
 
   return (
@@ -52,19 +60,39 @@ const SampleReels = () => {
                 key={reel.id}
                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-scale-in group cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
-                onClick={() => handleVideoClick(reel.videoUrl)}
+                onClick={() => {
+                  if (reel.videoUrl) setPlayingReelId(reel.id);
+                }}
               >
                 <div className="relative">
                   <div className="aspect-[9/16] bg-gradient-to-br from-navy/20 to-lime/20 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-lime rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
-                        <Play className="h-8 w-8 text-navy ml-1" />
+                    {/* Show embedded video for the first card when playing */}
+                    {reel.id === 1 && playingReelId === reel.id ? (
+                      <iframe
+                        className="w-full h-full rounded"
+                        src={getEmbedUrl(reel.videoUrl!)}
+                        title={reel.title}
+                        allow="autoplay; encrypted-media; picture-in-picture"
+                        allowFullScreen
+                        style={{
+                          border: 0,
+                          minHeight: 0,
+                          width: '100%',
+                          height: '100%',
+                          aspectRatio: '9/16',
+                        }}
+                      />
+                    ) : (
+                      <div className="text-center pointer-events-none">
+                        <div className="w-16 h-16 bg-lime rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300 pointer-events-auto">
+                          <Play className="h-8 w-8 text-navy ml-1" />
+                        </div>
+                        <div className="text-navy font-semibold">Sample AI Avatar</div>
+                        <div className="text-muted-foreground text-sm">Click to Preview</div>
                       </div>
-                      <div className="text-navy font-semibold">Sample AI Avatar</div>
-                      <div className="text-muted-foreground text-sm">Click to Preview</div>
-                    </div>
+                    )}
                   </div>
-                  <div className="absolute top-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm">
+                  <div className="absolute top-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm z-10">
                     {reel.duration}
                   </div>
                 </div>

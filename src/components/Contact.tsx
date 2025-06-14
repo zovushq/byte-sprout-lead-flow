@@ -58,7 +58,12 @@ const Contact = () => {
               </Button>
               <div className="flex items-center space-x-2 text-white/80">
                 <Mail className="h-5 w-5" />
-                <span>zovus.inc@gmail.com</span>
+                <a
+                  href="mailto:bytesprout.inc@gmail.com"
+                  className="underline hover:text-lime transition-colors"
+                >
+                  bytesprout.inc@gmail.com
+                </a>
               </div>
             </div>
 

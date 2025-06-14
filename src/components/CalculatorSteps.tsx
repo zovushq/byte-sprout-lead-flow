@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ListOrdered, SquareCheck } from "lucide-react";
 const steps = [{
@@ -12,10 +13,6 @@ const steps = [{
   icon: <ListOrdered className="h-6 w-6 text-lime" />,
   title: "Add Extra AI Avatars",
   desc: "First 2 avatars are included. Add more for your team if desired."
-}, {
-  icon: <SquareCheck className="h-6 w-6 text-lime" />,
-  title: "Review Transparent Pricing",
-  desc: "See the full monthly breakdown live. No hidden fees."
 }];
 const CalculatorSteps = () => <section className="bg-background py-[60px]">
     <div className="container mx-auto px-4 max-w-4xl">

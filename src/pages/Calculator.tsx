@@ -30,8 +30,7 @@ const PLAN_DESC = [
   "Dedicated social media manager and relationship manager for your firm.",
   "Bi-weekly performance analysis and strategy reviews, so you’re never left in the dark.",
   "2 custom AI avatars included",
-  "AI-Powered DM Automation (if selected)",
-  "Founding Member Special (only 3 slots left)"
+  "AI-Powered DM Automation (if selected)"
 ];
 const CalculatorPage = () => {
   const [numReels, setNumReels] = useState(BASE_REELS);
@@ -163,6 +162,11 @@ const CalculatorPage = () => {
             <div className="font-semibold text-navy mb-1">What's Included:</div>
             <ul className="pl-5 list-disc space-y-1">
               {PLAN_DESC.map(desc => <li key={desc}>{desc}</li>)}
+              {withOffer && (
+                <li className="font-semibold text-lime">
+                  Founding Member Special Discount (only 3 slots left)
+                </li>
+              )}
             </ul>
             <div className="mt-2 text-xs text-muted-foreground">
               * Founding Member Special (only 3 slots left)<br />

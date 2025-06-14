@@ -58,7 +58,7 @@ const CalculatorPage = () => {
             {offerText}
           </div>
 
-          <div className="space-y-6 mb-6">
+          <div className="space-y-3 mb-6">
             {/* Reels Stepper */}
             <div>
               <label className="block mb-1 font-medium text-navy">

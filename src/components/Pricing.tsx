@@ -1,5 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 const Pricing = () => {
   const features = ["AI Avatar Creation & Setup (2 Custom Avatars Included)", "16 Professional Reels per Month (4/week)", "Content Strategy & Scriptwriting", "Multi-Platform Publishing (TikTok, IG, YouTube, FB)", "AI-Powered DM Automation", "Lead Qualification & Scoring", "Automated Appointment Booking", "Real-Time Lead Dashboard", "SMS & Email Notifications", "Client Approval Workflow", "Bar Compliance Monitoring", "Monthly Performance Reports"];
   const addOns = ["Extra Reels: $150 per reel (additional to 16 included)", "Extra Avatars: $50/month per avatar (2 included in plan)"];
@@ -81,6 +83,19 @@ const Pricing = () => {
               Start Growing Your Practice Today
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
+
+            {/* New secondary button for users with custom requirements */}
+            <Link to="/calculator" className="block mt-4">
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full font-semibold py-4 text-sm px-0 border-navy text-navy hover:bg-navy/10 transition-colors"
+                aria-label="Go to Custom Plan Calculator"
+              >
+                Custom Plan Calculator
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
 
             <p className="text-center text-muted-foreground mt-4">
               No setup fees • Cancel anytime

@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -31,7 +30,7 @@ It’s been a pleasure recording today, and I’m excited to see the final resul
 `;
 
 const CONSENT_SCRIPT = `
-I, [Full Name], consent to the creation of my AI avatar by ByteSprout. I understand this avatar will be used for my law firm’s marketing and communications, and I grant permission to ByteSprout to process my likeness and voice for this purpose.
+I [Full Name], hereby allow HeyGen to use the footage of me to build a HeyGen Avatar for use on the HeyGen platform.
 `;
 
 const Onboarding = () => {

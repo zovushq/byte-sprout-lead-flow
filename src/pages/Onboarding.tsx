@@ -46,7 +46,7 @@ const Onboarding = () => {
           {/* Section: Welcome */}
           <section className="mb-12 text-center">
             <div className="h-10 md:h-14" />
-            <h1 className="text-4xl md:text-5xl font-bold text-navy mb-6 animate-fade-in">
+            <h1 className="text-4xl md:text-5xl font-bold text-navy mb-6 animate-fade-in leading-tight md:leading-[1.15]">
               Welcome to ByteSprout Onboarding!
             </h1>
             <p className="text-lg md:text-2xl text-muted-foreground animate-fade-in">

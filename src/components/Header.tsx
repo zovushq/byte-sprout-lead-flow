@@ -118,31 +118,31 @@ const Header = () => {
     <>
       <button 
         onClick={() => handleLinkClick('problem')}
-        className="text-foreground hover:text-navy transition-colors"
+        className="text-foreground hover:text-lime transition-colors"
       >
         Problem
       </button>
       <button 
         onClick={() => handleLinkClick('solution')}
-        className="text-foreground hover:text-navy transition-colors"
+        className="text-foreground hover:text-lime transition-colors"
       >
         Solution
       </button>
       <button 
         onClick={() => handleLinkClick('why-choose-us')}
-        className="text-foreground hover:text-navy transition-colors"
+        className="text-foreground hover:text-lime transition-colors"
       >
         Why Us
       </button>
       <button 
         onClick={() => handleLinkClick('pricing')}
-        className="text-foreground hover:text-navy transition-colors"
+        className="text-foreground hover:text-lime transition-colors"
       >
         Pricing
       </button>
       <button 
         onClick={() => handleLinkClick('faq')}
-        className="text-foreground hover:text-navy transition-colors"
+        className="text-foreground hover:text-lime transition-colors"
       >
         FAQ
       </button>
@@ -190,31 +190,31 @@ const Header = () => {
     <div className="flex flex-col space-y-4">
       <button 
         onClick={() => handleLinkClick('problem')}
-        className="text-left text-foreground hover:text-navy transition-colors"
+        className="text-left text-foreground hover:text-lime transition-colors"
       >
         Problem
       </button>
       <button 
         onClick={() => handleLinkClick('solution')}
-        className="text-left text-foreground hover:text-navy transition-colors"
+        className="text-left text-foreground hover:text-lime transition-colors"
       >
         Solution
       </button>
       <button 
         onClick={() => handleLinkClick('why-choose-us')}
-        className="text-left text-foreground hover:text-navy transition-colors"
+        className="text-left text-foreground hover:text-lime transition-colors"
       >
         Why Us
       </button>
       <button 
         onClick={() => handleLinkClick('pricing')}
-        className="text-left text-foreground hover:text-navy transition-colors"
+        className="text-left text-foreground hover:text-lime transition-colors"
       >
         Pricing
       </button>
       <button 
         onClick={() => handleLinkClick('faq')}
-        className="text-left text-foreground hover:text-navy transition-colors"
+        className="text-left text-foreground hover:text-lime transition-colors"
       >
         FAQ
       </button>

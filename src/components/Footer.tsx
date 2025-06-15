@@ -235,6 +235,15 @@ const Footer = () => {
                         Calculator
                       </Link>
                     </li>
+                    <li>
+                      {/* Onboarding page link */}
+                      <Link 
+                        to="/onboarding"
+                        className="hover:text-navy transition-colors text-left block"
+                      >
+                        Onboarding
+                      </Link>
+                    </li>
                   </>
                 )}
               </ul>

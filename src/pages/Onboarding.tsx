@@ -254,7 +254,7 @@ const Onboarding = () => {
               <a href="mailto:zovus.inc@gmail.com" className="underline hover:text-lime ml-1">zovus.inc@gmail.com</a>
             </p>
             <Link to="/" className="inline-block mt-3">
-              <Button variant="outline" className="border-lime text-lime hover:bg-lime/20 transition">
+              <Button variant="outline" className="border-lime text-lime hover:bg-lime/20 hover:text-white transition">
                 Back to Home
               </Button>
             </Link>

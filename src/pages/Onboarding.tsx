@@ -1,8 +1,10 @@
+
 import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Mail } from "lucide-react";
 import React from "react";
 import OnboardingHeader from "@/components/OnboardingHeader";
+import { Helmet } from "react-helmet-async";
 
 const GOOGLE_FORM_LINK = "https://forms.gle/your-form-link"; // Replace with your real form link
 
@@ -38,6 +40,13 @@ I [Full Name], hereby allow HeyGen to use the footage of me to build a HeyGen Av
 const Onboarding = () => {
   return (
     <div className="min-h-screen flex flex-col bg-muted">
+      <Helmet>
+        <title>ByteSprout | Client Onboarding | AI Avatar Content Setup for Attorneys</title>
+        <meta
+          name="description"
+          content="Start your ByteSprout journey with ease. Follow our step-by-step onboarding guide to submit video, voice, and brand assets — and launch your AI-powered legal content system fast."
+        />
+      </Helmet>
       {/* NAV */}
       <OnboardingHeader />
 
@@ -274,3 +283,4 @@ const Onboarding = () => {
 export default Onboarding;
 
 // NOTE: This file is getting very long. Please consider refactoring it to use smaller section/component files for easier maintenance.
+

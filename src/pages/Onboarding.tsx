@@ -209,7 +209,7 @@ const Onboarding = () => {
 
         {/* Section: Social Media Access for Auto Posting */}
         <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
-          <h2 className="text-2xl font-bold text-navy mb-4">Step 6: Social Media Account Access</h2>
+          <h2 className="text-2xl font-bold text-navy mb-4">Step 7: Social Media Account Access</h2>
           <p className="text-muted-foreground">
             We'll request access (or a manager invitation) for your TikTok, Instagram, Facebook, YouTube, and Google My Business profiles to automate publishing.
             You'll receive detailed instructions in Slack for securely connecting your accounts.

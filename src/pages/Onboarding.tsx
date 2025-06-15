@@ -218,7 +218,7 @@ const Onboarding = () => {
 
         {/* Section: Access for DM Automation */}
         <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
-          <h2 className="text-2xl font-bold text-navy mb-4">Step 7: Direct Message Automation Setup</h2>
+          <h2 className="text-2xl font-bold text-navy mb-4">Step 8: Direct Message Automation Setup</h2>
           <p className="text-muted-foreground">
             For DM automation, we’ll walk you through connecting your social media accounts with our ManyChat workspace (or similar service).
             This allows us to respond instantly to leads.

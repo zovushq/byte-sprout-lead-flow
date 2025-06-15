@@ -64,14 +64,14 @@ const OnboardingHeader = () => {
   const renderDesktopMenu = () => (
     <nav className="hidden md:flex items-center justify-center flex-1 space-x-8">
       <button
-        className="relative text-foreground border-b-2 border-transparent hover:border-lime hover:text-green-900 transition-colors font-normal pb-1"
+        className="relative text-foreground border-b-2 border-transparent hover:text-green-900 transition-colors font-normal pb-1"
         style={{ fontWeight: 400 }}
         onClick={handleLogoClick}
       >
         Home
       </button>
       <button
-        className="relative text-foreground border-b-2 border-transparent hover:border-lime hover:text-green-900 transition-colors font-normal pb-1"
+        className="relative text-foreground border-b-2 border-transparent hover:text-green-900 transition-colors font-normal pb-1"
         style={{ fontWeight: 400 }}
         onClick={handleCalculatorClick}
       >
@@ -105,7 +105,7 @@ const OnboardingHeader = () => {
       <button
         className={`relative ${
           isMobile ? "text-left w-full py-2" : ""
-        } text-foreground border-b-2 border-transparent hover:border-lime hover:text-green-900 transition-colors font-normal pb-1`}
+        } text-foreground border-b-2 border-transparent hover:text-green-900 transition-colors font-normal pb-1`}
         onClick={handleLogoClick}
         style={{ fontWeight: 400 }}
       >
@@ -114,7 +114,7 @@ const OnboardingHeader = () => {
       <button
         className={`relative ${
           isMobile ? "text-left w-full py-2" : ""
-        } text-foreground border-b-2 border-transparent hover:border-lime hover:text-green-900 transition-colors font-normal pb-1`}
+        } text-foreground border-b-2 border-transparent hover:text-green-900 transition-colors font-normal pb-1`}
         onClick={handleCalculatorClick}
         style={{ fontWeight: 400 }}
       >

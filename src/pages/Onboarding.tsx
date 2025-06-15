@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Mail } from "lucide-react";
 import React from "react";
+import OnboardingHeader from "@/components/OnboardingHeader";
 
 const GOOGLE_FORM_LINK = "https://forms.gle/your-form-link"; // Replace with your real form link
 
@@ -33,61 +34,6 @@ It’s been a pleasure recording today, and I’m excited to see the final resul
 const CONSENT_SCRIPT = `
 I [Full Name], hereby allow HeyGen to use the footage of me to build a HeyGen Avatar for use on the HeyGen platform.
 `;
-
-// Consistent Onboarding Header (matches site-wide nav)
-function OnboardingHeader() {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  return (
-    <header className="fixed top-0 w-full bg-white/80 backdrop-blur-lg border-b border-white/20 z-50 transition">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <Link to="/" aria-label="ByteSprout Home">
-              <img
-                src="/lovable-uploads/9618184f-6be5-4203-aa1e-d59883f4397e.png"
-                alt="ByteSprout Logo"
-                className="h-10 w-auto cursor-pointer"
-              />
-            </Link>
-          </div>
-          {/* Menu */}
-          <nav className="flex items-center space-x-8">
-            <Link
-              to="/"
-              className="text-foreground hover:text-navy font-medium transition-colors"
-            >
-              Home
-            </Link>
-            <Link
-              to="/calculator"
-              className="text-foreground hover:text-navy font-medium transition-colors"
-            >
-              Calculator
-            </Link>
-          </nav>
-          {/* Contact Us Button */}
-          <a
-            href="mailto:zovus.inc@gmail.com"
-            className="ml-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button
-              variant="outline"
-              className="border-lime text-navy hover:bg-lime/10 gap-1 font-semibold px-3 py-1.5 transition"
-            >
-              <Mail className="h-4 w-4" />
-              Contact Us
-            </Button>
-          </a>
-        </div>
-      </div>
-    </header>
-  );
-}
 
 const Onboarding = () => {
   return (
@@ -326,3 +272,5 @@ const Onboarding = () => {
 };
 
 export default Onboarding;
+
+// NOTE: This file is getting very long. Please consider refactoring it to use smaller section/component files for easier maintenance.

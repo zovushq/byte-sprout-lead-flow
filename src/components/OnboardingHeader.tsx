@@ -12,23 +12,24 @@ const OnboardingHeader = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    let ticking = false;
     const controlNavbar = () => {
-      if (typeof window !== "undefined") {
-        if (window.scrollY > lastScrollY && window.scrollY > 100) {
-          setIsVisible(false);
-        } else {
-          setIsVisible(true);
-        }
-        setLastScrollY(window.scrollY);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            setIsVisible(false);
+          } else {
+            setIsVisible(true);
+          }
+          setLastScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", controlNavbar);
-      return () => {
-        window.removeEventListener("scroll", controlNavbar);
-      };
-    }
+    window.addEventListener("scroll", controlNavbar);
+    return () => window.removeEventListener("scroll", controlNavbar);
+    // eslint-disable-next-line
   }, [lastScrollY]);
 
   // Clicking the logo or home always scrolls to top of homepage
@@ -63,17 +64,19 @@ const OnboardingHeader = () => {
     <>
       <button
         className={`${
-          isMobile ? "text-left" : ""
+          isMobile ? "text-left w-full py-2" : ""
         } text-foreground hover:text-navy transition-colors font-normal`}
         onClick={handleLogoClick}
+        style={{ fontWeight: 400 }}
       >
         Home
       </button>
       <button
         className={`${
-          isMobile ? "text-left" : ""
+          isMobile ? "text-left w-full py-2" : ""
         } text-foreground hover:text-navy transition-colors font-normal`}
         onClick={handleCalculatorClick}
+        style={{ fontWeight: 400 }}
       >
         Calculator
       </button>
@@ -81,7 +84,7 @@ const OnboardingHeader = () => {
         href="mailto:zovus.inc@gmail.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="md:ml-2"
+        className={isMobile ? "w-full py-2" : "md:ml-2"}
       >
         <Button
           variant="outline"
@@ -102,8 +105,10 @@ const OnboardingHeader = () => {
 
   const renderMobileMenu = () =>
     isMenuOpen ? (
-      <nav className="md:hidden mt-4 pt-4 border-t border-border/20">
-        <div className="flex flex-col space-y-4">{renderNavLinks(true)}</div>
+      <nav className="md:hidden mt-4 pt-4 border-t border-border/20 w-full">
+        <div className="flex flex-col items-start space-y-2">
+          {renderNavLinks(true)}
+        </div>
       </nav>
     ) : null;
 
@@ -126,7 +131,11 @@ const OnboardingHeader = () => {
           </div>
           {renderDesktopNav()}
           {/* Mobile menu button */}
-          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button
+            className="md:hidden p-1 rounded hover:bg-navy/5 transition"
+            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>

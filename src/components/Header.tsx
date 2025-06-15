@@ -160,19 +160,19 @@ const Header = () => {
     <>
       <button
         onClick={() => handleCalculatorNav("home")}
-        className="text-foreground hover:text-navy transition-colors"
+        className="text-foreground hover:text-green-900 transition-colors"
       >
         Home
       </button>
       <button
         onClick={() => handleCalculatorNav("calculator")}
-        className="text-foreground hover:text-navy transition-colors"
+        className="text-foreground hover:text-green-900 transition-colors"
       >
         Calculator
       </button>
       <button
         onClick={() => handleCalculatorNav("faq")}
-        className="text-foreground hover:text-navy transition-colors"
+        className="text-foreground hover:text-green-900 transition-colors"
       >
         FAQs
       </button>
@@ -232,19 +232,19 @@ const Header = () => {
     <div className="flex flex-col space-y-4">
       <button
         onClick={() => handleCalculatorNav("home")}
-        className="text-left text-foreground hover:text-navy transition-colors"
+        className="text-left text-foreground hover:text-green-900 transition-colors"
       >
         Home
       </button>
       <button
         onClick={() => handleCalculatorNav("calculator")}
-        className="text-left text-foreground hover:text-navy transition-colors"
+        className="text-left text-foreground hover:text-green-900 transition-colors"
       >
         Calculator
       </button>
       <button
         onClick={() => handleCalculatorNav("faq")}
-        className="text-left text-foreground hover:text-navy transition-colors"
+        className="text-left text-foreground hover:text-green-900 transition-colors"
       >
         FAQs
       </button>

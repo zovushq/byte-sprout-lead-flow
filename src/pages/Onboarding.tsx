@@ -99,6 +99,7 @@ const Onboarding = () => {
         <div className="container mx-auto max-w-3xl px-4">
           {/* Section: Welcome */}
           <section className="mb-12 text-center">
+            <div className="h-10 md:h-14" />
             <h1 className="text-4xl md:text-5xl font-bold text-navy mb-6 animate-fade-in">
               Welcome to ByteSprout Onboarding!
             </h1>

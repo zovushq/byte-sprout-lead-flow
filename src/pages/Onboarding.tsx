@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
-const GOOGLE_FORM_LINK = "https://forms.gle/your-form-link";  // Replace with your real form link
+const GOOGLE_FORM_LINK = "https://forms.gle/your-form-link"; // Replace with your real form link
 
 const VIDEO_SCRIPT = `
 Hello! I'm feeling great right now with a relaxed tone and confident that I'll do well on this recording 😃. I'm in front of the camera, ready to go. I'm excited to try out this new tool and see what I can achieve with it.
@@ -28,14 +27,11 @@ It’s been a pleasure recording today, and I’m excited to see the final resul
 
 <Close your mouth and breathe through your nose>
 `;
-
 const CONSENT_SCRIPT = `
 I [Full Name], hereby allow HeyGen to use the footage of me to build a HeyGen Avatar for use on the HeyGen platform.
 `;
-
 const Onboarding = () => {
-  return (
-    <div className="min-h-screen bg-muted pt-8 pb-28">
+  return <div className="min-h-screen bg-muted pt-8 pb-28">
       <div className="container mx-auto max-w-3xl px-4">
         {/* Section: Welcome */}
         <section className="mb-12 text-center">
@@ -154,7 +150,7 @@ const Onboarding = () => {
 
         {/* Section: Creating Different Avatar Looks */}
         <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
-          <h2 className="text-2xl font-bold text-navy mb-4">Creating Different Avatar Looks</h2>
+          <h2 className="text-2xl font-bold text-navy mb-4">Step 5: Creating Different Avatar Looks</h2>
           <p className="text-muted-foreground mb-4">
             You can create up to <b>100 different looks</b> for the same person—all under one avatar slot!
           </p>
@@ -253,8 +249,6 @@ const Onboarding = () => {
           </Link>
         </section>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Onboarding;

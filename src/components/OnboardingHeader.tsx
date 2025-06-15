@@ -60,6 +60,46 @@ const OnboardingHeader = () => {
     setIsMenuOpen(false);
   };
 
+  // Desktop nav menu (centered)
+  const renderDesktopMenu = () => (
+    <nav className="hidden md:flex items-center justify-center flex-1 space-x-8">
+      <button
+        className="text-foreground hover:text-navy transition-colors font-normal"
+        style={{ fontWeight: 400 }}
+        onClick={handleLogoClick}
+      >
+        Home
+      </button>
+      <button
+        className="text-foreground hover:text-navy transition-colors font-normal"
+        style={{ fontWeight: 400 }}
+        onClick={handleCalculatorClick}
+      >
+        Calculator
+      </button>
+    </nav>
+  );
+
+  // Desktop right (contact)
+  const renderDesktopContact = () => (
+    <div className="hidden md:flex items-center">
+      <a
+        href="mailto:zovus.inc@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button
+          variant="outline"
+          className="border-lime text-navy hover:bg-lime/10 gap-1 font-semibold px-3 py-1.5 transition"
+        >
+          <Mail className="h-4 w-4" />
+          Contact Us
+        </Button>
+      </a>
+    </div>
+  );
+
+  // Mobile Nav
   const renderNavLinks = (isMobile = false) => (
     <>
       <button
@@ -84,7 +124,7 @@ const OnboardingHeader = () => {
         href="mailto:zovus.inc@gmail.com"
         target="_blank"
         rel="noopener noreferrer"
-        className={isMobile ? "w-full py-2" : "md:ml-2"}
+        className={isMobile ? "w-full py-2" : ""}
       >
         <Button
           variant="outline"
@@ -95,12 +135,6 @@ const OnboardingHeader = () => {
         </Button>
       </a>
     </>
-  );
-
-  const renderDesktopNav = () => (
-    <nav className="hidden md:flex items-center space-x-8">
-      {renderNavLinks(false)}
-    </nav>
   );
 
   const renderMobileMenu = () =>
@@ -119,7 +153,8 @@ const OnboardingHeader = () => {
       }`}
     >
       <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between md:justify-normal">
+          {/* Left: logo */}
           <div className="flex items-center space-x-3">
             <Link to="/" onClick={handleLogoClick} aria-label="ByteSprout Home">
               <img
@@ -129,10 +164,16 @@ const OnboardingHeader = () => {
               />
             </Link>
           </div>
-          {renderDesktopNav()}
-          {/* Mobile menu button */}
+
+          {/* Center: menu */}
+          {renderDesktopMenu()}
+
+          {/* Right: contact */}
+          {renderDesktopContact()}
+
+          {/* Mobile: hamburger */}
           <button
-            className="md:hidden p-1 rounded hover:bg-navy/5 transition"
+            className="md:hidden p-1 rounded hover:bg-navy/5 transition ml-auto"
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >

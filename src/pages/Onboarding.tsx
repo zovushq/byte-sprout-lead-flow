@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Mail } from "lucide-react";
+import React from "react";
 
 const GOOGLE_FORM_LINK = "https://forms.gle/your-form-link"; // Replace with your real form link
 
@@ -33,48 +34,68 @@ const CONSENT_SCRIPT = `
 I [Full Name], hereby allow HeyGen to use the footage of me to build a HeyGen Avatar for use on the HeyGen platform.
 `;
 
-// Local Header for Onboarding page only
-function OnboardingNav() {
+// Consistent Onboarding Header (matches site-wide nav)
+function OnboardingHeader() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   return (
-    <header className="sticky top-0 z-40 w-full bg-white/80 backdrop-blur border-b border-border transition">
-      <nav className="container mx-auto max-w-3xl px-4 flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center space-x-2" aria-label="ByteSprout Home">
-          <img
-            src="/lovable-uploads/9618184f-6be5-4203-aa1e-d59883f4397e.png"
-            alt="ByteSprout Logo"
-            className="h-9 w-auto"
-          />
-        </Link>
-        <div className="flex items-center gap-6">
-          <Link to="/" className="text-navy/90 font-medium hover:text-primary transition-colors duration-150">Home</Link>
-          <Link to="/calculator" className="text-navy/90 font-medium hover:text-primary transition-colors duration-150">Calculator</Link>
-        </div>
-        <a
-          href="mailto:zovus.inc@gmail.com"
-          className="ml-2"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button
-            variant="outline"
-            className="border-lime text-navy hover:bg-lime/10 gap-1 font-semibold px-3 py-1.5 transition"
+    <header className="fixed top-0 w-full bg-white/80 backdrop-blur-lg border-b border-white/20 z-50 transition">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center space-x-3">
+            <Link to="/" aria-label="ByteSprout Home">
+              <img
+                src="/lovable-uploads/9618184f-6be5-4203-aa1e-d59883f4397e.png"
+                alt="ByteSprout Logo"
+                className="h-10 w-auto cursor-pointer"
+              />
+            </Link>
+          </div>
+          {/* Menu */}
+          <nav className="flex items-center space-x-8">
+            <Link
+              to="/"
+              className="text-foreground hover:text-navy font-medium transition-colors"
+            >
+              Home
+            </Link>
+            <Link
+              to="/calculator"
+              className="text-foreground hover:text-navy font-medium transition-colors"
+            >
+              Calculator
+            </Link>
+          </nav>
+          {/* Contact Us Button */}
+          <a
+            href="mailto:zovus.inc@gmail.com"
+            className="ml-2"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Mail className="h-4 w-4" />
-            Contact Us
-          </Button>
-        </a>
-      </nav>
+            <Button
+              variant="outline"
+              className="border-lime text-navy hover:bg-lime/10 gap-1 font-semibold px-3 py-1.5 transition"
+            >
+              <Mail className="h-4 w-4" />
+              Contact Us
+            </Button>
+          </a>
+        </div>
+      </div>
     </header>
   );
 }
 
 const Onboarding = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-muted pt-8 pb-28">
-      {/* Navbar */}
-      <OnboardingNav />
+    <div className="min-h-screen flex flex-col bg-muted">
+      {/* NAV */}
+      <OnboardingHeader />
 
-      <main className="flex-1">
+      <main className="flex-1 pt-[84px]">
         <div className="container mx-auto max-w-3xl px-4">
           {/* Section: Welcome */}
           <section className="mb-12 text-center">
@@ -293,8 +314,8 @@ const Onboarding = () => {
           </section>
         </div>
       </main>
-      {/* Footer at the bottom of onboarding page */}
-      <footer className="w-full bg-white/80 border-t border-border text-muted-foreground text-xs mt-8">
+      {/* Footer fixes: remove margin/padding above and below */}
+      <footer className="w-full bg-white/80 border-t border-border text-muted-foreground text-xs">
         <div className="container mx-auto max-w-3xl px-4 py-4 text-center">
           © 2025 ByteSprout (A <a href="https://www.zovus.tech" className="underline" target="_blank" rel="noopener noreferrer">ZOVUS Company</a>). All rights reserved.
         </div>

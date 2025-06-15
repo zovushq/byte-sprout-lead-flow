@@ -201,7 +201,7 @@ const Onboarding = () => {
 
         {/* Section: Thumbnail Photo Guidance */}
         <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
-          <h2 className="text-2xl font-bold text-navy mb-4">Step 5: Thumbnail Photo</h2>
+          <h2 className="text-2xl font-bold text-navy mb-4">Step 6: Thumbnail Photo</h2>
           <p className="text-muted-foreground">
             Please send a professional photo for use as your video thumbnail and branding. Use a plain, well-lit background and dress professionally.
           </p>

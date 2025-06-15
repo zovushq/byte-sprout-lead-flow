@@ -152,6 +152,57 @@ const Onboarding = () => {
           </div>
         </section>
 
+        {/* Section: Creating Different Avatar Looks */}
+        <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
+          <h2 className="text-2xl font-bold text-navy mb-4">Creating Different Avatar Looks</h2>
+          <p className="text-muted-foreground mb-4">
+            You can create up to <b>100 different looks</b> for the same person—all under one avatar slot!
+          </p>
+          <h3 className="font-semibold text-navy mb-3">AI Avatar Look Guidance for Attorneys</h3>
+          <p className="mb-3 text-muted-foreground">
+            To help us create a compelling, professional AI avatar that represents your firm with authority and trust, here are a few styling and setup recommendations:
+          </p>
+          <div className="mb-3">
+            <h4 className="font-medium text-navy mb-1 flex items-center">📍 Background Options</h4>
+            <ul className="list-disc pl-6 text-muted-foreground mb-2">
+              <li>Your office or desk setup</li>
+              <li>A bookshelf or law library background</li>
+              <li>A neutral hallway or conference room</li>
+              <li>Clean, uncluttered walls with subtle décor</li>
+            </ul>
+          </div>
+          <div className="mb-3">
+            <h4 className="font-medium text-navy mb-1 flex items-center">👔 Wardrobe Suggestions</h4>
+            <ul className="list-disc pl-6 text-muted-foreground mb-2">
+              <li>Dress as you would when meeting a client or appearing in court:</li>
+              <li className="ml-6">• Suit and tie or blazer with a button-down shirt</li>
+              <li className="ml-6">• Legal robes (if applicable in your jurisdiction)</li>
+              <li className="ml-6">• Professional attire in solid, neutral colors (avoid flashy patterns)</li>
+            </ul>
+          </div>
+          <div className="mb-3">
+            <h4 className="font-medium text-navy mb-1 flex items-center">🎥 Camera Angles</h4>
+            <ul className="list-disc pl-6 text-muted-foreground mb-2">
+              <li>Primarily front-facing (direct eye contact builds trust)</li>
+              <li>Optional: 45° angles for natural variation</li>
+            </ul>
+          </div>
+          <div className="mb-3">
+            <h4 className="font-medium text-navy mb-1 flex items-center">🧍‍♂️ Posture &amp; Framing</h4>
+            <ul className="list-disc pl-6 text-muted-foreground mb-2">
+              <li>Seated behind a desk or standing confidently</li>
+              <li>Frame from mid-chest up, ensuring shoulders and hands are visible</li>
+              <li>Avoid slouching — upright and composed posture is key</li>
+            </ul>
+          </div>
+          <div className="mt-4 bg-muted rounded p-4 text-[15px] text-navy">
+            These variations (backgrounds, outfits, angles) help us make your avatar more lifelike and dynamic — creating the impression of real-time presence in every video.
+          </div>
+          <div className="mt-2 text-muted-foreground text-sm">
+            <b>Reminder:</b> Your avatar reflects exactly what you put into it. Any coughs, unusual movements, robotic or echoey voice, or off-pitch speech in your original footage will appear in the avatar. Ensure your footage is clean and precise for the best results!
+          </div>
+        </section>
+
         {/* Section: Thumbnail Photo Guidance */}
         <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
           <h2 className="text-2xl font-bold text-navy mb-4">Step 5: Thumbnail Photo</h2>

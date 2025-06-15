@@ -64,14 +64,14 @@ const OnboardingHeader = () => {
   const renderDesktopMenu = () => (
     <nav className="hidden md:flex items-center justify-center flex-1 space-x-8">
       <button
-        className="text-foreground hover:text-navy transition-colors font-normal"
+        className="relative text-foreground border-b-2 border-transparent hover:border-lime transition-colors font-normal pb-1"
         style={{ fontWeight: 400 }}
         onClick={handleLogoClick}
       >
         Home
       </button>
       <button
-        className="text-foreground hover:text-navy transition-colors font-normal"
+        className="relative text-foreground border-b-2 border-transparent hover:border-lime transition-colors font-normal pb-1"
         style={{ fontWeight: 400 }}
         onClick={handleCalculatorClick}
       >
@@ -103,18 +103,18 @@ const OnboardingHeader = () => {
   const renderNavLinks = (isMobile = false) => (
     <>
       <button
-        className={`${
+        className={`relative ${
           isMobile ? "text-left w-full py-2" : ""
-        } text-foreground hover:text-navy transition-colors font-normal`}
+        } text-foreground border-b-2 border-transparent hover:border-lime transition-colors font-normal pb-1`}
         onClick={handleLogoClick}
         style={{ fontWeight: 400 }}
       >
         Home
       </button>
       <button
-        className={`${
+        className={`relative ${
           isMobile ? "text-left w-full py-2" : ""
-        } text-foreground hover:text-navy transition-colors font-normal`}
+        } text-foreground border-b-2 border-transparent hover:border-lime transition-colors font-normal pb-1`}
         onClick={handleCalculatorClick}
         style={{ fontWeight: 400 }}
       >

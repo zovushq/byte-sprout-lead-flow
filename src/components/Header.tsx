@@ -3,6 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import DefaultNav from "./header/DefaultNav";
+import CalculatorNav from "./header/CalculatorNav";
+import DefaultMobileNav from "./header/DefaultMobileNav";
+import CalculatorMobileNav from "./header/CalculatorMobileNav";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -113,150 +117,6 @@ const Header = () => {
 
   // ========== END NAVIGATION LOGIC ==========
 
-  // Renders main navigation (home page)
-  const renderDefaultNav = () => (
-    <>
-      <button 
-        onClick={() => handleLinkClick('problem')}
-        className="text-foreground hover:text-green-900 transition-colors"
-      >
-        Problem
-      </button>
-      <button 
-        onClick={() => handleLinkClick('solution')}
-        className="text-foreground hover:text-green-900 transition-colors"
-      >
-        Solution
-      </button>
-      <button 
-        onClick={() => handleLinkClick('why-choose-us')}
-        className="text-foreground hover:text-green-900 transition-colors"
-      >
-        Why Us
-      </button>
-      <button 
-        onClick={() => handleLinkClick('pricing')}
-        className="text-foreground hover:text-green-900 transition-colors"
-      >
-        Pricing
-      </button>
-      <button 
-        onClick={() => handleLinkClick('faq')}
-        className="text-foreground hover:text-green-900 transition-colors"
-      >
-        FAQ
-      </button>
-      <Button 
-        onClick={() => handleLinkClick('contact')}
-        className="bg-navy hover:bg-navy/90 text-white"
-      >
-        Get Started
-      </Button>
-    </>
-  );
-
-  // Renders calculator page navigation
-  const renderCalculatorNav = () => (
-    <>
-      <button
-        onClick={() => handleCalculatorNav("home")}
-        className="text-foreground hover:text-green-900 transition-colors"
-      >
-        Home
-      </button>
-      <button
-        onClick={() => handleCalculatorNav("calculator")}
-        className="text-foreground hover:text-green-900 transition-colors"
-      >
-        Calculator
-      </button>
-      <button
-        onClick={() => handleCalculatorNav("faq")}
-        className="text-foreground hover:text-green-900 transition-colors"
-      >
-        FAQs
-      </button>
-      <Button
-        onClick={() => handleCalculatorNav("calculator")}
-        className="bg-navy hover:bg-navy/90 text-white"
-      >
-        Get a Quote
-      </Button>
-    </>
-  );
-
-  // Renders mobile menu for main/home page
-  const renderDefaultMobileNav = () => (
-    <div className="flex flex-col space-y-4">
-      <button 
-        onClick={() => handleLinkClick('problem')}
-        className="text-left text-foreground hover:text-green-900 transition-colors"
-      >
-        Problem
-      </button>
-      <button 
-        onClick={() => handleLinkClick('solution')}
-        className="text-left text-foreground hover:text-green-900 transition-colors"
-      >
-        Solution
-      </button>
-      <button 
-        onClick={() => handleLinkClick('why-choose-us')}
-        className="text-left text-foreground hover:text-green-900 transition-colors"
-      >
-        Why Us
-      </button>
-      <button 
-        onClick={() => handleLinkClick('pricing')}
-        className="text-left text-foreground hover:text-green-900 transition-colors"
-      >
-        Pricing
-      </button>
-      <button 
-        onClick={() => handleLinkClick('faq')}
-        className="text-left text-foreground hover:text-green-900 transition-colors"
-      >
-        FAQ
-      </button>
-      <Button 
-        onClick={() => handleLinkClick('contact')}
-        className="bg-navy hover:bg-navy/90 text-white w-full"
-      >
-        Get Started
-      </Button>
-    </div>
-  );
-
-  // Renders mobile menu for calculator page
-  const renderCalculatorMobileNav = () => (
-    <div className="flex flex-col space-y-4">
-      <button
-        onClick={() => handleCalculatorNav("home")}
-        className="text-left text-foreground hover:text-green-900 transition-colors"
-      >
-        Home
-      </button>
-      <button
-        onClick={() => handleCalculatorNav("calculator")}
-        className="text-left text-foreground hover:text-green-900 transition-colors"
-      >
-        Calculator
-      </button>
-      <button
-        onClick={() => handleCalculatorNav("faq")}
-        className="text-left text-foreground hover:text-green-900 transition-colors"
-      >
-        FAQs
-      </button>
-      <Button
-        onClick={() => handleCalculatorNav("calculator")}
-        className="bg-navy hover:bg-navy/90 text-white w-full"
-      >
-        Get a Quote
-      </Button>
-    </div>
-  );
-
   return (
     <header 
       className={`fixed top-0 w-full bg-white/80 backdrop-blur-lg border-b border-white/20 z-50 transition-transform duration-300 ${
@@ -277,7 +137,9 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {location.pathname === "/calculator" ? renderCalculatorNav() : renderDefaultNav()}
+            {location.pathname === "/calculator" 
+              ? <CalculatorNav handleCalculatorNav={handleCalculatorNav} /> 
+              : <DefaultNav handleLinkClick={handleLinkClick} />}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -293,8 +155,8 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pt-4 border-t border-border/20">
             {location.pathname === "/calculator" 
-              ? renderCalculatorMobileNav() 
-              : renderDefaultMobileNav()}
+              ? <CalculatorMobileNav handleCalculatorNav={handleCalculatorNav} />
+              : <DefaultMobileNav handleLinkClick={handleLinkClick} />}
           </nav>
         )}
       </div>

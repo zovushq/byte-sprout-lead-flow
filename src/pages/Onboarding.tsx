@@ -228,7 +228,7 @@ const Onboarding = () => {
 
         {/* Section: Using Your Lead Dashboard */}
         <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
-          <h2 className="text-2xl font-bold text-navy mb-4">Step 8: Access Your Lead Dashboard</h2>
+          <h2 className="text-2xl font-bold text-navy mb-4">Step 9: Access Your Lead Dashboard</h2>
           <p className="text-muted-foreground">
             You'll be provided with a GoHighLevel dashboard to view conversations, qualified leads, and performance analytics in real time.
             We’ll show you how to use this platform during onboarding.

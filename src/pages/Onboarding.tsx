@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Mail } from "lucide-react";
@@ -6,7 +5,7 @@ import React from "react";
 import OnboardingHeader from "@/components/OnboardingHeader";
 import { Helmet } from "react-helmet-async";
 
-const GOOGLE_FORM_LINK = "https://forms.gle/your-form-link"; // Replace with your real form link
+const GOOGLE_FORM_LINK = "https://forms.gle/uUyQgbWHjQvjs1Bz7"; // Replace with your real form link
 
 const VIDEO_SCRIPT = `
 Hello! I'm feeling great right now with a relaxed tone and confident that I'll do well on this recording 😃. I'm in front of the camera, ready to go. I'm excited to try out this new tool and see what I can achieve with it.
@@ -283,4 +282,3 @@ const Onboarding = () => {
 export default Onboarding;
 
 // NOTE: This file is getting very long. Please consider refactoring it to use smaller section/component files for easier maintenance.
-

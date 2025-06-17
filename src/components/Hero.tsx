@@ -1,19 +1,30 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
+import { useState } from "react";
+
 const Hero = () => {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     element?.scrollIntoView({
       behavior: 'smooth'
     });
   };
+
   const scrollToSampleReels = () => {
     const element = document.getElementById('sample-reels');
     element?.scrollIntoView({
       behavior: 'smooth'
     });
   };
-  return <section className="pt-32 pb-24 bg-gradient-to-br from-navy via-primary to-navy text-white">
+
+  const handleVideoPlay = () => {
+    setIsVideoPlaying(true);
+  };
+
+  return (
+    <section className="pt-32 pb-24 bg-gradient-to-br from-navy via-primary to-navy text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
@@ -24,6 +35,38 @@ const Hero = () => {
             <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed max-w-3xl mx-auto">
               We create engaging short-form content using your AI avatar and automate lead qualification—no camera time, no content creation, just qualified prospects in your calendar.
             </p>
+            
+            {/* YouTube Video Section */}
+            <div className="mb-12 max-w-2xl mx-auto">
+              <div className="relative aspect-video rounded-xl overflow-hidden bg-black">
+                {!isVideoPlaying ? (
+                  <div 
+                    className="relative w-full h-full cursor-pointer group"
+                    onClick={handleVideoPlay}
+                  >
+                    <img
+                      src="https://img.youtube.com/vi/8G94VwFqn_Y/maxresdefault.jpg"
+                      alt="ByteSprout Demo Video"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/30 transition-colors duration-300">
+                      <div className="w-20 h-20 bg-lime rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Play className="h-10 w-10 text-navy ml-1" />
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/8G94VwFqn_Y?autoplay=1&modestbranding=1&rel=0&playsinline=1"
+                    title="ByteSprout Demo Video"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                    style={{ border: 0 }}
+                  />
+                )}
+              </div>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
               <Button size="lg" onClick={scrollToContact} className="bg-lime text-navy hover:bg-lime/90 font-semibold py-4 transition-all duration-300 hover:scale-105 text-base px-[20px]">
@@ -56,6 +99,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;

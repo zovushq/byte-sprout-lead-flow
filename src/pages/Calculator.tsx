@@ -18,7 +18,7 @@ const getReelPrice = (automation: boolean, special: boolean) => {
   if (special) {
     return automation ? 155 : 115;
   }
-  return automation ? 300 : 210;
+  return automation ? 333 : 285;
 };
 const AVATAR_PRICE = 50; // Per extra avatar (always the same)
 // Removed the "Lead qualification & booking (if selected)" point from PLAN_DESC.

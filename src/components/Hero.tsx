@@ -31,12 +31,12 @@ const Hero = () => {
             </p>
             
             {/* YouTube Video Section */}
-            <div className="mb-12 max-w-2xl mx-auto">
+            <div className="w-8 h-8">
               <div className="relative aspect-video rounded-xl overflow-hidden bg-black">
                 {!isVideoPlaying ? <div className="relative w-full h-full cursor-pointer group" onClick={handleVideoPlay}>
                     <img src="https://img.youtube.com/vi/8G94VwFqn_Y/maxresdefault.jpg" alt="ByteSprout Demo Video" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/30 transition-colors duration-300">
-                      <div className="w-14 h-14 bg-lime rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-20 h-20 bg-lime rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <Play className="h-10 w-10 text-navy ml-1" />
                       </div>
                     </div>

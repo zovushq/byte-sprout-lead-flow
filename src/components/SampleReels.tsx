@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Play } from "lucide-react";
 
@@ -14,29 +13,27 @@ const getMaxResYouTubeThumbnail = (url: string) => {
   return { maxRes: undefined, fallback: undefined };
 };
 
-const YOUTUBE_SHORT = "https://youtube.com/shorts/PeEdeRZ7z10?feature=share";
-
 const sampleReels = [
   {
     id: 1,
     title: "Pulled Over? One Sentence Could Save You.",
     description: "Criminal defense attorney Willie Baker breaks down what to say (and not say) if you're questioned by police. Know your rights — your future could depend on it.",
-    videoUrl: YOUTUBE_SHORT,
-    duration: "0:45",
-  },
-  {
-    id: 2,
-    title: "Estate Planning Essentials",
-    description: "Why every family needs a will - common misconceptions",
-    videoUrl: YOUTUBE_SHORT,
+    videoUrl: "https://youtube.com/shorts/Jbl5eNdYEao?feature=share",
     duration: "0:52",
   },
   {
+    id: 2,
+    title: "Hurt in a Crash? Say This Before You Speak.",
+    description: "Personal injury attorney Jason Cole explains the key steps to take after an accident — and what not to say to insurance companies. Protect your rights and get what you're owed.",
+    videoUrl: "https://youtube.com/shorts/d9uUGppo7IY?feature=share",
+    duration: "0:42",
+  },
+  {
     id: 3,
-    title: "Criminal Defense Rights",
-    description: "Understanding your Miranda rights during police stops",
-    videoUrl: YOUTUBE_SHORT,
-    duration: "0:38",
+    title: "Thinking About Divorce? Don't Do This First.",
+    description: "Divorce attorney shares the one mistake most people make when separating. Before you move out or file anything, watch this to protect your assets and custody rights.",
+    videoUrl: "https://youtube.com/shorts/j49v0AuDZcc?feature=share",
+    duration: "0:43",
   },
 ];
 
@@ -167,4 +164,3 @@ const SampleReels = () => {
 };
 
 export default SampleReels;
-

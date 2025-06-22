@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Mail } from "lucide-react";
@@ -24,16 +25,41 @@ As I record, I'm thinking of happy memories that make me feel life is full and i
 
 <Close your mouth and breathe through your nose>
 
-I’ll continue adding slight hand movements 👐 to keep things feeling natural. My tone remains steady and expressive, and I’m proud of how it’s going so far. I’ll keep giving my best until the recording is done.
+I'll continue adding slight hand movements 👐 to keep things feeling natural. My tone remains steady and expressive, and I'm proud of how it's going so far. I'll keep giving my best until the recording is done.
 
 <Close your mouth and breathe through your nose>
 
-It’s been a pleasure recording today, and I’m excited to see the final result. So far, everything has gone smoothly, and I hope things are going great for you too 😃.
+It's been a pleasure recording today, and I'm excited to see the final result. So far, everything has gone smoothly, and I hope things are going great for you too 😃.
 
 <Close your mouth and breathe through your nose>
 `;
-const CONSENT_SCRIPT = `
-I [Full Name], hereby allow HeyGen to use the footage of me to build a HeyGen Avatar for use on the HeyGen platform.
+
+const VOICE_SCRIPT = `
+Hi there! I'm [Your Name]
+
+Today's a good day. The lighting's perfect, and I'm speaking clearly and confidently, with a calm tone and natural energy.
+
+Sometimes I speak slowly. Other times, I might pick up the pace — especially when I'm excited about something. Let me show you...
+
+Here's a happy line! 😄
+
+Here's a curious one...?
+
+And here's one with quiet confidence.
+
+This script includes short sentences. Long ones too — because I want my voice model to sound flexible and real, like a real conversation.
+
+Now I'll pause... just for a moment.
+
+(Pause for 5 seconds)
+
+I'm not rushing. I'm relaxed.
+
+This recording feels good — because I'm just being myself.
+
+Alright, we're wrapping up now. This voice model's going to be great — I can already feel it.
+
+Thanks for listening. Let's do something amazing together.
 `;
 
 const Onboarding = () => {
@@ -58,7 +84,7 @@ const Onboarding = () => {
               Welcome to ByteSprout Onboarding!
             </h1>
             <p className="text-lg md:text-2xl text-muted-foreground animate-fade-in">
-              We’re excited to help you transform your practice with AI-powered content and qualified leads. Onboarding is simple, structured, and stress-free!
+              We're excited to help you transform your practice with AI-powered content and qualified leads. Onboarding is simple, structured, and stress-free!
             </p>
           </section>
 
@@ -83,23 +109,31 @@ const Onboarding = () => {
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 2: Your Private Slack Channel</h2>
             <p className="text-muted-foreground mb-3">
-              Once you sign up, you’ll get a dedicated Slack channel to chat with our team in real time.
+              Once you sign up, you'll get a dedicated Slack channel to chat with our team in real time.
             </p>
             <ul className="list-disc pl-6 text-muted-foreground mb-3">
               <li>Ask questions, share files, and get quick updates – all in one place.</li>
-              <li>We’ll share onboarding requirements and confirm each step there.</li>
+              <li>We'll share onboarding requirements and confirm each step there.</li>
               <li>All your files (videos, scripts, consent forms) can be shared securely through Slack.</li>
             </ul>
           </section>
 
-          {/* Section: Step 3 - Training Your Avatar */}
+          {/* Section: Step 3 - Updated */}
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
-            <h2 className="text-2xl font-bold text-navy mb-4">Step 3: Record Your AI Avatar Videos & Audio</h2>
-            <p className="text-muted-foreground mb-2">There are two types of avatars we can create:</p>
-            <ul className="mb-4 list-disc pl-6 text-muted-foreground">
-              <li><b>Still Avatar:</b> For announcements, training, and regular social videos. <span className="text-lime">(Recommended for most cases!)</span></li>
-              <li><b>Motion Avatar:</b> Best for external marketing and ads.</li>
+            <h2 className="text-2xl font-bold text-navy mb-4">Step 3: Record Your AI Avatar Training & Consent Videos 🎬</h2>
+            <p className="text-muted-foreground mb-4">
+              To create your personalized AI avatar, we'll need two video recordings:
+            </p>
+            <ul className="list-disc pl-6 text-muted-foreground mb-4">
+              <li><strong>Your training video</strong> (pre-recorded)</li>
+              <li><strong>Your consent video</strong> (recorded in real-time during the session)</li>
             </ul>
+            <p className="mb-4 text-muted-foreground">There are two types of avatars we can create:</p>
+            <ul className="mb-6 list-disc pl-6 text-muted-foreground">
+              <li><strong>Still Avatar:</strong> For announcements, training, and regular social videos. <span className="text-lime font-semibold">(Recommended for most cases! 🌟)</span></li>
+              <li><strong>Motion Avatar:</strong> Best for external marketing and ads.</li>
+            </ul>
+
             <div className="mb-6">
               <h3 className="font-semibold text-navy mb-2">⭐ Still Avatar Video Instructions</h3>
               <ul className="list-disc pl-6 text-muted-foreground mb-2">
@@ -108,13 +142,14 @@ const Onboarding = () => {
                 <li>Look directly at the camera. Pause between sentences, mouth closed.</li>
                 <li>Use subtle, natural gestures. Keep hands below chest.</li>
               </ul>
-              <h4 className="font-medium mb-1 mt-4 text-navy">Things to Avoid</h4>
+              <h4 className="font-medium mb-1 mt-4 text-navy">Things to Avoid ❌</h4>
               <ul className="list-disc pl-6 text-sm text-muted-foreground">
                 <li>Stitched or cut footage, talking fast without pauses.</li>
                 <li>Changing position, loud background noise, bad lighting.</li>
                 <li>Gestures above chest, looking away from camera.</li>
               </ul>
             </div>
+
             <div className="mb-6">
               <h3 className="font-semibold text-navy mb-2">🎥 Motion Avatar Video Instructions</h3>
               <ul className="list-disc pl-6 text-muted-foreground mb-2">
@@ -122,48 +157,75 @@ const Onboarding = () => {
                 <li>Well-lit, stable and clear view of your face and mouth.</li>
                 <li>Avoid fast movements and hand gestures above chest.</li>
               </ul>
-              <h4 className="font-medium mb-1 mt-4 text-navy">Things to Avoid</h4>
+              <h4 className="font-medium mb-1 mt-4 text-navy">Things to Avoid ❌</h4>
               <ul className="list-disc pl-6 text-sm text-muted-foreground">
                 <li>Stitches/cuts, loud background noise, shaky video.</li>
                 <li>Fast head movements, bad lighting, hands above chest.</li>
               </ul>
             </div>
-            <div className="mb-4">
+
+            <div className="mb-6">
               <h3 className="font-semibold text-navy mb-2">✅ Example Script to Read On-Camera</h3>
               <pre className="bg-muted text-[15px] p-4 rounded whitespace-pre-wrap">{VIDEO_SCRIPT.trim()}</pre>
             </div>
+
             <div className="mb-4">
-              <h3 className="font-semibold text-navy mb-2">🔊 Audio Guidelines (Voice Cloning)</h3>
-              <ul className="list-disc pl-6 text-muted-foreground mb-2">
-                <li>Use the script above and exaggerate emotions! Aim for a lively, expressive tone.</li>
-                <li>Avoid robotic or monotone speaking. Speak clearly and in a quiet room.</li>
-                <li>You can use your phone’s recorder if no professional mic is available.</li>
-              </ul>
-              <span className="block text-sm text-muted-foreground">Tip: The AI clone reduces excitement by ~30%. So, be even more expressive in your recording!</span>
-            </div>
-            <div className="mb-4">
-              <h3 className="font-semibold text-navy mb-2">📥 How to Send Videos & Audio</h3>
-              <p className="text-muted-foreground mb-2">
-                When done, upload your video and audio files directly to your private Slack channel. Our team will confirm receipt and next steps.
+              <h3 className="font-semibold text-navy mb-2">📋 How the Submission Works</h3>
+              <p className="text-muted-foreground mb-3">To complete this step:</p>
+              <ol className="list-decimal pl-6 text-muted-foreground mb-2 space-y-2">
+                <li><strong>You can record your training video at your convenience.</strong> We recommend using a professional setup if available. Save the final file on your desktop or in an easy-to-access location.</li>
+                <li><strong>Once you're ready</strong>, we'll email you the login credentials for your personal HeyGen account (licensed under our ByteSprout Team Plan).</li>
+                <li>We'll <strong>hop on a quick Zoom/Google Meet call</strong> with you. You'll:
+                  <ul className="list-disc pl-6 mt-2 space-y-1">
+                    <li>Log into HeyGen (we'll guide you).</li>
+                    <li>Upload your avatar training video.</li>
+                    <li>Record your <strong>real-time consent video</strong> using your webcam inside HeyGen. <em>(Required for avatar creation.)</em></li>
+                  </ul>
+                </li>
+              </ol>
+              <div className="bg-yellow-50 border border-yellow-200 rounded p-3 mt-4">
+                <p className="text-sm text-yellow-800">
+                  <strong>Note:</strong> The consent video must be recorded immediately after the upload. It's a mandatory part of HeyGen's security protocol and can't be skipped or done separately.
+                </p>
+              </div>
+              <p className="text-muted-foreground mt-3">
+                This session will take 5–10 minutes. We'll be right there with you to walk you through it live, step-by-step.
+              </p>
+              <p className="text-lime font-semibold mt-2">
+                Let us know when you're ready — and we'll schedule the session! 📅
               </p>
             </div>
           </section>
 
-          {/* Section: Consent Video */}
+          {/* Section: Step 4 - Updated */}
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
-            <h2 className="text-2xl font-bold text-navy mb-4">Step 4: Record Consent Video</h2>
-            <p className="text-muted-foreground mb-2">
-              To ensure compliance and safety, please record a brief consent video (under 30 seconds).
+            <h2 className="text-2xl font-bold text-navy mb-4">🗣️ Step 4: Record Your Voice for Avatar</h2>
+            <p className="text-muted-foreground mb-4">
+              This helps make your AI avatar sound exactly like you.
             </p>
-            <h3 className="font-semibold mb-1 mt-3">What to Say</h3>
-            <pre className="bg-muted text-[15px] p-4 rounded whitespace-pre-wrap mb-2">{CONSENT_SCRIPT.trim()}</pre>
-            <ul className="list-disc pl-6 text-muted-foreground mb-2">
-              <li>Keep the video style and quality just like your main avatar video.</li>
-              <li>Make sure the same person appears, with clear lighting and sound.</li>
-              <li>Avoid screen recordings, unclear audio, or unmatched footage.</li>
-            </ul>
-            <div className="mb-1 text-muted-foreground">
-              <b>Submit your consent video via Slack.</b>
+            
+            <div className="mb-4">
+              <h3 className="font-semibold text-navy mb-2">What You'll Do:</h3>
+              <ul className="list-disc pl-6 text-muted-foreground mb-2">
+                <li>Use the script below to record a 2–5 minute voice sample.</li>
+                <li>You can use your phone or any microphone you have — just make sure you're in a quiet space.</li>
+                <li>Upload the audio file to your Slack channel once done.</li>
+              </ul>
+            </div>
+
+            <div className="mb-4">
+              <h3 className="font-semibold text-navy mb-2">🎤 Voice Recording Script:</h3>
+              <div className="bg-muted p-4 rounded border-l-4 border-lime">
+                <pre className="text-[15px] whitespace-pre-wrap">{VOICE_SCRIPT.trim()}</pre>
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded p-4">
+              <h4 className="font-medium text-navy mb-2">💡 Tips:</h4>
+              <ul className="list-disc pl-6 text-sm text-blue-800">
+                <li>Speak with natural energy (more expressive than usual — the AI tends to flatten it a bit).</li>
+                <li>Don't worry if you mess up once or twice — just relax and try again.</li>
+              </ul>
             </div>
           </section>
 

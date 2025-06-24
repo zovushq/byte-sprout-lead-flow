@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Calendar } from "lucide-react";
 const Contact = () => {
@@ -59,10 +60,10 @@ const Contact = () => {
               <div className="flex items-center space-x-2 text-white/80">
                 <Mail className="h-5 w-5" />
                 <a
-                  href="mailto:zovus.inc@gmail.com"
+                  href="mailto:hello@zovus.tech"
                   className="underline hover:text-lime transition-colors"
                 >
-                  zovus.inc@gmail.com
+                  hello@zovus.tech
                 </a>
               </div>
             </div>

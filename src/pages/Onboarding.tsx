@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Mail, Play } from "lucide-react";
@@ -415,7 +416,7 @@ const Onboarding = () => {
             <h2 className="text-2xl font-bold mb-3">Questions? Here to Help!</h2>
             <p className="mb-2">
               If you have questions at any step, message us in your Slack channel or email
-              <a href="mailto:zovus.inc@gmail.com" className="underline hover:text-lime ml-1">zovus.inc@gmail.com</a>
+              <a href="mailto:hello@zovus.tech" className="underline hover:text-lime ml-1">hello@zovus.tech</a>
             </p>
             <Link to="/" className="inline-block mt-3">
               <Button variant="outline" className="border-lime text-lime hover:bg-lime/20 hover:text-white transition">

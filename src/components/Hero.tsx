@@ -1,4 +1,5 @@
 
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { useState } from "react";
@@ -46,7 +47,7 @@ const Hero = () => {
                     onClick={handleVideoPlay}
                   >
                     <img
-                      src="https://img.youtube.com/vi/8G94VwFqn_Y/maxresdefault.jpg"
+                      src="https://img.youtube.com/vi/d-QyoO2972c/maxresdefault.jpg"
                       alt="ByteSprout Demo Video"
                       className="w-full h-full object-cover"
                     />
@@ -59,7 +60,7 @@ const Hero = () => {
                 ) : (
                   <iframe
                     className="w-full h-full"
-                    src="https://www.youtube.com/embed/8G94VwFqn_Y?autoplay=1&modestbranding=1&rel=0&playsinline=1"
+                    src="https://www.youtube.com/embed/d-QyoO2972c?autoplay=1&modestbranding=1&rel=0&playsinline=1"
                     title="ByteSprout Demo Video"
                     allow="autoplay; encrypted-media; picture-in-picture"
                     allowFullScreen

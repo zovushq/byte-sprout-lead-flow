@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Play } from "lucide-react";
 
@@ -25,7 +26,7 @@ const sampleReels = [
     id: 2,
     title: "Hurt in a Crash? Say This Before You Speak.",
     description: "Personal injury attorney Jason Cole explains the key steps to take after an accident — and what not to say to insurance companies. Protect your rights and get what you're owed.",
-    videoUrl: "https://youtube.com/shorts/d9uUGppo7IY?feature=share",
+    videoUrl: "https://youtube.com/shorts/oV9sOAflaZo?feature=share",
     duration: "0:42",
   },
   {

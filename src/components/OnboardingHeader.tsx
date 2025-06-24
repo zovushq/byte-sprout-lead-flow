@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Menu, X, Mail } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -84,7 +83,7 @@ const OnboardingHeader = () => {
   const renderDesktopContact = () => (
     <div className="hidden md:flex items-center">
       <a
-        href="mailto:zovus.inc@gmail.com"
+        href="mailto:hello@zovus.tech"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -121,7 +120,7 @@ const OnboardingHeader = () => {
         Calculator
       </button>
       <a
-        href="mailto:zovus.inc@gmail.com"
+        href="mailto:hello@zovus.tech"
         target="_blank"
         rel="noopener noreferrer"
         className={isMobile ? "w-full py-2" : ""}

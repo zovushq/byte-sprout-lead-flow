@@ -145,7 +145,7 @@ const Footer = () => {
                 hover,
                 label
               }) => <a key={name} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={`transition-colors text-black ${hover}`}>
-                    
+                    <Icon size={28} strokeWidth={2} />
                   </a>)}
               </div>
             </div>

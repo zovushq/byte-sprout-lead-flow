@@ -74,8 +74,10 @@ const VideoEmbed = ({ size = "large" }: { size?: "large" | "medium" | "small" })
     small: "max-w-lg"
   };
 
+  const alignmentClass = size === "large" ? "mx-auto" : "";
+
   return (
-    <div className={`mb-6 ${sizeClasses[size]}`}>
+    <div className={`mb-6 ${sizeClasses[size]} ${alignmentClass}`}>
       <div className="relative aspect-video rounded-xl overflow-hidden bg-black">
         {!isVideoPlaying ? (
           <div 

@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { useState } from "react";
@@ -50,8 +51,8 @@ const Hero = () => {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/30 transition-colors duration-300">
-                      <div className="w-20 h-20 bg-lime rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <Play className="h-10 w-10 text-navy ml-1" />
+                      <div className="w-14 h-14 md:w-20 md:h-20 bg-lime rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Play className="h-7 w-7 md:h-10 md:w-10 text-navy ml-1" />
                       </div>
                     </div>
                   </div>

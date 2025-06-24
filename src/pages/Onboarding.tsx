@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Mail, Play } from "lucide-react";
@@ -71,12 +70,12 @@ const VideoEmbed = ({ size = "large" }: { size?: "large" | "medium" | "small" })
 
   const sizeClasses = {
     large: "max-w-2xl",
-    medium: "max-w-xl",
+    medium: "max-w-md",
     small: "max-w-lg"
   };
 
   return (
-    <div className={`mb-6 ${sizeClasses[size]} mx-auto`}>
+    <div className={`mb-6 ${sizeClasses[size]}`}>
       <div className="relative aspect-video rounded-xl overflow-hidden bg-black">
         {!isVideoPlaying ? (
           <div 
@@ -110,6 +109,13 @@ const VideoEmbed = ({ size = "large" }: { size?: "large" | "medium" | "small" })
 };
 
 const Onboarding = () => {
+  const scrollToStep1 = () => {
+    const element = document.getElementById('step-1');
+    element?.scrollIntoView({
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-muted">
       <Helmet>
@@ -136,10 +142,19 @@ const Onboarding = () => {
             
             {/* Hero Video */}
             <VideoEmbed size="large" />
+            
+            {/* Start Onboarding Button */}
+            <Button 
+              size="lg" 
+              onClick={scrollToStep1}
+              className="bg-lime text-navy hover:bg-lime/90 font-semibold py-4 transition-all duration-300 hover:scale-105 text-base px-8"
+            >
+              Start Onboarding
+            </Button>
           </section>
 
           {/* Section: Step 1 */}
-          <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-scale-in">
+          <section id="step-1" className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-scale-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 1: Share Your Info</h2>
             
             <VideoEmbed size="medium" />
@@ -349,7 +364,7 @@ const Onboarding = () => {
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 6: Thumbnail Photo</h2>
             
-            <VideoEmbed size="small" />
+            <VideoEmbed size="medium" />
             
             <p className="text-muted-foreground">
               Please send a professional photo for use as your video thumbnail and branding. Use a plain, well-lit background and dress professionally.
@@ -360,7 +375,7 @@ const Onboarding = () => {
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 7: Social Media Account Access</h2>
             
-            <VideoEmbed size="small" />
+            <VideoEmbed size="medium" />
             
             <p className="text-muted-foreground">
               We'll request access (or a manager invitation) for your TikTok, Instagram, Facebook, YouTube, and Google My Business profiles to automate publishing.
@@ -372,7 +387,7 @@ const Onboarding = () => {
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 8: Direct Message Automation Setup</h2>
             
-            <VideoEmbed size="small" />
+            <VideoEmbed size="medium" />
             
             <p className="text-muted-foreground">
               For DM automation, we'll walk you through connecting your social media accounts with our ManyChat workspace (or similar service).
@@ -385,7 +400,7 @@ const Onboarding = () => {
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 9: Access Your Lead Dashboard</h2>
             
-            <VideoEmbed size="small" />
+            <VideoEmbed size="medium" />
             
             <p className="text-muted-foreground">
               You'll be provided with a GoHighLevel dashboard to view conversations, qualified leads, and performance analytics in real time.

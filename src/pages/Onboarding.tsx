@@ -1,8 +1,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Mail } from "lucide-react";
-import React from "react";
+import { Mail, Play } from "lucide-react";
+import React, { useState } from "react";
 import OnboardingHeader from "@/components/OnboardingHeader";
 import { Helmet } from "react-helmet-async";
 
@@ -62,6 +62,53 @@ Alright, we're wrapping up now. This voice model's going to be great — I can a
 Thanks for listening. Let's do something amazing together.
 `;
 
+const VideoEmbed = ({ size = "large" }: { size?: "large" | "medium" | "small" }) => {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+
+  const handleVideoPlay = () => {
+    setIsVideoPlaying(true);
+  };
+
+  const sizeClasses = {
+    large: "max-w-2xl",
+    medium: "max-w-xl",
+    small: "max-w-lg"
+  };
+
+  return (
+    <div className={`mb-6 ${sizeClasses[size]} mx-auto`}>
+      <div className="relative aspect-video rounded-xl overflow-hidden bg-black">
+        {!isVideoPlaying ? (
+          <div 
+            className="relative w-full h-full cursor-pointer group"
+            onClick={handleVideoPlay}
+          >
+            <img
+              src="https://img.youtube.com/vi/QxCM34XhY98/maxresdefault.jpg"
+              alt="ByteSprout Onboarding Video"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/30 transition-colors duration-300">
+              <div className="w-16 h-16 bg-lime rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Play className="h-8 w-8 text-navy ml-1" />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/QxCM34XhY98?autoplay=1&modestbranding=1&rel=0&playsinline=1"
+            title="ByteSprout Onboarding Video"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+            style={{ border: 0 }}
+          />
+        )}
+      </div>
+    </div>
+  );
+};
+
 const Onboarding = () => {
   return (
     <div className="min-h-screen flex flex-col bg-muted">
@@ -83,14 +130,20 @@ const Onboarding = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-navy mb-6 animate-fade-in leading-tight md:leading-[1.15]">
               Welcome to ByteSprout Onboarding!
             </h1>
-            <p className="text-lg md:text-2xl text-muted-foreground animate-fade-in">
+            <p className="text-lg md:text-2xl text-muted-foreground animate-fade-in mb-8">
               We're excited to help you transform your practice with AI-powered content and qualified leads. Onboarding is simple, structured, and stress-free!
             </p>
+            
+            {/* Hero Video */}
+            <VideoEmbed size="large" />
           </section>
 
           {/* Section: Step 1 */}
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-scale-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 1: Share Your Info</h2>
+            
+            <VideoEmbed size="medium" />
+            
             <p className="mb-4 text-muted-foreground">
               Help us kick off the process by providing your details.
             </p>
@@ -108,6 +161,9 @@ const Onboarding = () => {
           {/* Section: Step 2 */}
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 2: Your Private Slack Channel</h2>
+            
+            <VideoEmbed size="medium" />
+            
             <p className="text-muted-foreground mb-3">
               Once you sign up, you'll get a dedicated Slack channel to chat with our team in real time.
             </p>
@@ -121,6 +177,9 @@ const Onboarding = () => {
           {/* Section: Step 3 - Updated */}
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 3: Record Your AI Avatar Training & Consent Videos 🎬</h2>
+            
+            <VideoEmbed size="medium" />
+            
             <p className="text-muted-foreground mb-4">
               To create your personalized AI avatar, we'll need two video recordings:
             </p>
@@ -200,6 +259,9 @@ const Onboarding = () => {
           {/* Section: Step 4 - Updated */}
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">🗣️ Step 4: Record Your Voice for Avatar</h2>
+            
+            <VideoEmbed size="medium" />
+            
             <p className="text-muted-foreground mb-4">
               This helps make your AI avatar sound exactly like you.
             </p>
@@ -232,6 +294,9 @@ const Onboarding = () => {
           {/* Section: Creating Different Avatar Looks */}
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 5: Creating Different Avatar Looks</h2>
+            
+            <VideoEmbed size="medium" />
+            
             <p className="text-muted-foreground mb-4">
               You can create up to <b>100 different looks</b> for the same person—all under one avatar slot!
             </p>
@@ -283,6 +348,9 @@ const Onboarding = () => {
           {/* Section: Thumbnail Photo Guidance */}
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 6: Thumbnail Photo</h2>
+            
+            <VideoEmbed size="small" />
+            
             <p className="text-muted-foreground">
               Please send a professional photo for use as your video thumbnail and branding. Use a plain, well-lit background and dress professionally.
             </p>
@@ -291,6 +359,9 @@ const Onboarding = () => {
           {/* Section: Social Media Access for Auto Posting */}
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 7: Social Media Account Access</h2>
+            
+            <VideoEmbed size="small" />
+            
             <p className="text-muted-foreground">
               We'll request access (or a manager invitation) for your TikTok, Instagram, Facebook, YouTube, and Google My Business profiles to automate publishing.
               You'll receive detailed instructions in Slack for securely connecting your accounts.
@@ -300,8 +371,11 @@ const Onboarding = () => {
           {/* Section: Access for DM Automation */}
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 8: Direct Message Automation Setup</h2>
+            
+            <VideoEmbed size="small" />
+            
             <p className="text-muted-foreground">
-              For DM automation, we’ll walk you through connecting your social media accounts with our ManyChat workspace (or similar service).
+              For DM automation, we'll walk you through connecting your social media accounts with our ManyChat workspace (or similar service).
               This allows us to respond instantly to leads.
               All details and step-by-step help will be in your Slack channel.
             </p>
@@ -310,9 +384,12 @@ const Onboarding = () => {
           {/* Section: Using Your Lead Dashboard */}
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 9: Access Your Lead Dashboard</h2>
+            
+            <VideoEmbed size="small" />
+            
             <p className="text-muted-foreground">
               You'll be provided with a GoHighLevel dashboard to view conversations, qualified leads, and performance analytics in real time.
-              We’ll show you how to use this platform during onboarding.
+              We'll show you how to use this platform during onboarding.
             </p>
           </section>
 
@@ -342,5 +419,3 @@ const Onboarding = () => {
 };
 
 export default Onboarding;
-
-// NOTE: This file is getting very long. Please consider refactoring it to use smaller section/component files for easier maintenance.

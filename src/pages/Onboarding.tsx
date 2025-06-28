@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Mail, Play } from "lucide-react";
@@ -335,9 +334,9 @@ const Onboarding = () => {
               <h4 className="font-medium text-navy mb-1 flex items-center">👔 Wardrobe Suggestions</h4>
               <ul className="list-disc pl-6 text-muted-foreground mb-2">
                 <li>Dress as you would when meeting a client or appearing in court:</li>
-                <li className="ml-6">• Suit and tie or blazer with a button-down shirt</li>
-                <li className="ml-6">• Legal robes (if applicable in your jurisdiction)</li>
-                <li className="ml-6">• Professional attire in solid, neutral colors (avoid flashy patterns)</li>
+                <li>Suit and tie or blazer with a button-down shirt</li>
+                <li>Legal robes (if applicable in your jurisdiction)</li>
+                <li>Professional attire in solid, neutral colors (avoid flashy patterns)</li>
               </ul>
             </div>
             <div className="mb-3">

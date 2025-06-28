@@ -333,10 +333,13 @@ const Onboarding = () => {
             <div className="mb-3">
               <h4 className="font-medium text-navy mb-1 flex items-center">👔 Wardrobe Suggestions</h4>
               <ul className="list-disc pl-6 text-muted-foreground mb-2">
-                <li>Dress as you would when meeting a client or appearing in court:</li>
-                <li>Suit and tie or blazer with a button-down shirt</li>
-                <li>Legal robes (if applicable in your jurisdiction)</li>
-                <li>Professional attire in solid, neutral colors (avoid flashy patterns)</li>
+                <li>Dress as you would when meeting a client or appearing in court:
+                  <ul className="list-disc pl-6 mt-1">
+                    <li>Suit and tie or blazer with a button-down shirt</li>
+                    <li>Legal robes (if applicable in your jurisdiction)</li>
+                    <li>Professional attire in solid, neutral colors (avoid flashy patterns)</li>
+                  </ul>
+                </li>
               </ul>
             </div>
             <div className="mb-3">

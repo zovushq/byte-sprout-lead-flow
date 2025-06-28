@@ -204,6 +204,17 @@ const Onboarding = () => {
               <li><strong>Your training video</strong> (pre-recorded)</li>
               <li><strong>Your consent video</strong> (recorded in real-time during the session)</li>
             </ul>
+
+            <div className="bg-lime/10 border border-lime/30 rounded-lg p-4 mb-6">
+              <h3 className="font-semibold text-navy mb-2 flex items-center">📱 Important Recording Format</h3>
+              <p className="text-navy">
+                <strong>Please record your training video in vertical format</strong> — just like how you'd shoot a Reel or TikTok.
+              </p>
+              <p className="text-navy mt-1">
+                Since your avatar will be used in short-form content, recording vertically ensures everything fits perfectly on screen.
+              </p>
+            </div>
+
             <p className="mb-4 text-muted-foreground">There are two types of avatars we can create:</p>
             <ul className="mb-6 list-disc pl-6 text-muted-foreground">
               <li><strong>Still Avatar:</strong> For announcements, training, and regular social videos. <span className="text-lime font-semibold">(Recommended for most cases! 🌟)</span></li>
@@ -317,10 +328,22 @@ const Onboarding = () => {
             <p className="text-muted-foreground mb-4">
               You can create up to <b>100 different looks</b> for the same person—all under one avatar slot!
             </p>
+
+            <div className="bg-lime/10 border border-lime/30 rounded-lg p-4 mb-6">
+              <h3 className="font-semibold text-navy mb-2 flex items-center">📱 Important Recording Format</h3>
+              <p className="text-navy">
+                <strong>Please make sure all your avatar looks are recorded vertically</strong> — just like Instagram Reels, TikToks, or YouTube Shorts.
+              </p>
+              <p className="text-navy mt-1">
+                This ensures your avatar fits perfectly in the short-form content we'll be creating for you.
+              </p>
+            </div>
+
             <h3 className="font-semibold text-navy mb-3">AI Avatar Look Guidance for Attorneys</h3>
             <p className="mb-3 text-muted-foreground">
               To help us create a compelling, professional AI avatar that represents your firm with authority and trust, here are a few styling and setup recommendations:
             </p>
+            
             <div className="mb-3">
               <h4 className="font-medium text-navy mb-1 flex items-center">📍 Background Options</h4>
               <ul className="list-disc pl-6 text-muted-foreground mb-2">

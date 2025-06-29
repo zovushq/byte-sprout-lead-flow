@@ -11,7 +11,7 @@ const CalculatorHero = () => <section className="bg-gradient-to-br from-navy via
           Instantly Calculate Your ByteSprout Plan Cost
         </h1>
         <p className="text-lg md:text-2xl text-white/90 mb-2 md:mb-3">See exactly what you’ll pay—no surprises.</p>
-        <p className="text-white/70 text-base md:text-lg max-w-xl mx-auto mb-1 md:mb-2">Customize the number of AI reels and avatar options for your law firm. Designed for transparency and flexibility.</p>
+        <p className="text-white/70 text-base md:text-lg max-w-xl mx-auto mb-1 md:mb-2">Easily customize the number of AI reels and avatars to suit your law firm’s needs. Our plans are built for transparency and flexibility.</p>
       </div>
     </div>
   </section>;

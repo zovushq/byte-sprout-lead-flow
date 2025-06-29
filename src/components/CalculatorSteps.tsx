@@ -1,13 +1,11 @@
+
 import React from "react";
 import { ListOrdered, SquareCheck } from "lucide-react";
+
 const steps = [{
   icon: <ListOrdered className="h-6 w-6 text-lime" />,
   title: "Adjust Your Monthly Reels",
   desc: "Choose how many AI reels you want per month. Minimum is 15 reels."
-}, {
-  icon: <SquareCheck className="h-6 w-6 text-lime" />,
-  title: "Select Automation",
-  desc: "Add AI DM automation for more leads—toggle on or off as needed."
 }, {
   icon: <ListOrdered className="h-6 w-6 text-lime" />,
   title: "Add Extra AI Avatars",
@@ -17,6 +15,7 @@ const steps = [{
   title: "Review Transparent Pricing",
   desc: "See the full monthly breakdown live. No hidden fees."
 }];
+
 const CalculatorSteps = () => <section className="bg-background py-[60px]">
     <div className="container mx-auto px-4 max-w-4xl">
       <div className="mb-8 text-center animate-fade-in">
@@ -25,7 +24,7 @@ const CalculatorSteps = () => <section className="bg-background py-[60px]">
           Get a custom quote in seconds. Just follow these simple steps:
         </p>
       </div>
-      <ol className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-scale-in">
+      <ol className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-scale-in">
         {steps.map((step, i) => <li key={i} className="flex items-start gap-4 bg-white shadow rounded-xl px-6 py-5 border border-border">
             <span>{step.icon}</span>
             <div>
@@ -36,4 +35,5 @@ const CalculatorSteps = () => <section className="bg-background py-[60px]">
       </ol>
     </div>
   </section>;
+
 export default CalculatorSteps;

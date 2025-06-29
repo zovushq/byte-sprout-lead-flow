@@ -82,22 +82,6 @@ const CalculatorPage = () => {
               </div>
             </div>
 
-            {/* AI-Powered DM Automation - Now always included */}
-            <div className="bg-lime/10 border border-lime/30 rounded-lg p-3">
-              <div className="flex items-center gap-3">
-                <span className="text-lime font-semibold">✓</span>
-                <span className="font-medium text-navy text-base">
-                  AI-Powered DM Automation
-                </span>
-                <span className="text-xs text-muted-foreground">
-                  (Included in all plans)
-                </span>
-              </div>
-              <p className="text-xs text-muted-foreground mt-1 ml-6">
-                Lead generation & booking automation is now standard with every plan
-              </p>
-            </div>
-
             {/* Extra AI Avatars */}
             <div>
               <label className="block mb-1 font-medium text-navy">

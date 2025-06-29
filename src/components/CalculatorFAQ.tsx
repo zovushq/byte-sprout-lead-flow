@@ -9,7 +9,7 @@ import {
 
 const faqData = [
   {
-    question: "What’s included in the Founding Member Offer?",
+    question: "What's included in the Founding Member Offer?",
     answer:
       "The Founding Member Offer is our introductory pricing available while slots last—only 3 slots left! It offers a significant discount on reels and automation, locking in lower rates for early adopters. Once these slots are filled, the pricing will revert to standard rates as displayed in the calculator when the offer toggle is off.",
   },
@@ -26,7 +26,7 @@ const faqData = [
   {
     question: "Does the price include lead qualification and booking?",
     answer:
-      "If you enable AI-powered DM automation, your plan will include automated lead qualification and booking. You can toggle this on or off above to see how it affects pricing.",
+      "Yes, all ByteSprout plans include AI-powered DM automation by default — which means automated lead qualification and booking is fully included in your pricing. No extra fees — it's all built-in to help you convert more leads, faster.",
   },
   {
     question: "What happens when the special offer ends?",

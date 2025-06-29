@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
@@ -13,30 +14,27 @@ import ScrollToTop from "@/components/ScrollToTop";
 const BASE_REELS = 15;
 const INCLUDED_AVATARS = 2;
 
-// Pricing Rules
-const getReelPrice = (automation: boolean, special: boolean) => {
-  if (special) {
-    return automation ? 155 : 115;
-  }
-  return automation ? 333 : 285;
+// Pricing Rules - automation is now always included
+const getReelPrice = (special: boolean) => {
+  return special ? 155 : 333; // Always with automation pricing
 };
 const AVATAR_PRICE = 50; // Per extra avatar (always the same)
-// Removed the "Lead qualification & booking (if selected)" point from PLAN_DESC.
-const PLAN_DESC = ["All videos are professionally edited for maximum scroll-stopping power.", "Custom cover design for every single video.", "Content ideation, AI video production, and publishing on ALL platforms: Instagram, TikTok, Facebook, YouTube, Google My Business.", "A dedicated Slack channel for easy approvals, fast feedback, and direct communication with our team.", "Dedicated social media manager and relationship manager for your firm.", "Bi-weekly performance analysis and strategy reviews, so you’re never left in the dark.", "2 custom AI avatars included", "AI-Powered DM Automation (if selected)"];
+// Plan description updated to reflect that automation is always included
+const PLAN_DESC = ["All videos are professionally edited for maximum scroll-stopping power.", "Custom cover design for every single video.", "Content ideation, AI video production, and publishing on ALL platforms: Instagram, TikTok, Facebook, YouTube, Google My Business.", "A dedicated Slack channel for easy approvals, fast feedback, and direct communication with our team.", "Dedicated social media manager and relationship manager for your firm.", "Bi-weekly performance analysis and strategy reviews, so you're never left in the dark.", "2 custom AI avatars included", "AI-Powered DM Automation included"];
+
 const CalculatorPage = () => {
   const [numReels, setNumReels] = useState(BASE_REELS);
-  const [withAutomation, setWithAutomation] = useState(true);
   const [extraAvatars, setExtraAvatars] = useState(0);
   const [withOffer, setWithOffer] = useState(true);
 
-  // Pricing logic
-  const reelUnitPrice = getReelPrice(withAutomation, withOffer);
+  // Pricing logic - automation is always included now
+  const reelUnitPrice = getReelPrice(withOffer);
   const avatarsCharged = extraAvatars > 0 ? extraAvatars : 0;
   const reelsCharged = numReels >= BASE_REELS ? numReels : BASE_REELS;
   const reelsSubtotal = reelsCharged * reelUnitPrice;
   const avatarSubtotal = avatarsCharged * AVATAR_PRICE;
   const total = reelsSubtotal + avatarSubtotal;
-  const offerText = withOffer ? "Founding Member Special (only 3 slots left)" : "Normal Pricing (after all offer slots filled)";
+
   return <>
       <Helmet>
         <title>ByteSprout | AI Video & Automation Cost Calculator</title>
@@ -84,17 +82,20 @@ const CalculatorPage = () => {
               </div>
             </div>
 
-            {/* Automation Toggle */}
-            <div>
-              <label className="flex items-center gap-3 cursor-pointer">
-                <input type="checkbox" checked={withAutomation} onChange={() => setWithAutomation(val => !val)} className="h-5 w-5 accent-lime" />
+            {/* AI-Powered DM Automation - Now always included */}
+            <div className="bg-lime/10 border border-lime/30 rounded-lg p-3">
+              <div className="flex items-center gap-3">
+                <span className="text-lime font-semibold">✓</span>
                 <span className="font-medium text-navy text-base">
-                  Add AI-Powered DM Automation
+                  AI-Powered DM Automation
                 </span>
                 <span className="text-xs text-muted-foreground">
-                  (Lead gen & booking)
+                  (Included in all plans)
                 </span>
-              </label>
+              </div>
+              <p className="text-xs text-muted-foreground mt-1 ml-6">
+                Lead generation & booking automation is now standard with every plan
+              </p>
             </div>
 
             {/* Extra AI Avatars */}
@@ -125,7 +126,7 @@ const CalculatorPage = () => {
             </div>
             <div className="flex justify-between px-5 py-2">
               <span>
-                Reels{" "}
+                Reels with AI Automation{" "}
                 <span className="text-xs text-muted-foreground">
                   ({reelsCharged} × ${reelUnitPrice}/reel)
                 </span>

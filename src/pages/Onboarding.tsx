@@ -179,7 +179,7 @@ const Onboarding = () => {
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 2: Your Private Slack Channel</h2>
             
-            <VideoEmbed size="medium" videoId="QxCM34XhY98" />
+            <VideoEmbed size="medium" videoId="PevjbIzAqZc" />
             
             <p className="text-muted-foreground mb-3">
               Once you sign up, you'll get a dedicated Slack channel to chat with our team in real time.
@@ -195,7 +195,7 @@ const Onboarding = () => {
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 3: Record Your AI Avatar Training & Consent Videos 🎬</h2>
             
-            <VideoEmbed size="medium" videoId="QxCM34XhY98" />
+            <VideoEmbed size="medium" videoId="s6rkiuzOhGM" />
             
             <p className="text-muted-foreground mb-4">
               To create your personalized AI avatar, we'll need two video recordings:
@@ -288,7 +288,7 @@ const Onboarding = () => {
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">🗣️ Step 4: Record Your Voice for Avatar</h2>
             
-            <VideoEmbed size="medium" videoId="QxCM34XhY98" />
+            <VideoEmbed size="medium" videoId="-_JR4LYZ51Q" />
             
             <p className="text-muted-foreground mb-4">
               This helps make your AI avatar sound exactly like you.
@@ -323,7 +323,7 @@ const Onboarding = () => {
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 5: Creating Different Avatar Looks</h2>
             
-            <VideoEmbed size="medium" videoId="QxCM34XhY98" />
+            <VideoEmbed size="medium" videoId="nLSo2uHchKY" />
             
             <p className="text-muted-foreground mb-4">
               You can create up to <b>100 different looks</b> for the same person—all under one avatar slot!

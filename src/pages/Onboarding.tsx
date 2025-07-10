@@ -4,7 +4,6 @@ import { Mail, Play } from "lucide-react";
 import React, { useState } from "react";
 import OnboardingHeader from "@/components/OnboardingHeader";
 import { Helmet } from "react-helmet-async";
-
 const GOOGLE_FORM_LINK = "https://forms.gle/uUyQgbWHjQvjs1Bz7"; // Replace with your real form link
 
 const VIDEO_SCRIPT = `
@@ -32,7 +31,6 @@ It's been a pleasure recording today, and I'm excited to see the final result. S
 
 <Close your mouth and breathe through your nose>
 `;
-
 const VOICE_SCRIPT = `
 Hi there! I'm [Your Name]
 
@@ -60,56 +58,38 @@ Alright, we're wrapping up now. This voice model's going to be great — I can a
 
 Thanks for listening. Let's do something amazing together.
 `;
-
-const VideoEmbed = ({ size = "large", videoId }: { size?: "large" | "medium" | "small", videoId: string }) => {
+const VideoEmbed = ({
+  size = "large",
+  videoId
+}: {
+  size?: "large" | "medium" | "small";
+  videoId: string;
+}) => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
   const handleVideoPlay = () => {
     setIsVideoPlaying(true);
   };
-
   const sizeClasses = {
     large: "max-w-2xl",
     medium: "max-w-md",
     small: "max-w-lg"
   };
-
   const alignmentClass = size === "large" ? "mx-auto" : "";
-
-  return (
-    <div className={`mb-6 ${sizeClasses[size]} ${alignmentClass}`}>
+  return <div className={`mb-6 ${sizeClasses[size]} ${alignmentClass}`}>
       <div className="relative aspect-video rounded-xl overflow-hidden bg-black">
-        {!isVideoPlaying ? (
-          <div 
-            className="relative w-full h-full cursor-pointer group"
-            onClick={handleVideoPlay}
-          >
-            <img
-              src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-              alt="ByteSprout Onboarding Video"
-              className="w-full h-full object-cover"
-            />
+        {!isVideoPlaying ? <div className="relative w-full h-full cursor-pointer group" onClick={handleVideoPlay}>
+            <img src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`} alt="ByteSprout Onboarding Video" className="w-full h-full object-cover" />
             <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/30 transition-colors duration-300">
               <div className="w-16 h-16 bg-lime rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Play className="h-8 w-8 text-navy ml-1" />
               </div>
             </div>
-          </div>
-        ) : (
-          <iframe
-            className="w-full h-full"
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0&playsinline=1`}
-            title="ByteSprout Onboarding Video"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen
-            style={{ border: 0 }}
-          />
-        )}
+          </div> : <iframe className="w-full h-full" src={`https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0&playsinline=1`} title="ByteSprout Onboarding Video" allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen style={{
+        border: 0
+      }} />}
       </div>
-    </div>
-  );
+    </div>;
 };
-
 const Onboarding = () => {
   const scrollToStep1 = () => {
     const element = document.getElementById('step-1');
@@ -117,15 +97,10 @@ const Onboarding = () => {
       behavior: 'smooth'
     });
   };
-
-  return (
-    <div className="min-h-screen flex flex-col bg-muted">
+  return <div className="min-h-screen flex flex-col bg-muted">
       <Helmet>
         <title>ByteSprout | Client Onboarding | AI Avatar Content Setup for Attorneys</title>
-        <meta
-          name="description"
-          content="Start your ByteSprout journey with ease. Follow our step-by-step onboarding guide to submit video, voice, and brand assets — and launch your AI-powered legal content system fast."
-        />
+        <meta name="description" content="Start your ByteSprout journey with ease. Follow our step-by-step onboarding guide to submit video, voice, and brand assets — and launch your AI-powered legal content system fast." />
       </Helmet>
       {/* NAV */}
       <OnboardingHeader />
@@ -146,11 +121,7 @@ const Onboarding = () => {
             <VideoEmbed size="large" videoId="_SQdfw_ckK8" />
             
             {/* Start Onboarding Button */}
-            <Button 
-              size="lg" 
-              onClick={scrollToStep1}
-              className="bg-lime text-navy hover:bg-lime/90 font-semibold py-4 transition-all duration-300 hover:scale-105 text-base px-8"
-            >
+            <Button size="lg" onClick={scrollToStep1} className="bg-lime text-navy hover:bg-lime/90 font-semibold py-4 transition-all duration-300 hover:scale-105 text-base px-8">
               Start Onboarding
             </Button>
           </section>
@@ -193,7 +164,7 @@ const Onboarding = () => {
 
           {/* Section: Step 3 - Updated */}
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
-            <h2 className="text-2xl font-bold text-navy mb-4">Step 3: Record Your AI Avatar Training & Consent Videos 🎬</h2>
+            <h2 className="text-2xl font-bold text-navy mb-4">Step 3: Record Your AI Avatar Training &amp; Consent Video 🎬</h2>
             
             <VideoEmbed size="medium" videoId="s6rkiuzOhGM" />
             
@@ -457,8 +428,6 @@ const Onboarding = () => {
           © 2025 ByteSprout (A <a href="https://www.zovus.tech" className="underline" target="_blank" rel="noopener noreferrer">ZOVUS Company</a>). All rights reserved.
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Onboarding;

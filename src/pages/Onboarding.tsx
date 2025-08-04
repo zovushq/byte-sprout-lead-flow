@@ -166,7 +166,7 @@ const Onboarding = () => {
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 3: Record Your AI Avatar Training &amp; Consent Video 🎬</h2>
             
-            <VideoEmbed size="medium" videoId="s6rkiuzOhGM" />
+            <VideoEmbed size="medium" videoId="fTcvGJ_vmtA" />
             
             <p className="text-muted-foreground mb-4">
               To create your personalized AI avatar, we'll need two video recordings:

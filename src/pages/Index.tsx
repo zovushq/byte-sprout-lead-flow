@@ -7,6 +7,7 @@ import SampleReels from "@/components/SampleReels";
 import Process from "@/components/Process";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Pricing from "@/components/Pricing";
+import CostComparison from "@/components/CostComparison";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -22,6 +23,7 @@ const Index = () => {
       <Process />
       <WhyChooseUs />
       <Pricing />
+      <CostComparison />
       <FAQ />
       <Contact />
       <Footer />

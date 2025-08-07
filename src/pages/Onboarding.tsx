@@ -294,7 +294,7 @@ const Onboarding = () => {
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 5: Creating Different Avatar Looks</h2>
             
-            <VideoEmbed size="medium" videoId="nLSo2uHchKY" />
+            <VideoEmbed size="medium" videoId="an5wZF_CbTg" />
             
             <p className="text-muted-foreground mb-4">
               You can create up to <b>100 different looks</b> for the same person—all under one avatar slot!
@@ -363,7 +363,7 @@ const Onboarding = () => {
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 6: Thumbnail Photo</h2>
             
-            <VideoEmbed size="medium" videoId="QxCM34XhY98" />
+            <VideoEmbed size="medium" videoId="an5wZF_CbTg" />
             
             <p className="text-muted-foreground">
               Please send a professional photo for use as your video thumbnail and branding. Use a plain, well-lit background and dress professionally.
@@ -386,7 +386,7 @@ const Onboarding = () => {
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 8: Direct Message Automation Setup</h2>
             
-            <VideoEmbed size="medium" videoId="QxCM34XhY98" />
+            <VideoEmbed size="medium" videoId="_TCpcP3VCSE" />
             
             <p className="text-muted-foreground">
               For DM automation, we'll walk you through connecting your social media accounts with our ManyChat workspace (or similar service).

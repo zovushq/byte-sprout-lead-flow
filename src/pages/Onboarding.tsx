@@ -374,7 +374,7 @@ const Onboarding = () => {
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 7: Social Media Account Access</h2>
             
-            <VideoEmbed size="medium" videoId="QxCM34XhY98" />
+            <VideoEmbed size="medium" videoId="J9pvoWH_HiI" />
             
             <p className="text-muted-foreground">
               We'll request access (or a manager invitation) for your TikTok, Instagram, Facebook, YouTube, and Google My Business profiles to automate publishing.
@@ -386,7 +386,7 @@ const Onboarding = () => {
           <section className="mb-10 bg-white rounded-2xl p-8 shadow border border-border animate-fade-in">
             <h2 className="text-2xl font-bold text-navy mb-4">Step 8: Direct Message Automation Setup</h2>
             
-            <VideoEmbed size="medium" videoId="_TCpcP3VCSE" />
+            <VideoEmbed size="medium" videoId="xA277kpa0qE" />
             
             <p className="text-muted-foreground">
               For DM automation, we'll walk you through connecting your social media accounts with our ManyChat workspace (or similar service).

@@ -32,31 +32,45 @@ It's been a pleasure recording today, and I'm excited to see the final result. S
 <Close your mouth and breathe through your nose>
 `;
 const VOICE_SCRIPT = `
-Hi there! I'm [Your Name]
+Hi there, I'm [Your Name].
 
-Today's a good day. The lighting's perfect, and I'm speaking clearly and confidently, with a calm tone and natural energy.
+It's a good day, and I'm speaking clearly, confidently, and with a relaxed pace.
 
-Sometimes I speak slowly. Other times, I might pick up the pace — especially when I'm excited about something. Let me show you...
+Sometimes my tone is serious and steady… other times it's lighter, more conversational — like this.
 
-Here's a happy line! 😄
+There are moments where I speak slowly, letting my words breathe.
 
-Here's a curious one...?
+And then, I can pick up the pace — especially when I'm explaining something exciting or important.
 
-And here's one with quiet confidence.
+Here's a warm, friendly sentence: "It's truly a pleasure to meet you."
 
-This script includes short sentences. Long ones too — because I want my voice model to sound flexible and real, like a real conversation.
+Here's a curious one: "Now… how exactly did that happen?"
 
-Now I'll pause... just for a moment.
+And here's a line with calm authority: "We'll get through this, step by step."
 
-(Pause for 5 seconds)
+The quick brown fox jumps over the lazy dog.
 
-I'm not rushing. I'm relaxed.
+Bright zebras graze quietly in the yellow field.
 
-This recording feels good — because I'm just being myself.
+Victor's jazz quartet played quirky rhythms all night.
 
-Alright, we're wrapping up now. This voice model's going to be great — I can already feel it.
+She sells seashells by the seashore, while chubby chipmunks chatter cheerfully.
 
-Thanks for listening. Let's do something amazing together.
+Owen knew the route was rough, but he moved forward without doubt.
+
+In my work, I often explain complex ideas in plain English — breaking down each point so it's easy to understand, even if the topic is unfamiliar.
+
+Whether I'm in the courtroom, on a call, or in front of a camera, my goal is to speak with clarity, empathy, and precision.
+
+Now… I'll pause for just a moment.
+
+(Pause for 4–5 seconds)
+
+And continue with a steady, even pace.
+
+This recording should capture the true sound of my voice — my tone, rhythm, and energy.
+
+Thank you for listening, and I look forward to using this voice to share valuable ideas, answer important questions, and connect with people in a meaningful way.
 `;
 const VideoEmbed = ({
   size = "large",

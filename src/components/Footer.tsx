@@ -228,11 +228,7 @@ const Footer = () => {
 
           <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="text-muted-foreground">
-              © 2025 ByteSprout (A{" "}
-              <a href="https://www.zovus.tech" className="underline" target="_blank" rel="noopener noreferrer">
-                ZOVUS
-              </a>
-              {" "}Company). All rights reserved.
+              © 2025 ByteSprout (A Zovus Technologies Company). All rights reserved.
             </div>
             <div className="text-muted-foreground mt-4 md:mt-0">
               Built for law firms who want to grow smarter, not harder.

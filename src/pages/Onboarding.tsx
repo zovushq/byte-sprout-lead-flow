@@ -428,7 +428,7 @@ const Onboarding = () => {
       {/* Footer fixes: remove margin/padding above and below */}
       <footer className="w-full bg-white/80 border-t border-border text-muted-foreground text-xs">
         <div className="container mx-auto max-w-3xl px-4 py-4 text-center">
-          © 2025 ByteSprout (A <a href="https://www.zovus.tech" className="underline" target="_blank" rel="noopener noreferrer">ZOVUS Company</a>). All rights reserved.
+          © 2025 ByteSprout (A Zovus Technologies Company). All rights reserved.
         </div>
       </footer>
     </div>;

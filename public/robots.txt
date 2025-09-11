@@ -1,4 +1,4 @@
-
 User-agent: *
+Disallow: /onboarding
 Allow: /
 Sitemap: https://bytesprout.zovus.tech/sitemap.xml

@@ -1,4 +1,5 @@
 
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
@@ -15,6 +16,10 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>ByteSprout (A Zovus Technologies Company) | AI-Powered Inbound Lead Generation and Qualification System for Law Firms</title>
+        <meta name="description" content="ByteSprout, a Zovus Technologies company, helps law firms generate and qualify inbound leads using AI-powered automation. Streamline client acquisition and grow your practice efficiently." />
+      </Helmet>
       <Header />
       <Hero />
       <Problem />

@@ -37,8 +37,8 @@ const CalculatorPage = () => {
 
   return <>
       <Helmet>
-        <title>ByteSprout | AI Video & Automation Cost Calculator</title>
-        <meta name="description" content="Get a custom quote for AI avatar video production, content automation, and multi-platform publishing. Instantly estimate pricing based on your business needs." />
+        <title>ByteSprout Cost Calculator | AI-Powered Lead Generation & Qualification System for Law Firms</title>
+        <meta name="description" content="Explore ByteSprout's pricing plans for AI-powered inbound lead generation and qualification. Find the perfect solution to grow your law firm's client base efficiently." />
       </Helmet>
       <Header />
       <ScrollToTop />

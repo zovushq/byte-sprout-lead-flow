@@ -113,8 +113,8 @@ const Onboarding = () => {
   };
   return <div className="min-h-screen flex flex-col bg-muted">
       <Helmet>
-        <title>ByteSprout | Client Onboarding | AI Avatar Content Setup for Attorneys</title>
-        <meta name="description" content="Start your ByteSprout journey with ease. Follow our step-by-step onboarding guide to submit video, voice, and brand assets — and launch your AI-powered legal content system fast." />
+        <title>ByteSprout Client Onboarding | AI-Powered Lead Generation & Qualification System for Law Firms</title>
+        <meta name="description" content="Get started with ByteSprout's AI-powered lead generation and qualification system for law firms. Our step-by-step onboarding ensures your practice is set up quickly and efficiently." />
       </Helmet>
       {/* NAV */}
       <OnboardingHeader />

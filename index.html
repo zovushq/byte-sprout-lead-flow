@@ -24,6 +24,57 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+
+        {
+          "@type": "Organization",
+          "name": "ByteSprout",
+          "url": "https://bytesprout.zovus.tech/",
+          "parentOrganization": {
+            "@type": "Organization",
+            "name": "Zovus Technologies",
+            "url": "https://www.zovus.tech/"
+          },
+          "sameAs": [
+            "https://www.instagram.com/bytesprouthq/",
+            "https://www.facebook.com/bytesprouthq",
+            "https://www.linkedin.com/company/bytesprouthq",
+            "https://x.com/bytesprouthq"
+          ]
+        },
+
+        {
+          "@type": "Service",
+          "name": "AI Lead Generation & Qualification System for Law Firms",
+          "provider": {
+            "@type": "Organization",
+            "name": "ByteSprout",
+            "url": "https://bytesprout.zovus.tech/"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "USA"
+          },
+          "audience": [
+            {
+              "@type": "ProfessionalAudience",
+              "name": "Law Firms"
+            },
+            {
+              "@type": "ProfessionalAudience",
+              "name": "Attorneys"
+            }
+          ]
+        }
+
+      ]
+    }
+    </script>
   </head>
 
   <body>

@@ -9,9 +9,9 @@ import {
 
 const faqData = [
   {
-    question: "What's included in the Founding Member Offer?",
+    question: "What's included in the Early Adopter Program Offer?",
     answer:
-      "The Founding Member Offer is our introductory pricing available while slots last—only 3 slots left! It offers a significant discount on reels and automation, locking in lower rates for early adopters. Once these slots are filled, the pricing will revert to standard rates as displayed in the calculator when the offer toggle is off.",
+      "The Early Adopter Program Offer is our introductory pricing available while slots last—limited slots remaining! It offers a significant discount on reels and automation, locking in lower rates for early adopters. Once these slots are filled, the pricing will revert to standard rates as displayed in the calculator when the offer toggle is off.",
   },
   {
     question: "Can I create a plan with more than 15 reels per month?",
@@ -31,7 +31,7 @@ const faqData = [
   {
     question: "What happens when the special offer ends?",
     answer:
-      "When all founding member slots are taken, the calculator will automatically show normal pricing. You'll still receive transparent cost breakdowns—no surprises.",
+      "When all early adopter program slots are taken, the calculator will automatically show normal pricing. You'll still receive transparent cost breakdowns—no surprises.",
   }
 ];
 

@@ -52,7 +52,7 @@ const CalculatorPage = () => {
           </p>
           {/* Offer Toggle */}
           <div className="flex items-center justify-center gap-3 my-8">
-            <span className="text-sm md:text-base font-medium text-navy">Show Early Adopter Offer</span>
+            <span className="text-sm md:text-base font-medium text-navy">Show Early Adopter Program Offer</span>
             <Switch checked={withOffer} onCheckedChange={setWithOffer} aria-label="Toggle Founding Member Special" />
           </div>
           <div className={`font-semibold rounded-full py-1 px-4 mx-auto text-center mb-6 w-fit transition-colors duration-200 ${withOffer ? "bg-lime/10 text-lime" : "bg-muted/80 text-navy border border-muted"}`}>

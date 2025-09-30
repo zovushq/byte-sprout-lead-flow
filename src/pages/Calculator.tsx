@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
@@ -21,7 +20,6 @@ const getReelPrice = (special: boolean) => {
 const AVATAR_PRICE = 50; // Per extra avatar (always the same)
 // Plan description updated to reflect that automation is always included
 const PLAN_DESC = ["All videos are professionally edited for maximum scroll-stopping power.", "Custom cover design for every single video.", "Content ideation, AI video production, and publishing on ALL platforms: Instagram, TikTok, Facebook, YouTube, Google My Business.", "A dedicated Slack channel for easy approvals, fast feedback, and direct communication with our team.", "Dedicated social media manager and relationship manager for your firm.", "Bi-weekly performance analysis and strategy reviews, so you're never left in the dark.", "2 custom AI avatars included", "AI-Powered DM Automation included"];
-
 const CalculatorPage = () => {
   const [numReels, setNumReels] = useState(BASE_REELS);
   const [extraAvatars, setExtraAvatars] = useState(0);
@@ -34,7 +32,6 @@ const CalculatorPage = () => {
   const reelsSubtotal = reelsCharged * reelUnitPrice;
   const avatarSubtotal = avatarsCharged * AVATAR_PRICE;
   const total = reelsSubtotal + avatarSubtotal;
-
   return <>
       <Helmet>
         <title>ByteSprout Cost Calculator | AI-Powered Lead Generation & Qualification System for Law Firms</title>
@@ -55,13 +52,11 @@ const CalculatorPage = () => {
           </p>
           {/* Offer Toggle */}
           <div className="flex items-center justify-center gap-3 my-8">
-            <span className="text-sm md:text-base font-medium text-navy">Show Founding Member Offer</span>
+            <span className="text-sm md:text-base font-medium text-navy">Show Early Adopter Offer</span>
             <Switch checked={withOffer} onCheckedChange={setWithOffer} aria-label="Toggle Founding Member Special" />
           </div>
           <div className={`font-semibold rounded-full py-1 px-4 mx-auto text-center mb-6 w-fit transition-colors duration-200 ${withOffer ? "bg-lime/10 text-lime" : "bg-muted/80 text-navy border border-muted"}`}>
-            {withOffer
-              ? "Founding Member Special Offer (only 3 slots left)"
-              : "Normal Pricing (after all offer slots filled)"}
+            {withOffer ? "Founding Member Special Offer (only 3 slots left)" : "Normal Pricing (after all offer slots filled)"}
           </div>
 
           <div className="space-y-5 mb-6">

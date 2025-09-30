@@ -66,7 +66,7 @@ const CalculatorPage = () => {
                 How many reels per month?
               </label>
               <div className="flex items-center gap-4">
-                <Button type="button" onClick={() => setNumReels(v => Math.max(BASE_REELS, v - 1))} size="icon" variant="secondary" aria-label="decrease">
+                <Button type="button" onClick={() => setNumReels(v => Math.max(BASE_REELS, v - 1))} size="icon" variant="secondary" aria-label="decrease" disabled={numReels === BASE_REELS}>
                   −
                 </Button>
                 <span className="text-2xl font-bold">{numReels}</span>

@@ -15,7 +15,7 @@ const INCLUDED_AVATARS = 2;
 
 // Pricing Rules - automation is now always included
 const getReelPrice = (special: boolean) => {
-  return special ? 155 : 333; // Always with automation pricing
+  return special ? 112.3 : 333; // Always with automation pricing
 };
 const AVATAR_PRICE = 50; // Per extra avatar (always the same)
 // Plan description updated to reflect that automation is always included

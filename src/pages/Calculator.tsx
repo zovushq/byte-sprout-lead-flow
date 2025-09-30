@@ -132,7 +132,7 @@ const CalculatorPage = () => {
             <ul className="pl-5 list-disc space-y-1">
               {PLAN_DESC.map(desc => <li key={desc}>{desc}</li>)}
               {withOffer && <li className="font-semibold text-lime">
-                  Founding Member Special Discount (only 3 slots left)
+                  Early Adopter Program Offer (Limited slots left)
                 </li>}
             </ul>
             

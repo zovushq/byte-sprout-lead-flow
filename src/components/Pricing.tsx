@@ -50,7 +50,7 @@ const Pricing = () => {
                 <span className="ml-2">$1,797</span>
                 <span className="text-lg font-normal text-muted-foreground">/month</span>
               </h3>
-              <p className="text-lime font-semibold text-lg mb-2">50% OFF - Limited Time</p>
+              <p className="text-lime font-semibold text-lg mb-2">64% OFF - Limited Slots Left</p>
               <p className="text-muted-foreground text-lg">
                 Everything you need to turn your expertise into a lead generation machine
               </p>

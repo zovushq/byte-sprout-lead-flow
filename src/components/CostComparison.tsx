@@ -1,39 +1,31 @@
 import { Check, X, TrendingUp } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
 const CostComparison = () => {
-  const inHouseRoles = [
-    { role: "🎥 Video Editor", salary: "$50,000–$70,000" },
-    { role: "✍️ Scriptwriter & Strategist", salary: "$60,000–$90,000" },
-    { role: "📱 Social Media Manager", salary: "$55,000–$75,000" },
-    { role: "🤖 AI + Automation Engineer", salary: "$80,000–$120,000" },
-    { role: "📊 Performance Analyst", salary: "$45,000–$65,000" },
-    { role: "💼 Project Manager", salary: "$60,000+" },
-    { role: "🧰 Tools & Software", salary: "$5,000–$10,000/year" },
-  ];
-
-  const hiddenCosts = [
-    "Office space & utilities",
-    "High-end equipment & laptops", 
-    "Health insurance & benefits",
-    "Annual salary increments",
-    "Employee training & development",
-    "Team retreats & bonuses",
-    "HR & recruitment costs",
-    "Paid time off & sick leave"
-  ];
-
-  const ourAdvantages = [
-    "Multi-client data insights",
-    "Proven strategies across industries", 
-    "Latest AI & automation tools",
-    "No hiring or training delays",
-    "Scalable team resources",
-    "Performance-driven results"
-  ];
-
-  return (
-    <section className="py-20 bg-gradient-to-br from-background to-muted/30">
+  const inHouseRoles = [{
+    role: "🎥 Video Editor",
+    salary: "$50,000–$70,000"
+  }, {
+    role: "✍️ Scriptwriter & Strategist",
+    salary: "$60,000–$90,000"
+  }, {
+    role: "📱 Social Media Manager",
+    salary: "$55,000–$75,000"
+  }, {
+    role: "🤖 AI + Automation Engineer",
+    salary: "$80,000–$120,000"
+  }, {
+    role: "📊 Performance Analyst",
+    salary: "$45,000–$65,000"
+  }, {
+    role: "💼 Project Manager",
+    salary: "$60,000+"
+  }, {
+    role: "🧰 Tools & Software",
+    salary: "$5,000–$10,000/year"
+  }];
+  const hiddenCosts = ["Office space & utilities", "High-end equipment & laptops", "Health insurance & benefits", "Annual salary increments", "Employee training & development", "Team retreats & bonuses", "HR & recruitment costs", "Paid time off & sick leave"];
+  const ourAdvantages = ["Multi-client data insights", "Proven strategies across industries", "Latest AI & automation tools", "No hiring or training delays", "Scalable team resources", "Performance-driven results"];
+  return <section className="py-20 bg-gradient-to-br from-background to-muted/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -65,12 +57,10 @@ const CostComparison = () => {
               <div>
                 <h4 className="font-semibold mb-3 text-foreground">Required Team Members:</h4>
                 <div className="space-y-2">
-                  {inHouseRoles.map((item, index) => (
-                    <div key={index} className="flex justify-between text-sm">
+                  {inHouseRoles.map((item, index) => <div key={index} className="flex justify-between text-sm">
                       <span className="text-muted-foreground">{item.role}</span>
                       <span className="font-medium text-foreground">{item.salary}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
                 <div className="border-t mt-4 pt-4">
                   <div className="flex justify-between font-bold text-lg">
@@ -83,12 +73,10 @@ const CostComparison = () => {
               <div className="bg-destructive/5 p-4 rounded-lg">
                 <h4 className="font-semibold mb-2 text-destructive">+ Hidden Costs:</h4>
                 <div className="grid grid-cols-2 gap-1 text-xs text-muted-foreground">
-                  {hiddenCosts.map((cost, index) => (
-                    <div key={index} className="flex items-center gap-1">
+                  {hiddenCosts.map((cost, index) => <div key={index} className="flex items-center gap-1">
                       <div className="w-1 h-1 bg-destructive rounded-full"></div>
                       {cost}
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </CardContent>
@@ -146,12 +134,10 @@ const CostComparison = () => {
                   Our Competitive Edge:
                 </h4>
                 <div className="space-y-1 text-sm text-green-700">
-                  {ourAdvantages.map((advantage, index) => (
-                    <div key={index} className="flex items-center gap-2">
+                  {ourAdvantages.map((advantage, index) => <div key={index} className="flex items-center gap-2">
                       <div className="w-1 h-1 bg-green-600 rounded-full"></div>
                       {advantage}
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </CardContent>
@@ -160,9 +146,7 @@ const CostComparison = () => {
 
         {/* Bottom CTA */}
         <div className="text-center bg-primary/5 rounded-2xl p-8 border border-primary/20">
-          <h3 className="text-2xl font-bold text-foreground mb-4">
-            Save $300,000+ Per Year
-          </h3>
+          <h3 className="text-2xl font-bold text-foreground mb-4">Save $330,000+ Per Year</h3>
           <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
             Why spend 7x more building an in-house team when you can get better results, 
             faster execution, and proven expertise with ByteSprout? Plus, we bring 
@@ -173,8 +157,6 @@ const CostComparison = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CostComparison;

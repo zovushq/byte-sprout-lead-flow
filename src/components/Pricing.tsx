@@ -20,7 +20,7 @@ const Pricing = () => {
     "Bar Compliance Monitoring",
     "Monthly Performance Reports"
   ];
-  const addOns = ["Extra Reels: $150 per reel (additional to 16 included)", "Extra Avatars: $50/month per avatar (2 included in plan)"];
+  const addOns = ["Extra Reels: $112.3 per reel (additional to 16 included)", "Extra Avatars: $50/month per avatar (2 included in plan)"];
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     element?.scrollIntoView({
@@ -43,11 +43,11 @@ const Pricing = () => {
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border-2 border-lime/20 animate-scale-in">
             <div className="text-center mb-8">
               <div className="bg-lime/10 text-navy px-4 py-2 rounded-full inline-block mb-4">
-                <span className="font-semibold">🔥 Founding Member Special Offer - only 3 slots left</span>
+                <span className="font-semibold">Join Our Early Adopter Program - Limited to 3 Law Firms</span>
               </div>
               <h3 className="text-3xl md:text-4xl font-bold text-navy mb-2">
                 <span className="line-through text-muted-foreground text-2xl">$5,000</span>
-                <span className="ml-2">$2,500</span>
+                <span className="ml-2">$1,797</span>
                 <span className="text-lg font-normal text-muted-foreground">/month</span>
               </h3>
               <p className="text-lime font-semibold text-lg mb-2">50% OFF - Limited Time</p>
@@ -128,7 +128,7 @@ const Pricing = () => {
               </div>
               <div className="bg-lime/10 rounded-lg p-6 border-2 border-lime/20">
                 <h5 className="font-semibold text-navy mb-2">ByteSprout</h5>
-                <div className="text-lg font-bold text-navy">$2,500/month</div>
+                <div className="text-lg font-bold text-navy">$1,797/month</div>
                 <div className="text-sm text-lime">Everything included</div>
               </div>
             </div>

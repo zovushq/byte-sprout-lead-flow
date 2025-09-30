@@ -98,16 +98,19 @@ const CostComparison = () => {
           <Card className="border-primary/20 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/80"></div>
             <CardHeader className="text-center pb-6">
+              <div className="bg-lime/10 text-navy px-3 py-1 rounded-full inline-block mb-3 text-sm font-semibold">
+                Early Adopter Program Offer
+              </div>
               <CardTitle className="text-2xl text-primary flex items-center justify-center gap-2">
                 <Check className="w-6 h-6" />
                 ByteSprout
               </CardTitle>
               <div className="text-4xl font-bold text-primary">
-                $60,000
+                $21,564
                 <span className="text-lg font-normal text-muted-foreground">/year</span>
               </div>
               <div className="text-sm text-muted-foreground">
-                Just $5,000/month • All-inclusive
+                just $1,797/month • All-inclusive
               </div>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -158,7 +161,7 @@ const CostComparison = () => {
         {/* Bottom CTA */}
         <div className="text-center bg-primary/5 rounded-2xl p-8 border border-primary/20">
           <h3 className="text-2xl font-bold text-foreground mb-4">
-            Save $290,000+ Per Year
+            Save $300,000+ Per Year
           </h3>
           <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
             Why spend 7x more building an in-house team when you can get better results, 

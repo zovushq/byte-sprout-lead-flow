@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Accordion,
@@ -8,11 +7,6 @@ import {
 } from "@/components/ui/accordion";
 
 const faqData = [
-  {
-    question: "What's included in the Early Adopter Program Offer?",
-    answer:
-      "The Early Adopter Program Offer is our introductory pricing available while slots last—limited slots remaining! It offers a significant discount on reels and automation, locking in lower rates for early adopters. Once these slots are filled, the pricing will revert to standard rates as displayed in the calculator when the offer toggle is off.",
-  },
   {
     question: "Can I create a plan with more than 15 reels per month?",
     answer:
@@ -29,9 +23,9 @@ const faqData = [
       "Yes, all ByteSprout plans include AI-powered DM automation by default — which means automated lead qualification and booking is fully included in your pricing. No extra fees — it's all built-in to help you convert more leads, faster.",
   },
   {
-    question: "What happens when the special offer ends?",
+    question: "How does pricing work?",
     answer:
-      "When all early adopter program slots are taken, the calculator will automatically show normal pricing. You'll still receive transparent cost breakdowns—no surprises.",
+      "Our pricing is simple and transparent. You pay $333 per reel with a minimum of 15 reels per month. 2 custom AI avatars are included, and you can add more for $50/month each. All plans include AI-powered DM automation at no extra cost.",
   }
 ];
 
@@ -40,7 +34,7 @@ const CalculatorFAQ = () => (
     <div className="container mx-auto px-4 max-w-3xl">
       <div className="mb-10 text-center">
         <h2 className="text-2xl md:text-4xl font-bold text-navy mb-2">Frequently Asked Questions</h2>
-        <p className="text-base md:text-lg text-muted-foreground">Answers about how pricing works, our offer, and how to build your plan.</p>
+        <p className="text-base md:text-lg text-muted-foreground">Answers about how pricing works and how to build your plan.</p>
       </div>
       <Accordion type="single" collapsible className="space-y-4">
         {faqData.map((faq, idx) => (
